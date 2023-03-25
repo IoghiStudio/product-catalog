@@ -2,6 +2,6 @@ import React from 'react';
 
 export const PhonesPage = () => {
   return (
-    <div>Phones</div>
+    <div>Mobile phones</div>
   )
 }
