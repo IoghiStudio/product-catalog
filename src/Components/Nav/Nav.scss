@@ -1,0 +1,23 @@
+@import '../App/App.scss';
+
+.nav {
+
+  &__list {
+    background-color: rgb(255, 105, 46);
+    display: flex;
+    list-style: none;
+
+    gap: 32px;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $white;
+    background-color: rgb(25, 59, 5);
+  }
+}
