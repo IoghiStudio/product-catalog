@@ -1,5 +1,9 @@
 .header {
-  height: 48px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 
+  height: 48px;
   border-bottom: 1px solid #3B3E4A
 }
