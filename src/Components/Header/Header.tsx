@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import './Header.scss';
-import cn from 'classnames';
+// import cn from 'classnames';
+import { MenuIcon } from '../MenuIcon';
 
 export const Header = () => {
   const [windowWidth, setWindowSize] = useState(window.innerWidth);
@@ -27,7 +28,7 @@ export const Header = () => {
       {windowWidth >= 640 ? (
         <Nav />
       ) : (
-        "Icon"
+        <MenuIcon />
       )}
     </header>
   )

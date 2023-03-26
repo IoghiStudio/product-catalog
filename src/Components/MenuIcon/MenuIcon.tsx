@@ -4,14 +4,16 @@ import cn from 'classnames';
 
 export const MenuIcon = () => {
   return (
-    <NavLink
-      to='/menu'
-      className={({ isActive }) => cn(
-        "MenuIcon",
-        {
-          "test": false
-        }
-      )}
-    ></NavLink>
+    <div className="menuicon">
+      <NavLink
+        to='/menu'
+        className={({ isActive }) => cn(
+          "menuicon--icon",
+          {
+            "test": false
+          }
+        )}
+      ></NavLink>
+    </div>
   )
 }
