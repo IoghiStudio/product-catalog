@@ -8,13 +8,16 @@
   right: 0;
 
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   gap: 32px;
   height: 48px;
+  padding-left: 16px;
   border-bottom: 1px solid $elements;
 
   @include onDesktop {
     height: 64px;
     gap: 48px;
+    padding-left: 24px;
   }
 }
