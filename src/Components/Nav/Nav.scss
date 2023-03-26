@@ -22,12 +22,14 @@
     }
   }
 
-  &__item {}
+  &__item {
+    display: flex;
+    height: 100%;
+  }
 
   &__link {
     display: flex;
-    padding: 6px 0;
-
+    align-items: center;
     font-size: 12px;
     font-weight: 700;
     line-height: 11px;
@@ -35,6 +37,10 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: $white;
+
+    &--active {
+      border-bottom: 3px solid $white;
+    }
   }
 
   &__icons {
