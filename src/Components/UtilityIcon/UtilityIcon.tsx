@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './UtilityIcon.scss';
 import cn from 'classnames';
@@ -7,22 +8,29 @@ type Props = {
   modifier: string; 
 }
 
-export const UtilityIcon: React.FC<Props> = ({
-  url,
-  modifier,
-}) => {
-  return (
-    <div className="utilityicon">
+export const UtilityIcon: React.FC<Props> = React.memo(
+  ({
+    url,
+    modifier,
+  }) => {
+    console.log(window.location)
+    return (
       <NavLink
-        to={url}
         className={({ isActive }) => cn(
-          "utilityicon--icon",
-          `utilityicon--${modifier}`,
+          "utilityicon",
           {
-            test: isActive
+            "utilityicon--active": isActive
           }
         )}
-      ></NavLink>
-    </div>
-  )
-}
+        to={url}
+      >
+        <div
+          className={cn(
+            "utilityicon--icon",
+            `utilityicon--${modifier}`,
+          )}
+        ></div>
+      </NavLink>
+    )
+  }
+)
