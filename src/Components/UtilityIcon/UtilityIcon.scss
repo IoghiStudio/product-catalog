@@ -20,11 +20,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    @include onDesktop {
-      width: 24px;
-      height: 24px;
-    }
   }
 
   &--fav {
