@@ -47,8 +47,26 @@ export const Nav = () => {
         })}
       </ul>
 
-      <div className="nav__buttons">
+      <div className="nav__icons">
+        <div className="nav__icons-icon--container">
+          <NavLink
+            className={({ isActive }) => cn(
+              "nav__icons-icon",
+              "nav__icons-icon--fav"
+            )}
+            to="/favorites"
+          ></NavLink>
+        </div>
 
+        <div className="nav__icons-icon--container">
+          <NavLink
+            className={({ isActive }) => cn(
+              "nav__icons-icon",
+              "nav__icons-icon--cart"
+            )}
+            to="/favorites"
+          ></NavLink>
+        </div>
       </div>
     </nav>
   )

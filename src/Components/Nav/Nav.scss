@@ -1,11 +1,16 @@
 @import '../../styles/vars';
 
 .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 
   &__list {
-    background-color: rgb(255, 105, 46);
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
 
     gap: 32px;
   }
@@ -24,6 +29,35 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: $white;
-    // background-color: rgb(25, 59, 5);
+  }
+
+  &__icons {
+    display: flex;
+    width: 100px;
+
+    &-icon {
+      &--container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        box-shadow: -1px 0 0 0 $surface-2;
+      }
+
+      width: 16px;
+      height: 16px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      &--fav {
+        background-image: url(../../icons/heart.svg);
+      }
+
+      &--cart {
+        background-image: url(../../icons/cart.svg);
+      }
+    }
   }
 }
