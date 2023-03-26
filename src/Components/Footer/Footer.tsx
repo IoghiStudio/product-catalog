@@ -4,14 +4,17 @@ import './Footer.scss';
 
 const footerLinks = [
   {
+    id: 1,
     url: '/',
     name: 'Github'
   },
   {
+    id: 2,
     url: '/',
     name: 'Contacts'
   },
   {
+    id: 3,
     url: '/',
     name: 'Rights'
   },
@@ -28,10 +31,10 @@ export const Footer = () => {
 
       <ul className='footer__list'>
         {footerLinks.map(link => {
-          const { url, name} = link;
+          const { id, url, name} = link;
 
           return (
-            <li className='footer__item'>
+            <li key={id} className='footer__item'>
               <a
                 href={url}
                 className='footer__link'

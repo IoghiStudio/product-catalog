@@ -9,6 +9,7 @@ import { TabletsPage } from '../TabletsPage';
 import { AccessoriesPage } from '../AccessoriesPage';
 import { CartPage } from '../CartPage';
 import { FavoritesPage } from '../FavoritesPage';
+import { NotFoundPage } from '../NotFoundPage';
 
 export const App = () => {
   return (
@@ -64,7 +65,7 @@ export const App = () => {
         />
 
         <Route
-          element={'404 page not found'}
+          element={<NotFoundPage />}
           path='*'
         />
       </Routes>

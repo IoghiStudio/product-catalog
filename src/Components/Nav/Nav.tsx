@@ -5,18 +5,22 @@ import { UtilityIcon } from '../UtilityIcon';
 
 const paths = [
   {
+    id: 1,
     url: '/',
     name: 'Home',
   },
   {
+    id: 2,
     url: '/phones',
     name: 'Phones',
   },
   {
+    id: 3,
     url: '/tablets',
     name: 'Tablets',
   },
   {
+    id: 4,
     url: '/accessories',
     name: 'Accessories',
   },
@@ -27,10 +31,10 @@ export const Nav = () => {
     <nav className='nav'>
       <ul className='nav__list'>
         {paths.map(path => {
-          const { url, name } = path;
+          const { id, url, name } = path;
 
           return (
-            <li className="nav__item">
+            <li key={id} className="nav__item">
               <NavLink
                 className={({ isActive }) => cn(
                   "nav__link",

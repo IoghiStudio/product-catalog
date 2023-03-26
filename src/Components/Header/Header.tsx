@@ -14,7 +14,6 @@ export const Header = () => {
     };
 
     window.addEventListener('resize', handleWindowResize);
-    console.log(windowWidth)
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
