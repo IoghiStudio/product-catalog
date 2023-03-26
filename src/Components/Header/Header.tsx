@@ -23,7 +23,9 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <Logo />
+      <Logo
+        defaultBig={false}
+      />
 
       {windowWidth >= 640 ? (
         <Nav />

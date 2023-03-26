@@ -12,6 +12,11 @@
 
   @include onDesktop {
     width: 80px;
-    height: 28px;
+    height: 27px;
+  }
+
+  &--big {
+    width: 89px;
+    height: 30px;
   }
 }

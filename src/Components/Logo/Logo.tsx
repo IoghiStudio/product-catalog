@@ -1,7 +1,20 @@
 import './Logo.scss';
+import cn from 'classnames';
 
-export const Logo = () => (
+
+type Props = {
+  defaultBig: boolean;
+};
+
+export const Logo: React.FC<Props> = ({
+  defaultBig
+}) => (
   <div
-    className="logo"
+    className={cn(
+      "logo",
+      {
+        "logo--big": defaultBig,
+      }
+    )}
   ></div>
 );

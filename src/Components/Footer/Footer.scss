@@ -1,0 +1,16 @@
+@import '../../styles/mixins';
+
+.footer {
+  display: flex;
+  background-color: rgb(49, 43, 35);
+
+  padding: 34px 16px;
+
+  // @include onTablet {
+  //   padding: 34px 102px;
+  // }
+
+  @include onDesktop {
+    padding: 34px 154px;
+  }
+}
