@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import './Nav.scss';
@@ -23,21 +22,6 @@ const paths = [
 ]
 
 export const Nav = () => {
-  const [windowWidth, setWindowSize] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleWindowResize);
-    console.log(windowWidth)
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  });
-  
   return (
     <nav className='nav'>
       <ul className='nav__list'>

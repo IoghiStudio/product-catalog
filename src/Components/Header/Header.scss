@@ -9,11 +9,16 @@
 
   display: flex;
   box-sizing: border-box;
+  justify-content: space-between;
   align-items: center;
   gap: 32px;
   height: 48px;
   padding-left: 16px;
   border-bottom: 1px solid $elements;
+
+  @include onTablet {
+    justify-content: flex-start;
+  }
 
   @include onDesktop {
     height: 64px;
