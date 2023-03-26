@@ -16,7 +16,19 @@
   }
 
   &--active {
-    border-bottom: 3px solid $white;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 45px;
+      width: 48px;
+      height: 3px;
+      background-color: $white;
+
+      @include onDesktop {
+        top: 61px;
+        width: 64px;
+      }
+    }
   }
 
   &--icon {
