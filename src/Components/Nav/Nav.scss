@@ -39,35 +39,5 @@
 
   &__icons {
     display: flex;
-
-    &-icon {
-      &--container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 48px;
-        height: 48px;
-        box-shadow: -1px 0 0 0 $surface-2;
-
-        @include onDesktop {
-          width: 64px;
-          height: 64px;
-        }
-      }
-
-      width: 16px;
-      height: 16px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-      &--fav {
-        background-image: url(../../icons/heart.svg);
-      }
-
-      &--cart {
-        background-image: url(../../icons/cart.svg);
-      }
-    }
   }
-}
+};

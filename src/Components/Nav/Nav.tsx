@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import './Nav.scss';
+import { UtilityIcon } from '../UtilityIcon';
 
 const paths = [
   {
@@ -47,25 +48,15 @@ export const Nav = () => {
       </ul>
 
       <div className="nav__icons">
-        <div className="nav__icons-icon--container">
-          <NavLink
-            className={({ isActive }) => cn(
-              "nav__icons-icon",
-              "nav__icons-icon--fav"
-            )}
-            to="/favorites"
-          ></NavLink>
-        </div>
+        <UtilityIcon
+          url='/favorites'
+          modifier='fav'
+        />
 
-        <div className="nav__icons-icon--container">
-          <NavLink
-            className={({ isActive }) => cn(
-              "nav__icons-icon",
-              "nav__icons-icon--cart"
-            )}
-            to="/favorites"
-          ></NavLink>
-        </div>
+        <UtilityIcon
+          url='/cart'
+          modifier='cart'
+        />
       </div>
     </nav>
   )

@@ -3,7 +3,7 @@ import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import './Header.scss';
 // import cn from 'classnames';
-import { MenuIcon } from '../MenuIcon';
+import { UtilityIcon } from '../UtilityIcon';
 
 export const Header = () => {
   const [windowWidth, setWindowSize] = useState(window.innerWidth);
@@ -28,7 +28,10 @@ export const Header = () => {
       {windowWidth >= 640 ? (
         <Nav />
       ) : (
-        <MenuIcon />
+        <UtilityIcon
+          url='/menu'
+          modifier='menu'
+        />
       )}
     </header>
   )
