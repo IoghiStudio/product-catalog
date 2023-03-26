@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.73ea7394.css",
-    "main.js": "/product-catalog/static/js/main.b279f512.js",
+    "main.css": "/product-catalog/static/css/main.d63336ce.css",
+    "main.js": "/product-catalog/static/js/main.d3bb58e2.js",
     "static/media/nicegadgets-logo.svg": "/product-catalog/static/media/nicegadgets-logo.6f9215944abd73ff7f28.svg",
     "static/media/Mont-Regular.otf": "/product-catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product-catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -11,11 +11,11 @@
     "static/media/menu.svg": "/product-catalog/static/media/menu.ccd1a9542b5bc584f2a1.svg",
     "index.html": "/product-catalog/index.html",
     "static/media/up-white.svg": "/product-catalog/static/media/up-white.4a750d9ba7eef45d57ab.svg",
-    "main.73ea7394.css.map": "/product-catalog/static/css/main.73ea7394.css.map",
-    "main.b279f512.js.map": "/product-catalog/static/js/main.b279f512.js.map"
+    "main.d63336ce.css.map": "/product-catalog/static/css/main.d63336ce.css.map",
+    "main.d3bb58e2.js.map": "/product-catalog/static/js/main.d3bb58e2.js.map"
   },
   "entrypoints": [
-    "static/css/main.73ea7394.css",
-    "static/js/main.b279f512.js"
+    "static/css/main.d63336ce.css",
+    "static/js/main.d3bb58e2.js"
   ]
 }
