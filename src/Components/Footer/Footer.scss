@@ -48,4 +48,35 @@
     color: $white;
   }
 
+  &__back {
+    display: flex;
+    align-items: center;
+
+    &--text {
+      background-color: red;
+      width: 70px;
+      font-family: 'Mont';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--button {
+      width: 16px;
+      height: 16px;
+      background-image: url(../../icons/Arrows/up-white.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        background-color: $surface-2;
+      }
+    }
+  }
 }

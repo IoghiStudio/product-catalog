@@ -42,6 +42,16 @@ export const Footer = () => {
           )
         })}
       </ul>
+
+      <div className="footer__back">
+        <p className="footer__back--text">
+          back to top
+        </p>
+
+        <div className="footer__back--button-container">
+          <div className="footer__back--button"></div>
+        </div>
+      </div>
     </div>
   )
 }
