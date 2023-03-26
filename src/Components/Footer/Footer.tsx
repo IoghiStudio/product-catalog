@@ -48,9 +48,12 @@ export const Footer = () => {
           back to top
         </p>
 
-        <div className="footer__back--button-container">
+        <a
+          href='#top'
+          className="footer__back--button-container"
+        >
           <div className="footer__back--button"></div>
-        </div>
+        </a>
       </div>
     </div>
   )

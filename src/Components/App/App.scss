@@ -17,16 +17,27 @@
   src: url(../../fonts/Mont-Bold.otf)
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: Mont;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   color: $white;
   background-color: $black;
-  font-family: Mont;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .App {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   background-color: $black;
+}
+
+.menu {
+  height: 1000px;
+  overflow-y: auto;
 }
