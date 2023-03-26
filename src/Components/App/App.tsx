@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <div id='top' className="App">
       <Header />
-      <menu className='menu'></menu>
+
       <Footer />
     </div>
   );
