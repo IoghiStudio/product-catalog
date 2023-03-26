@@ -1,9 +1,10 @@
+@import '../../styles/vars';
 @import '../../styles/mixins';
 
 .footer {
   display: flex;
-  background-color: rgb(49, 43, 35);
-
+  flex-direction: column;
+  // background-color: rgb(49, 43, 35);
   padding: 34px 16px;
 
   // @include onTablet {
@@ -13,4 +14,38 @@
   @include onDesktop {
     padding: 34px 154px;
   }
+
+  &__logo {
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 32px;
+
+    @include onDesktop {
+      gap: 64px;
+    }
+  }
+
+  &__item {}
+
+  &__link {
+    display: flex;
+    padding: 6px 0;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $white;
+  }
+
 }

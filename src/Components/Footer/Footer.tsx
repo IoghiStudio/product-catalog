@@ -20,9 +20,11 @@ const footerLinks = [
 export const Footer = () => {
   return (
     <div className='footer'>
-      <Logo
-        defaultBig={true}
-      />
+      <div className="footer__logo">
+        <Logo
+          defaultBig={true}
+        />
+      </div>
 
       <ul className='footer__list'>
         {footerLinks.map(link => {
