@@ -1,4 +1,5 @@
 @import '../../styles/vars';
+@import '../../styles/mixins';
 
 .nav {
   display: flex;
@@ -12,13 +13,14 @@
     list-style: none;
     padding: 0;
     margin: 0;
-
     gap: 32px;
+
+    @include onDesktop {
+      gap: 64px;
+    }
   }
 
-  &__item {
-
-  }
+  &__item {}
 
   &__link {
     display: flex;
