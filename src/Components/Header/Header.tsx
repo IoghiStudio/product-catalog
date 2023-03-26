@@ -1,11 +1,12 @@
 import React from 'react';
+import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import './Header.scss';
 
 export const Header = () => {
   return (
     <header className="header">
-      <div className="logo-img"></div>
+      <Logo />
 
       <Nav />
     </header>

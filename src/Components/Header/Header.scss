@@ -6,6 +6,9 @@
   left: 0;
   right: 0;
 
+  display: flex;
+  align-items: center;
+  gap: 32px;
   height: 48px;
   border-bottom: 1px solid $elements;
 }

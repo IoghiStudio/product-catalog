@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  flex-grow: 1;
 
   &__list {
     display: flex;
@@ -33,7 +34,6 @@
 
   &__icons {
     display: flex;
-    width: 100px;
 
     &-icon {
       &--container {
