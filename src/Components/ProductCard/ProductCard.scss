@@ -3,11 +3,23 @@
 
 .productcard {
   display: flex;
-  background-color: $surface-1;
+  flex-direction: column;
   padding: 32px;
   height: 440px;
+  background-color: $surface-1;
 
   @include onTablet {
     height: 506px;
+  }
+
+  &__image {}
+  &__title {}
+  &__prices {}
+  &__price {}
+  &__fullprice {}
+  &__description {}
+  &__sepcs {
+    &--text {}
+    &--value {}
   }
 }
