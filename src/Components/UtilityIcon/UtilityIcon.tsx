@@ -13,7 +13,6 @@ export const UtilityIcon: React.FC<Props> = React.memo(
     url,
     modifier,
   }) => {
-    console.log(window.location)
     return (
       <NavLink
         className={({ isActive }) => cn(

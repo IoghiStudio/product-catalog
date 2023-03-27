@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Button';
 import './ProductCard.scss';
 
 type Props = {
@@ -33,8 +34,8 @@ export const ProductCard = () => {
       <div className="productcard__title"></div>
 
       <div className="productcard__prices">
-        <div className="productcard__fullprice"></div>
         <div className="productcard__price"></div>
+        <div className="productcard__fullprice"></div>
       </div>
 
       <div className="productcard__description">
@@ -54,7 +55,9 @@ export const ProductCard = () => {
         </div>
       </div>
 
-      
+      <div className="productcard__buttons">
+        <Button text={"Add to cart"}/>
+      </div>
     </div>
   )
 }
