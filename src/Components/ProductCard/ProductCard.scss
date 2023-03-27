@@ -1,0 +1,13 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.productcard {
+  display: flex;
+  background-color: $surface-1;
+  padding: 32px;
+  height: 440px;
+
+  @include onTablet {
+    height: 506px;
+  }
+}
