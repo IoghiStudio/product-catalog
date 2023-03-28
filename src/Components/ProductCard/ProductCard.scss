@@ -13,7 +13,13 @@
   }
 
   &__image {}
-  &__title {}
+  &__title {
+    font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  }
   &__prices {}
   &__price {}
   &__fullprice {}
