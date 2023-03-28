@@ -14,20 +14,38 @@
     height: 506px;
   }
 
-  &__image {}
+  &__image {
+    height: 165px;
+    object-fit: contain;
+    margin-bottom: 24px;
+  }
 
   &__title {
     font-family: 'Mont';
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
+    margin-bottom: 8px;
   }
 
-  &__prices {}
+  &__prices {
+    display: flex;
+    gap: 8px;
+    font-family: 'Mont';
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+
+    margin-bottom: 24px;
+  }
 
   &__price {}
 
-  &__fullprice {}
+  &__fullprice {
+    font-weight: 600;
+    color: $secondary;
+    text-decoration: line-through;
+  }
 
   &__description {
     display: flex;

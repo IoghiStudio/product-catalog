@@ -27,8 +27,11 @@ export const ProductCard: React.FC<Props> = ({
     <div className="productcard">
       <img
         className="productcard__image"
-        // src={image}
-        src={require('../../client/api/img/phones/apple-iphone-11/green/00.jpg')}
+
+        //COMMENT LEFT FOR DEVELOPMENT REFREENCE
+        // src={require('../../client/api/img/phones/apple-iphone-11/green/00.jpg')}
+
+        src={require(`../../client/api/${image}`)}
         alt={name}
       />
       
