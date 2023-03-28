@@ -4,6 +4,18 @@
   background-color: $accent;
   padding: 0;
   border: 0;
-  width: 160px;
+  width: 176px;
   height: 40px;
+
+  font-family: 'Mont'; 
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-hover;
+  }
 }
