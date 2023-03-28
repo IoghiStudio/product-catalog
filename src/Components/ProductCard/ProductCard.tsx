@@ -4,6 +4,7 @@ import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
 
 type Props = {
+  image: string;
   name: string;
   fullPrice: number;
   price: number;
@@ -13,6 +14,7 @@ type Props = {
 }
 
 export const ProductCard: React.FC<Props> = ({
+  image,
   name,
   fullPrice,
   price,
@@ -20,35 +22,42 @@ export const ProductCard: React.FC<Props> = ({
   capacity,
   ram,
 }) => {
+
   return (
     <div className="productcard">
-      <div className="productcard__image">
-        wesfewf
-      </div>
+      <img
+        className="productcard__image"
+        // src={image}
+        src={require('../../client/api/img/phones/apple-iphone-11/green/00.jpg')}
+        alt={name}
+      />
+      
 
       <div className="productcard__title">
-        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+        {name}
+        {' '}
+        (iMT9G2FS/A)
       </div>
 
       <div className="productcard__prices">
-        <div className="productcard__price">$799</div>
-        <div className="productcard__fullprice">$899</div>
+        <div className="productcard__price">{`$${price}`}</div>
+        <div className="productcard__fullprice">{`$${fullPrice}`}</div>
       </div>
 
       <div className="productcard__description">
         <div className="productcard__specs">
           <div className="productcard__specs--text">Screen</div>
-          <div className="productcard__specs--value">5.7led</div>
+          <div className="productcard__specs--value">{screen}</div>
         </div>
 
         <div className="productcard__specs">
           <div className="productcard__specs--text">Capacity</div>
-          <div className="productcard__specs--value">64 gb</div>
+          <div className="productcard__specs--value">{capacity}</div>
         </div>
 
         <div className="productcard__specs">
           <div className="productcard__specs--text">RAM</div>
-          <div className="productcard__specs--value">4 gb</div>
+          <div className="productcard__specs--value">{ram}</div>
         </div>
       </div>
 
