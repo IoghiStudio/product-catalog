@@ -47,6 +47,8 @@ export const ProductCard: React.FC<Props> = ({
         <div className="productcard__fullprice">{`$${fullPrice}`}</div>
       </div>
 
+      <div className="productcard__divider"></div>
+
       <div className="productcard__description">
         <div className="productcard__specs">
           <div className="productcard__specs--text">Screen</div>
@@ -65,7 +67,9 @@ export const ProductCard: React.FC<Props> = ({
       </div>
 
       <div className="productcard__buttons">
-        <Button text={"Add to cart"}/>
+        <div className="productcard__buttons--button">
+          <Button text={"Add to cart"}/>
+        </div>
         <HeartIcon />
       </div>
     </div>

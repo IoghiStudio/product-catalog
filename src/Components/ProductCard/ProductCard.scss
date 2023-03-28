@@ -6,7 +6,7 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 32px;
-  max-width: 275px;
+  max-width: 280px;
   height: 440px;
   background-color: $surface-1;
 
@@ -36,7 +36,7 @@
     font-size: 22px;
     line-height: 140%;
 
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
 
   &__price {}
@@ -45,6 +45,11 @@
     font-weight: 600;
     color: $secondary;
     text-decoration: line-through;
+  }
+
+  &__divider {
+    border: 1px solid $secondary;
+    margin-bottom: 16px;
   }
 
   &__description {
@@ -73,5 +78,9 @@
   &__buttons {
     display: flex;
     gap: 8px;
+
+    &--button {
+      flex-grow: 1;
+    }
   }
 }

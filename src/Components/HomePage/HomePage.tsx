@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductCard } from '../ProductCard';
 import phones from '../../client/api/phones.json';
 
-const phoneFromSever = phones[22];
+const phoneFromSever = phones[12];
 
 export const HomePage = () => {
   console.log(phoneFromSever);
