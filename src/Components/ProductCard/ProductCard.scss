@@ -4,7 +4,9 @@
 .productcard {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   padding: 32px;
+  max-width: 275px;
   height: 440px;
   background-color: $surface-1;
 
@@ -13,20 +15,45 @@
   }
 
   &__image {}
+
   &__title {
     font-family: 'Mont';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
   }
+
   &__prices {}
+
   &__price {}
+
   &__fullprice {}
-  &__description {}
-  &__sepcs {
-    &--text {}
-    &--value {}
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
   }
-  &__buttons {}
+
+  &__specs {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Mont';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    &--text {
+      color: $secondary;
+    }
+
+    &--value {
+
+    }
+  }
+  &__buttons {
+    display: flex;
+    gap: 8px;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../Button';
+import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
 
 type Props = {
@@ -11,22 +12,14 @@ type Props = {
   ram: string;
 }
 
-// export const ProductCard: React.FC<Props> = ({
-//   name,
-//   fullPrice,
-//   price,
-//   screen,
-//   capacity,
-//   ram,
-// }) => {
-//   return (
-//     <div className="productcard">
-
-//     </div>
-//   )
-// }
-
-export const ProductCard = () => {
+export const ProductCard: React.FC<Props> = ({
+  name,
+  fullPrice,
+  price,
+  screen,
+  capacity,
+  ram,
+}) => {
   return (
     <div className="productcard">
       <div className="productcard__image">
@@ -61,7 +54,8 @@ export const ProductCard = () => {
 
       <div className="productcard__buttons">
         <Button text={"Add to cart"}/>
+        <HeartIcon />
       </div>
     </div>
   )
-}
+};
