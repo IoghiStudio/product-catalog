@@ -11,6 +11,7 @@
   min-width: 212px;
   height: 440px;
   background-color: $surface-1;
+  margin-bottom: 40px;
 
   @include onTablet {
     height: 506px;

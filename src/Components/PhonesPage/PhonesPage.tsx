@@ -3,6 +3,7 @@ import phonesFromServer from '../../client/api/phones.json';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
 import './PhonesPage.scss';
+import '../../styles/grid.scss';
 
 enum FilterBy {
   All = 'all',
@@ -44,7 +45,7 @@ export const PhonesPage = () => {
   }, [phones, filterBy, filterProducts]);
 
   return (
-    <div className='phones'>
+    <div className='phones grid'>
       <h1 className='phones__title'>Mobile phones</h1>
 
       <button
