@@ -4,8 +4,9 @@
 .footer {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   padding: 34px 16px;
-  max-width: 1136px;
+  max-width: 1200px;
   margin: 0 auto;
 
   @include onTablet {

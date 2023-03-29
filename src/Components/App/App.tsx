@@ -16,59 +16,61 @@ export const App = () => {
     <div id='top' className="App">
       <Header />
 
-      <Routes>
-        <Route
-          element={<HomePage />}
-          path="/"
-        />
+      <main>
+        <Routes>
+          <Route
+            element={<HomePage />}
+            path="/"
+          />
 
-        <Route
-          path="/home"
-          element={
-            <Navigate to="/" replace/>
-          }
-        />
+          <Route
+            path="/home"
+            element={
+              <Navigate to="/" replace/>
+            }
+          />
 
-        <Route
-          path="/phones"
-          element={
-            <PhonesPage />
-          }
-        />
+          <Route
+            path="/phones"
+            element={
+              <PhonesPage />
+            }
+          />
 
-        <Route
-          path="/tablets"
-          element={
-            <TabletsPage />
-          }
-        />
+          <Route
+            path="/tablets"
+            element={
+              <TabletsPage />
+            }
+          />
 
-        <Route
-          path="/accessories"
-          element={
-            <AccessoriesPage />
-          }
-        />
+          <Route
+            path="/accessories"
+            element={
+              <AccessoriesPage />
+            }
+          />
 
-        <Route
-          path="/favorites"
-          element={
-            <FavoritesPage />
-          }
-        />
+          <Route
+            path="/favorites"
+            element={
+              <FavoritesPage />
+            }
+          />
 
-        <Route
-          path="/cart"
-          element={
-            <CartPage />
-          }
-        />
+          <Route
+            path="/cart"
+            element={
+              <CartPage />
+            }
+          />
 
-        <Route
-          element={<NotFoundPage />}
-          path='*'
-        />
-      </Routes>
+          <Route
+            element={<NotFoundPage />}
+            path='*'
+          />
+        </Routes>
+      </main>
 
       <Footer />
     </div>
