@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import phonesFromServer from '../../client/api/phones.json';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
@@ -15,37 +15,64 @@ enum FilterBy {
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
-  const [filterBy, setFilterBy] = useState<FilterBy>(FilterBy.All);
+  const [filterBy, setFilterBy] = useState<FilterBy>(FilterBy.Cheapest);
+
+  const filterProducts = useCallback((filter: FilterBy, products: Phone[]) => {
+    switch(filter) {
+      case FilterBy.Alph:
+        return [...products].sort((a, b) => a.name.localeCompare(b.name));
+
+      case FilterBy.Newest:
+        return [...products].sort((a, b) => b.year - a.year);
+
+      case FilterBy.Cheapest:
+        return [...products].sort((a, b) => a.price - b.price);
+
+      default:
+        return [...products];
+    }
+  } , [])
 
   useEffect(() => {
     setPhones(phonesFromServer);
   }, [])
 
   useEffect(() => {
-    let sortedPhones: Phone[];
-
-    switch(filterBy) {
-      case FilterBy.Alph:
-        sortedPhones = [...phones].sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case FilterBy.Newest:
-        sortedPhones = [...phones].sort((a, b) => b.year - a.year);
-        break;
-      case FilterBy.Cheapest:
-        sortedPhones = [...phones].sort((a, b) => a.price - b.price);
-        break;
-      default:
-        sortedPhones = [...phones];
-    }
-
+    const sortedPhones = filterProducts(filterBy, phones);
 
     setViziblePhones(sortedPhones);
-  }, [phones, filterBy])
+  }, [phones, filterBy]);
+
+  console.log('render')
 
 
   return (
     <div className='phones'>
       <h1 className='phones__title'>Mobile phones</h1>
+
+      <button
+        onClick={() => {
+          setFilterBy(FilterBy.Alph);
+        }}
+      >
+        Alph
+      </button>
+
+      <button
+        onClick={() => {
+          setFilterBy(FilterBy.All);
+        }}
+      >
+        All
+      </button>
+
+      <button
+        onClick={() => {
+          setFilterBy(FilterBy.Cheapest);
+        }}
+      >
+        Cheap
+      </button>
 
       <ProductList
         products={visiblePhones}
