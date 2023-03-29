@@ -13,11 +13,9 @@
 
   &__item {
     @for $start from 1 through 4 {
-      @for $end from $start through 4 {
-        @include onTablet {
-          &--mobile-#{$start}-#{$end} {
-            grid-column: #{$start} / #{$end + 1};
-          }
+      @for $end from $start through 14 {
+        &--mobile-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
         }
       }
     }
