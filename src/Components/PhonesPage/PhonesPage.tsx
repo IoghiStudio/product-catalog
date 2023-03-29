@@ -41,10 +41,7 @@ export const PhonesPage = () => {
     const sortedPhones = filterProducts(filterBy, phones);
 
     setViziblePhones(sortedPhones);
-  }, [phones, filterBy]);
-
-  console.log('render')
-
+  }, [phones, filterBy, filterProducts]);
 
   return (
     <div className='phones'>
