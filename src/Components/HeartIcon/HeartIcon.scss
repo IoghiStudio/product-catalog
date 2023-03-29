@@ -8,6 +8,7 @@
   height: 40px;
   background-color: $surface-2;
   cursor: pointer;
+  transition: background-color 300ms;
 
   &:hover {
     background-color: $icons;
