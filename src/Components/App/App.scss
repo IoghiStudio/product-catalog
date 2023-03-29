@@ -31,12 +31,13 @@ body {
   overflow-y: auto;
 }
 
-.App {
+.app {
   min-width: 100%;
   min-height: 100vh;
   background-color: $black;
-}
 
-.menu {
-  height: 1000px;
+  &__main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }

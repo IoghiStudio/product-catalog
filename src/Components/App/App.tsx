@@ -13,10 +13,10 @@ import { NotFoundPage } from '../NotFoundPage';
 
 export const App = () => {
   return (
-    <div id='top' className="App">
+    <div id='top' className="app">
       <Header />
 
-      <main>
+      <main className='app__main'>
         <Routes>
           <Route
             element={<HomePage />}
