@@ -10,7 +10,7 @@ export const ProductList: React.FC<Props> = ({
   products,
 }) => {
   return (
-    <>
+    <div className='productlist'>
       {products.map(product => {
         const {
           id,
@@ -36,6 +36,6 @@ export const ProductList: React.FC<Props> = ({
           />
         )
       })}
-    </>
+    </div>
   )
 }

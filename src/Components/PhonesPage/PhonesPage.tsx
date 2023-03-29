@@ -6,7 +6,7 @@ import { ProductList } from '../ProductList';
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
-  const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
+  // const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
 
   useEffect(() => {
     setPhones(phonesFromServer);
