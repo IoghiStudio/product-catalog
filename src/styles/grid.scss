@@ -12,10 +12,10 @@
   }
 
   &__item {
-    @for $start from 1 through 6 {
-      @for $end from $start through 6 {
+    @for $start from 1 through 4 {
+      @for $end from $start through 4 {
         @include onTablet {
-          &--tablet-#{$start}-#{$end} {
+          &--mobile-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
@@ -24,6 +24,16 @@
 
     @for $start from 1 through 12 {
       @for $end from $start through 12 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 24 {
+      @for $end from $start through 24 {
         @include onDesktop {
           &--desktop-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
