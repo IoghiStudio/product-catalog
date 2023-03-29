@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductCard } from '../ProductCard';
 import phones from '../../client/api/phones.json';
 
-const phoneFromSever = phones[12];
+const phoneFromSever = phones[9];
 
 export const HomePage = () => {
   console.log(phoneFromSever);
@@ -14,7 +14,8 @@ export const HomePage = () => {
     screen,
     capacity,
     ram,
-  } = phoneFromSever
+  } = phoneFromSever;
+  
   return (
     <div>
       Home Page

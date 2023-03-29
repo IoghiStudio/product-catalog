@@ -6,7 +6,9 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 32px;
+  // width: 212px;
   max-width: 280px;
+  min-width: 212px;
   height: 440px;
   background-color: $surface-1;
 
@@ -15,7 +17,8 @@
   }
 
   &__image {
-    height: 165px;
+    flex-grow: 1;
+    height: 100px;
     object-fit: contain;
     margin-bottom: 24px;
   }
