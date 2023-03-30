@@ -5,7 +5,7 @@ import './Footer.scss';
 const footerLinks = [
   {
     id: 1,
-    url: '/',
+    url: 'https://github.com/IoghiStudio/product-catalog',
     name: 'Github'
   },
   {
