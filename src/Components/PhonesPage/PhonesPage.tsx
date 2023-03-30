@@ -76,7 +76,7 @@ export const PhonesPage = () => {
           className='phones__filter--option'
           value={FilterBy.Alph}
         >
-          Alphabet
+          Name
         </option>
 
         <option 
@@ -86,30 +86,6 @@ export const PhonesPage = () => {
           Newest
         </option>
       </select>
-
-      {/* <button
-        onClick={() => {
-          setFilterBy(FilterBy.Alph);
-        }}
-      >
-        Alph
-      </button>
-
-      <button
-        onClick={() => {
-          setFilterBy(FilterBy.All);
-        }}
-      >
-        All
-      </button>
-
-      <button
-        onClick={() => {
-          setFilterBy(FilterBy.Cheapest);
-        }}
-      >
-        Cheap
-      </button> */}
 
       <ProductList
         products={visiblePhones}
