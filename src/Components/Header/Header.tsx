@@ -9,6 +9,7 @@ import { UtilityIcon } from '../UtilityIcon';
 export const Header = React.memo(
   () => {
     const [windowWidth, setWindowSize] = useState(window.innerWidth);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   
     useEffect(() => {
       const handleWindowResize = () => {
@@ -31,10 +32,23 @@ export const Header = React.memo(
         {windowWidth >= 640 ? (
           <Nav />
         ) : (
-          <UtilityIcon
-            url='/menu'
-            modifier='menu'
-          />
+          <div
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen);
+            }}
+          >
+            {!isMenuOpen ? (
+              <UtilityIcon
+                url='/menu'
+                modifier='menu'
+              />
+            ) : (
+              <UtilityIcon
+                url='/'
+                modifier='close'
+              />
+            )}
+          </div>
         )}
       </header>
     )
