@@ -16,9 +16,9 @@ enum FilterBy {
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
-  const [filterBy, setFilterBy] = useState<FilterBy>(FilterBy.Cheapest);
+  const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Cheapest);
 
-  const filterProducts = useCallback((filter: FilterBy, products: Phone[]) => {
+  const filterProducts = useCallback((filter: FilterBy | string, products: Phone[]) => {
     switch(filter) {
       case FilterBy.Alph:
         return [...products].sort((a, b) => a.name.localeCompare(b.name));
@@ -50,7 +50,30 @@ export const PhonesPage = () => {
         Mobile Phones
       </h1>
 
-      <button
+      <select
+        value={filterBy}
+        onChange={(event) => {
+          setFilterBy(event.target.value)
+        }}
+      >
+        <option value={FilterBy.All} selected>
+          All
+        </option>
+
+        <option value={FilterBy.Cheapest}>
+          Price
+        </option>
+
+        <option value={FilterBy.Alph}>
+          Alphabet
+        </option>
+
+        <option value={FilterBy.Newest}>
+          Newest
+        </option>
+      </select>
+
+      {/* <button
         onClick={() => {
           setFilterBy(FilterBy.Alph);
         }}
@@ -72,7 +95,7 @@ export const PhonesPage = () => {
         }}
       >
         Cheap
-      </button>
+      </button> */}
 
       <ProductList
         products={visiblePhones}
