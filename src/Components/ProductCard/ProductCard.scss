@@ -6,7 +6,8 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 32px;
-  width: 212px;
+  width: 100%;
+  // max-width: 288px;
   height: 440px;
   background-color: $surface-1;
   margin-bottom: 40px;
