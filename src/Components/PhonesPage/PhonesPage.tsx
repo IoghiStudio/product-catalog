@@ -45,8 +45,15 @@ export const PhonesPage = () => {
   }, [phones, filterBy, filterProducts]);
 
   return (
-    <div className='phones'>
-      <h1 className='phones__title'>Mobile phones</h1>
+    <div className='phones grid'>
+      <h1
+        className='phones__title
+        grid__item--mobile-1-4
+        grid__item--tablet-1-8
+        grid__item--desktop-1-8'
+      >
+        Mobile phones
+      </h1>
 
       <button
         onClick={() => {

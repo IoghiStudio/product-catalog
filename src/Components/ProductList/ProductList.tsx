@@ -1,6 +1,7 @@
 import { Phone } from '../../types/phone';
 import { ProductCard } from '../ProductCard';
 import './ProductList.scss';
+import '../../styles/grid.scss';
 
 type Props = {
   products: Phone[];
