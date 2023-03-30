@@ -15,5 +15,30 @@
       line-height: 56px;
     }
   }
-  
+
+  &__filter {
+    height: 40px;
+    background-color: $surface-2;
+    border: 0;
+    appearance: none;
+
+    font-family: 'Mont';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+    color: $white;
+
+    &--option {
+      font-weight: 600;
+      color: $secondary;
+      background-color: $black;
+
+      &:hover {
+        color: $white;
+        background-color: $surface-2;
+      }
+    }
+  }
 }

@@ -51,24 +51,38 @@ export const PhonesPage = () => {
       </h1>
 
       <select
+        className='phones__filter'
         value={filterBy}
         onChange={(event) => {
           setFilterBy(event.target.value)
         }}
       >
-        <option value={FilterBy.All} selected>
+        <option
+          className='phones__filter--option'
+          value={FilterBy.All}
+          selected
+        >
           All
         </option>
 
-        <option value={FilterBy.Cheapest}>
+        <option 
+          className='phones__filter--option'
+          value={FilterBy.Cheapest}
+        >
           Price
         </option>
 
-        <option value={FilterBy.Alph}>
+        <option 
+          className='phones__filter--option'
+          value={FilterBy.Alph}
+        >
           Alphabet
         </option>
 
-        <option value={FilterBy.Newest}>
+        <option 
+          className='phones__filter--option'
+          value={FilterBy.Newest}
+        >
           Newest
         </option>
       </select>
