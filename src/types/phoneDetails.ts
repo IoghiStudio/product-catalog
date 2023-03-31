@@ -9,20 +9,10 @@ export interface PhoneDetails {
   "colorsAvailable": string[],
   "color": string;
   "images": string[];
-  "description": [
-    {
-      "title": string;
-      "text": string[];
-    },
-    {
-      "title": string;
-      "text": string[];
-    },
-    {
-      "title": string;
-      "text": string[];
-    }
-  ],
+  "description": { 
+    title: string;
+    text: string[];
+  }[]
   "screen": string;
   "resolution": string;
   "processor": string;
