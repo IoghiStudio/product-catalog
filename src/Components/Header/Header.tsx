@@ -51,6 +51,6 @@ export const Header = React.memo(
           </div>
         )}
       </header>
-    )
+    );
   }
-)
+);
