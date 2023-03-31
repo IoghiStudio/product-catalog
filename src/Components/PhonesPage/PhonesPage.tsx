@@ -16,7 +16,7 @@ enum FilterBy {
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
-  const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Cheapest);
+  const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.All);
 
   const filterProducts = useCallback((filter: FilterBy | string, products: Phone[]) => {
     switch(filter) {
@@ -35,7 +35,7 @@ export const PhonesPage = () => {
   } , [])
 
   useEffect(() => {
-    setPhones(phonesFromServer.reverse());
+    setPhones(phonesFromServer);
   }, [])
 
   useEffect(() => {

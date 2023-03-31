@@ -2,8 +2,10 @@ import React from 'react';
 import { Button } from '../Button';
 import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
+import { Link } from 'react-router-dom';
 
 type Props = {
+  phoneId: string;
   image: string;
   name: string;
   fullPrice: number;
@@ -14,6 +16,7 @@ type Props = {
 }
 
 export const ProductCard: React.FC<Props> = ({
+  phoneId,
   image,
   name,
   fullPrice,
@@ -22,18 +25,18 @@ export const ProductCard: React.FC<Props> = ({
   capacity,
   ram,
 }) => {
-
   return (
     <div className="productcard">
-      <img
-        className="productcard__image"
-
-        //COMMENT LEFT FOR DEVELOPMENT REFREENCE
-        // src={require('../../client/api/img/phones/apple-iphone-11/green/00.jpg')}
-
-        src={require(`../../client/api/${image}`)}
-        alt={name}
-      />
+      <Link
+        to={`/phones/${phoneId}`}
+        className="productcard__image-container"
+      >
+        <img
+          className="productcard__image"
+          src={require(`../../client/api/${image}`)}
+          alt={name}
+        />
+      </Link>
       
 
       <div className="productcard__title">

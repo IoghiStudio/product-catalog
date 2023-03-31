@@ -16,10 +16,14 @@
   }
 
   &__image {
-    flex-grow: 1;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 24px;
+    &-container {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
   }
 
   &__title {

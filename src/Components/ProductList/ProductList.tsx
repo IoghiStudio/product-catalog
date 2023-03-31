@@ -15,6 +15,7 @@ export const ProductList: React.FC<Props> = ({
       {products.map(product => {
         const {
           id,
+          phoneId,
           image,
           name,
           fullPrice,
@@ -25,9 +26,12 @@ export const ProductList: React.FC<Props> = ({
         } = product;
 
         return (
-          <div className="productlist__item">
+          <div
+            className="productlist__item"
+            key={id}
+          >
             <ProductCard
-              key={id}
+              phoneId={phoneId}
               image={image}
               name={name}
               fullPrice={fullPrice}

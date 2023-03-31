@@ -10,8 +10,11 @@ import { AccessoriesPage } from '../AccessoriesPage';
 import { CartPage } from '../CartPage';
 import { FavoritesPage } from '../FavoritesPage';
 import { NotFoundPage } from '../NotFoundPage';
+import { ProductDetailsPage } from '../ProductDetailsPage';
 
 export const App = () => {
+  console.log('app rendered');
+
   return (
     <div id='top' className="app">
       <Header />
@@ -34,6 +37,13 @@ export const App = () => {
             path="/phones"
             element={
               <PhonesPage />
+            }
+          />
+
+          <Route
+            path="/phones/:phoneId"
+            element={
+              <ProductDetailsPage />
             }
           />
 
