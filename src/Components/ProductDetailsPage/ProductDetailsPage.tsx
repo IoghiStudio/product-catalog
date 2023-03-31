@@ -14,11 +14,14 @@ export const ProductDetailsPage = () => {
   useEffect(() => {
     setPhone(phoneFromServer)
     console.log(phoneFromServer)
+    console.log(phone)
   }, [])
 
   return (
-    <h1>
-      {match?.params.phoneId}
-    </h1>
+    <div className='details'>
+      <h2 className='details__title'>
+        {phone?.name}
+      </h2>
+    </div>
   )
 }
