@@ -35,7 +35,7 @@ export const PhonesPage = () => {
   } , [])
 
   useEffect(() => {
-    setPhones(phonesFromServer);
+    setPhones(phonesFromServer.reverse());
   }, [])
 
   useEffect(() => {
