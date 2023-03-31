@@ -9,6 +9,7 @@ import { NotFoundPage } from '../NotFoundPage';
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
   // const [phonePath, setPhonePath] = useState([]);
+  
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
