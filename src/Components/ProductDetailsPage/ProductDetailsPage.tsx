@@ -8,13 +8,10 @@ import { PhoneDetails } from '../../types/phoneDetails';
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
   // const [phonePath, setPhonePath] = useState([]);
-
-  const match = useMatch('/phones/:phoneId');
+  // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
     setPhone(phoneFromServer)
-    console.log(phoneFromServer)
-    console.log(phone)
   }, [])
 
   return (
