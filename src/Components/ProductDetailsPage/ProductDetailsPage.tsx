@@ -222,45 +222,47 @@ export const ProductDetailsPage = () => {
 
             <div className="divider"></div>
 
-            <div className="details__specs">
-              <div className="details__specs--text">Screen</div>
-              <div className="details__specs--value">{phone.screen}</div>
-            </div>
-
-            <div className="details__specs">
-                <div className="details__specs--text">Resolution</div>
+            <div className="details__description">
+              <div className="details__specs">
+                <div className="details__specs--text">Screen</div>
                 <div className="details__specs--value">{phone.screen}</div>
-            </div>
+              </div>
 
-            <div className="details__specs">
-              <div className="details__specs--text">Processor</div>
-              <div className="details__specs--value">{phone.screen}</div>
-            </div>
+              <div className="details__specs">
+                  <div className="details__specs--text">Resolution</div>
+                  <div className="details__specs--value">{phone.resolution}</div>
+              </div>
 
-            <div className="details__specs">
-              <div className="details__specs--text">RAM</div>
-              <div className="details__specs--value">{phone.screen}</div>
-            </div>
+              <div className="details__specs">
+                <div className="details__specs--text">Processor</div>
+                <div className="details__specs--value">{phone.processor}</div>
+              </div>
 
-            <div className="details__specs">
-              <div className="details__specs--text">Built in memory</div>
-              <div className="details__specs--value">{phone.screen}</div>
-            </div>
+              <div className="details__specs">
+                <div className="details__specs--text">RAM</div>
+                <div className="details__specs--value">{phone.ram}</div>
+              </div>
 
-            <div className="details__specs">
-              <div className="details__specs--text">Camera</div>
-              <div className="details__specs--value">{phone.screen}</div>
-            </div>
+              <div className="details__specs">
+                <div className="details__specs--text">Built in memory</div>
+                <div className="details__specs--value">{phone.capacity}</div>
+              </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">Camera</div>
+                <div className="details__specs--value">{phone.camera}</div>
+              </div>
 
               <div className="details__specs">
                 <div className="details__specs--text">Zoom</div>
-                <div className="details__specs--value">{phone.screen}</div>
+                <div className="details__specs--value">{phone.zoom}</div>
               </div>
 
               <div className="details__specs">
                 <div className="details__specs--text">Cell</div>
                 <div className="details__specs--value">{phone.cell.join(',')}</div>
               </div>
+            </div>
           </div>
         </div>
       </div>
