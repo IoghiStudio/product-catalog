@@ -2,6 +2,43 @@
 @import '../../styles/vars';
 
 .phones {
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &--left-arrow {
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+
+    &--right-arrow {
+      background-image: url(../../icons/Arrows/right.svg);
+    }
+  }
+
+  &__paths {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 25px 0 24px;
+
+    @include onTablet {
+      margin-bottom: 41px;
+    }
+  }
+
+  &__path-home {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../icons/home.svg);
+  }
+
+  &__path-phones {
+    text-decoration: none;
+    color: $secondary;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+  }
 
   &__title {
     font-family: 'Mont';

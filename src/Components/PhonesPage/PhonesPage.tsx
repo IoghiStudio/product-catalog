@@ -4,6 +4,7 @@ import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
 import './PhonesPage.scss';
 import '../../styles/grid.scss';
+import { Link } from 'react-router-dom';
 
 enum FilterBy {
   All = 'all',
@@ -46,6 +47,23 @@ export const PhonesPage = () => {
 
   return (
     <div className='phones'>
+      <div className="phones__paths">
+        <Link
+          className='phones__path-home'
+          to='/home'
+        ></Link>
+
+        <div
+          className="phones__icon phones__icon--right-arrow"
+        ></div>
+
+        <Link
+          className='phones__path-phones'
+          to='/phones'
+        >
+          Phones
+        </Link>
+      </div>
       <h1 className='phones__title'>
         Mobile Phones
       </h1>

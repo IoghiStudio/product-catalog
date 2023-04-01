@@ -35,15 +35,28 @@ export const ProductDetailsPage = () => {
       <div className='details'>
         <div className="details__paths">
           <Link
-            className='details__path'
+            className='details__path-home'
             to='/home'
-          >
+          ></Link>
 
+          <div
+            className="details__icon details__icon--right-arrow"
+          ></div>
+
+          <Link
+            className='details__path-phones'
+            to='/phones'
+          >
+            Phones
           </Link>
 
           <div
             className="details__icon details__icon--right-arrow"
           ></div>
+
+          <div className="details__path-name">
+            {phone.name}
+          </div>
         </div>
 
         <Link
