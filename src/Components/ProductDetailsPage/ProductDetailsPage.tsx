@@ -23,17 +23,19 @@ export const ProductDetailsPage = () => {
           {phone.name}
         </h2>
   
-      <div className="details__images">
-        <img
-            className="details__images--image"
-            src={require(`../../client/api/${phone.images[0]}`)}
-            alt={phone.name}
-          />
+        <div className="details__top">
+          <div className="details__images">
+            <img
+                className="details__images--image"
+                src={require(`../../client/api/${phone.images[0]}`)}
+                alt={phone.name}
+              />
 
-        <div className="details__images--previews">
-          
+            <div className="details__images--previews">
+              
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     )
   } else {
