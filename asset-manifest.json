@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.bcfbee82.css",
-    "main.js": "/product-catalog/static/js/main.7aa5bbbe.js",
+    "main.css": "/product-catalog/static/css/main.77af7063.css",
+    "main.js": "/product-catalog/static/js/main.3e82e47c.js",
     "static/media/category-tablets.png": "/product-catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
     "static/media/category-phones.png": "/product-catalog/static/media/category-phones.af93d992917380dfe206.png",
     "static/media/banner-phones.png": "/product-catalog/static/media/banner-phones.b4eeda8bd82b712057a2.png",
@@ -21,15 +21,18 @@
     "static/media/04.jpg": "/product-catalog/static/media/04.3c4b6b47c1321f9dce59.jpg",
     "static/media/cart.svg": "/product-catalog/static/media/cart.fbb7bb4b7513df420fa1.svg",
     "static/media/heart.svg": "/product-catalog/static/media/heart.28f6088c83570782c6af.svg",
+    "static/media/home.svg": "/product-catalog/static/media/home.901f72c9436f9e8c6357.svg",
     "static/media/close.svg": "/product-catalog/static/media/close.c89cd55fcda471b596c2.svg",
     "static/media/menu.svg": "/product-catalog/static/media/menu.ccd1a9542b5bc584f2a1.svg",
     "index.html": "/product-catalog/index.html",
+    "static/media/left-white.svg": "/product-catalog/static/media/left-white.173b6b33bb1fa3a0dcbb.svg",
+    "static/media/right.svg": "/product-catalog/static/media/right.c9171b88f2b5c91378fd.svg",
     "static/media/up-white.svg": "/product-catalog/static/media/up-white.4a750d9ba7eef45d57ab.svg",
-    "main.bcfbee82.css.map": "/product-catalog/static/css/main.bcfbee82.css.map",
-    "main.7aa5bbbe.js.map": "/product-catalog/static/js/main.7aa5bbbe.js.map"
+    "main.77af7063.css.map": "/product-catalog/static/css/main.77af7063.css.map",
+    "main.3e82e47c.js.map": "/product-catalog/static/js/main.3e82e47c.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcfbee82.css",
-    "static/js/main.7aa5bbbe.js"
+    "static/css/main.77af7063.css",
+    "static/js/main.3e82e47c.js"
   ]
 }
