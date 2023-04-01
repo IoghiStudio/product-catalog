@@ -192,7 +192,7 @@ export const ProductDetailsPage = () => {
           </div>
         </div>
 
-        <div className="details__description">
+        <div className="details__info">
           <div className="details__about">
             <h3 className='details__about--title'>
               About
@@ -260,7 +260,7 @@ export const ProductDetailsPage = () => {
 
               <div className="details__specs">
                 <div className="details__specs--text">Cell</div>
-                <div className="details__specs--value">{phone.cell.join(',')}</div>
+                <div className="details__specs--value">{phone.cell.join(', ')}</div>
               </div>
             </div>
           </div>

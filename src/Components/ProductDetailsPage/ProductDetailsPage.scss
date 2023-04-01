@@ -85,9 +85,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 56px;
 
     @include onTablet {
       flex-direction: row;
+      margin-bottom: 64px;
     }
 
     @include onDesktop {
@@ -283,8 +285,18 @@
     }
   }
 
-  &__description {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
 
+    @include onTablet {
+      gap: 64px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+    }
   }
 
   &__about {
@@ -313,6 +325,11 @@
   }
 
   &__techspecs {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
     &--title {
       margin: 0 0 16px;
       font-weight: 800;
