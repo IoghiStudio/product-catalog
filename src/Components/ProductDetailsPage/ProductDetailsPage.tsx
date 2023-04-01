@@ -139,8 +139,13 @@ export const ProductDetailsPage = () => {
               </div>
 
               <div className="details__specs">
-                <div className="details__specs--text">Capacity</div>
-                <div className="details__specs--value">{currentCapacity}</div>
+                <div className="details__specs--text">Resolution</div>
+                <div className="details__specs--value">{phone.resolution}</div>
+              </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">Processor</div>
+                <div className="details__specs--value">{phone.processor}</div>
               </div>
 
               <div className="details__specs">
