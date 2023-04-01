@@ -40,6 +40,7 @@ export const ProductDetailsPage = () => {
               {images.map(image => {
                 return (
                   <img
+                    key={image}
                     className='details__images--previews--image'
                     src={require(`../../client/api/${image}`)}
                     alt={phone.name}
@@ -60,7 +61,7 @@ export const ProductDetailsPage = () => {
                   return (
                     <div
                       key={color}
-                      className="details__colors--color"
+                      className="details__colors--color-container"
                       style={{backgroundColor: color}}
                     >
 

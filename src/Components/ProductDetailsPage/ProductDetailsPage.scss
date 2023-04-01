@@ -83,10 +83,17 @@
     }
 
     &--color {
-      width: 30px;
-      height: 30px;
+      &-container {
+        border: 1px solid $elements;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      width: 10px;
+      height: 10px;
+      background-color: red;
       border: 1px solid black;
-      // background-color: red;
       border-radius: 50%;
     }
   }
