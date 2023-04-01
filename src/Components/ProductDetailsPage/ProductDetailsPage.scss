@@ -3,16 +3,40 @@
 
 .details {
 
+  &__back {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $white;
+    margin-bottom: 16px;
+    gap: 6px;
+    
+    &--text {
+      font-family: 'Mont';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &--icon {
+      width: 16px;
+      height: 16px;
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+  }
+
   &__title {
     font-family: 'Mont';
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
+    margin: 0 0 32px;
 
     @include onTablet {
       font-size: 32px;
       line-height: 41px;
       letter-spacing: -0.01em;
+      margin-bottom: 40px;
     }
   }
 

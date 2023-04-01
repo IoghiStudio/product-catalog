@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useMatch } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import './ProductDetailsPage.scss';
 import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-max-512gb-midnightgreen.json'
 import { PhoneDetails } from '../../types/phoneDetails';
@@ -33,6 +33,15 @@ export const ProductDetailsPage = () => {
   if (phone) {
     return (
       <div className='details'>
+
+        <Link
+          to='/phones'
+          className="details__back"
+        >
+          <div className="details__back--icon"></div>
+          <div className="details__back--text"> Back </div>
+        </Link>
+
         <h2 className='details__title'>
           {phone.name}
         </h2>
