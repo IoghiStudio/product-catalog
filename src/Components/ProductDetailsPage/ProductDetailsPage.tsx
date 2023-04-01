@@ -216,9 +216,51 @@ export const ProductDetailsPage = () => {
           </div>
 
           <div className="details__techspecs">
-            <h3 className='details__about--title'>
+            <h3 className='details__techspecs--title'>
               Tech specs
             </h3>
+
+            <div className="divider"></div>
+
+            <div className="details__specs">
+              <div className="details__specs--text">Screen</div>
+              <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+            <div className="details__specs">
+                <div className="details__specs--text">Resolution</div>
+                <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+            <div className="details__specs">
+              <div className="details__specs--text">Processor</div>
+              <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+            <div className="details__specs">
+              <div className="details__specs--text">RAM</div>
+              <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+            <div className="details__specs">
+              <div className="details__specs--text">Built in memory</div>
+              <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+            <div className="details__specs">
+              <div className="details__specs--text">Camera</div>
+              <div className="details__specs--value">{phone.screen}</div>
+            </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">Zoom</div>
+                <div className="details__specs--value">{phone.screen}</div>
+              </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">Cell</div>
+                <div className="details__specs--value">{phone.cell.join(',')}</div>
+              </div>
           </div>
         </div>
       </div>
