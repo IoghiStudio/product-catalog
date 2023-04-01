@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Button.scss';
 import cn from 'classnames';
 import { Sizes } from '../../types/sizes';
 
 type Props = {
   text: string;
-  size: string;
+  size: Sizes;
 }
 
 export const Button: React.FC<Props> = React.memo(
