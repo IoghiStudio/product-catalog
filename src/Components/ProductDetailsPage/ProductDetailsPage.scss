@@ -114,7 +114,7 @@
     }
   }
 
-  &__separator {
+  &__divider {
     border: 1px solid $elements;
     margin-bottom: 24px;
   }
@@ -187,9 +187,34 @@
   &__buttons {
     display: flex;
     gap: 8px;
+    margin-bottom: 32px;
 
     &--button {
       flex-grow: 1;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__specs {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Mont';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+
+    &--text {
+      color: $secondary;
+    }
+
+    &--value {
+      font-weight: 700;
     }
   }
 }

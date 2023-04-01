@@ -85,7 +85,7 @@ export const ProductDetailsPage = () => {
               </div>
             </div>
 
-            <div className="details__separator"></div>
+            <div className="details__divider"></div>
 
             <div className="details__capacities">
               <h3 className="details__capacities--title">
@@ -113,7 +113,7 @@ export const ProductDetailsPage = () => {
               </div>
             </div>
 
-            <div className="details__separator"></div>
+            <div className="details__divider"></div>
 
             <div className="details__prices">
               <div className="details__price">{`$${phone.priceDiscount}`}</div>
@@ -127,7 +127,26 @@ export const ProductDetailsPage = () => {
                   size={Sizes.L}
                 />
               </div>
-              <HeartIcon />
+              <HeartIcon
+                size={Sizes.L}
+              />
+            </div>
+
+            <div className="details__description">
+              <div className="details__specs">
+                <div className="details__specs--text">Screen</div>
+                <div className="details__specs--value">{phone.screen}</div>
+              </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">Capacity</div>
+                <div className="details__specs--value">{currentCapacity}</div>
+              </div>
+
+              <div className="details__specs">
+                <div className="details__specs--text">RAM</div>
+                <div className="details__specs--value">{phone.ram}</div>
+              </div>
             </div>
           </div>
         </div>
