@@ -33,12 +33,26 @@ export const ProductDetailsPage = () => {
   if (phone) {
     return (
       <div className='details'>
+        <div className="details__paths">
+          <Link
+            className='details__path'
+            to='/home'
+          >
+
+          </Link>
+
+          <div
+            className="details__icon details__icon--right-arrow"
+          ></div>
+        </div>
 
         <Link
           to='/phones'
           className="details__back"
         >
-          <div className="details__back--icon"></div>
+          <div
+            className="details__icon details__icon--left-arrow"
+          ></div>
           <div className="details__back--text"> Back </div>
         </Link>
 

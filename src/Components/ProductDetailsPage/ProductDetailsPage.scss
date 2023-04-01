@@ -3,6 +3,28 @@
 
 .details {
 
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &--left-arrow {
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+
+    &--right-arrow {
+      background-image: url(../../icons/Arrows/right.svg);
+    }
+  }
+
+
+  &__paths {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 41px;
+    }
+  }
+
   &__back {
     display: flex;
     align-items: center;
@@ -16,12 +38,6 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-    }
-
-    &--icon {
-      width: 16px;
-      height: 16px;
-      background-image: url(../../icons/Arrows/left-white.svg);
     }
   }
 
