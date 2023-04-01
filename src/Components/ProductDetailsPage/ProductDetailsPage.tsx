@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useMatch } from "react-router-dom";
 import './ProductDetailsPage.scss';
-import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-256gb-midnightgreen.json';
+import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-max-512gb-midnightgreen.json'
 import { PhoneDetails } from '../../types/phoneDetails';
 import { NotFoundPage } from '../NotFoundPage';
-
+import cn from 'classnames';
 
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
-  const [colors, setColors] = useState<string[]>([]);
+  const [colorsAvailable, setColorsAvailable] = useState<string[]>([]);
   const [images, setImages] = useState<string[]>([]);
+  const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
+  const [currentImage, setCurrentImage] = useState<string>('');
+  const [currentCapacity, setCurrentCapacity] = useState<string>('');
   // const [phonePath, setPhonePath] = useState([]);
   
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
     setPhone(phoneFromServer)
-    setColors(phoneFromServer.colorsAvailable)
+    setColorsAvailable(phoneFromServer.colorsAvailable)
     setImages(phoneFromServer.images);
-    console.log(phoneFromServer.colorsAvailable)
+    setCurrentImage(phoneFromServer.images[0])
+    setCapacityAvailable(phoneFromServer.capacityAvailable)
+    setCurrentCapacity(phoneFromServer.capacity)
+    
   }, [])
 
   if (phone) {
@@ -32,7 +38,7 @@ export const ProductDetailsPage = () => {
           <div className="details__images">
             <img
               className="details__images--image"
-              src={require(`../../client/api/${phone.images[0]}`)}
+              src={require(`../../client/api/${currentImage}`)}
               alt={phone.name}
             />
 
@@ -44,6 +50,9 @@ export const ProductDetailsPage = () => {
                     className='details__images--previews--image'
                     src={require(`../../client/api/${image}`)}
                     alt={phone.name}
+                    onClick={() => {
+                      setCurrentImage(image)
+                    }}
                   />
                 )
               })}
@@ -57,19 +66,51 @@ export const ProductDetailsPage = () => {
               </h3>
 
               <div className="details__colors--previews">
-                {colors.map(color => {
+                {colorsAvailable.map(color => {
                   return (
                     <div
                       key={color}
-                      className="details__colors--color-container"
-                      style={{backgroundColor: color}}
+                      className="details__colors-color-container"
                     >
-
+                      <div
+                        className="details__colors-color"
+                        style={{backgroundColor: color}}
+                      ></div>
                     </div>
                   )
                 })}
               </div>
             </div>
+
+            <div className="details__separator"></div>
+
+            <div className="details__capacities">
+              <h3 className="details__capacities--title">
+                Select capacity
+              </h3>
+
+              <div className="details__capacities--previews">
+                {capacityAvailable.map(capacity => {
+                  return (
+                    <div
+                      className={cn(
+                        "details__capacities-capacity",
+                        {
+                          "details__capacities-capacity--active": capacity === currentCapacity
+                        }
+                      )}
+                      onClick={() => {
+                        setCurrentCapacity(capacity)
+                      }}
+                    >
+                      {capacity}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            <div className="details__separator"></div>
           </div>
         </div>
       </div>

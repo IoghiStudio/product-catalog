@@ -19,10 +19,14 @@
   &__top {
     display: flex;
     flex-direction: column;
-    gap: 30px ;
+    gap: 30px;
 
     @include onTablet {
       flex-direction: row;
+    }
+
+    @include onDesktop {
+      gap: 70px;
     }
   }
 
@@ -64,12 +68,18 @@
   }
 
   &__pick {
-
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   &__colors {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
     &--title {
+      margin: 0;
       font-family: 'Mont';
       font-weight: 700;
       font-size: 12px;
@@ -82,19 +92,73 @@
       gap: 20px;
     }
 
-    &--color {
+    &-color {
       &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid $elements;
         width: 30px;
         height: 30px;
         border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+          border-color: $secondary;
+        }
       }
 
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      border: 1px solid black;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
+    }
+  }
+
+  &__separator {
+    border: 1px solid $elements;
+  }
+
+  &__capacities {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &--title {
+      margin: 0;
+      font-family: 'Mont';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $secondary;
+    }
+
+    &--previews {
+      display: flex;
+      gap: 8px;
+    }
+
+    &-capacity {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px 8px 4px;
+      height: 32px;
+      border: 1px solid $icons;
+
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      cursor: pointer;
+
+
+      &--active {
+        color: $black;
+        background-color: $white;
+        border: 0;
+      }
     }
   }
 }
