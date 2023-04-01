@@ -1,3 +1,4 @@
+@import '../../styles/vars.scss';
 @import '../../styles/_mixins.scss';
 
 .details {
@@ -17,24 +18,76 @@
 
   &__top {
     display: flex;
+    flex-direction: column;
+    gap: 30px ;
+
+    @include onTablet {
+      flex-direction: row;
+    }
   }
 
   &__images {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 23px;
+      
+    @include onTablet {
+      flex-direction: row;
+    }
     
     &--image {
       box-sizing: border-box;
-      width: 100%;
-      padding: 0 48px;
-  
+      width: 80%;
+      // padding: 0 48px;
+      
       @include onTablet {
-        
+        order: 1;
+        padding: 0;
       }
     }
 
     &--previews {
+      display: flex;
+      gap: 12px;
 
+      @include onTablet {
+        flex-direction: column;
+      }
+
+      &--image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__pick {
+
+  }
+
+  &__colors {
+
+    &--title {
+      font-family: 'Mont';
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $secondary;
+    }
+
+    &--previews {
+      display: flex;
+      gap: 20px;
+    }
+
+    &--color {
+      width: 30px;
+      height: 30px;
+      border: 1px solid black;
+      // background-color: red;
+      border-radius: 50%;
     }
   }
 }
