@@ -1,4 +1,9 @@
+import { Sizes } from '../../types/sizes';
 import './HeartIcon.scss';
+
+type props = {
+  size: Sizes;
+}
 
 export const HeartIcon = () => {
   return (

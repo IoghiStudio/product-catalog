@@ -3,6 +3,7 @@ import { Button } from '../Button';
 import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
 import { Link } from 'react-router-dom';
+import { Sizes } from '../../types/sizes';
 
 type Props = {
   phoneId: string;
@@ -71,7 +72,10 @@ export const ProductCard: React.FC<Props> = ({
 
       <div className="productcard__buttons">
         <div className="productcard__buttons--button">
-          <Button text={"Add to cart"}/>
+          <Button
+            text={"Add to cart"}
+            size={Sizes.M}
+          />
         </div>
         <HeartIcon />
       </div>

@@ -70,13 +70,13 @@
   &__pick {
     display: flex;
     flex-direction: column;
-    gap: 24px;
   }
 
   &__colors {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 24px;
 
     &--title {
       margin: 0;
@@ -116,6 +116,7 @@
 
   &__separator {
     border: 1px solid $elements;
+    margin-bottom: 24px;
   }
 
   &__capacities {
@@ -144,6 +145,7 @@
       align-items: center;
       padding: 7px 8px 4px;
       height: 32px;
+      margin-bottom: 24px;
       border: 1px solid $icons;
 
       font-family: 'Mont';
@@ -159,6 +161,35 @@
         background-color: $white;
         border: 0;
       }
+    }
+  }
+
+  &__prices {
+    display: flex;
+    gap: 8px;
+    font-family: 'Mont';
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 140%;
+
+    margin-bottom: 16px;
+  }
+
+  &__price {}
+
+  &__fullprice {
+    font-size: 22px;
+    font-weight: 600;
+    color: $secondary;
+    text-decoration: line-through;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+
+    &--button {
+      flex-grow: 1;
     }
   }
 }

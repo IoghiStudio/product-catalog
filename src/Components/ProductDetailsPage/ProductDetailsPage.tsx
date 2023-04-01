@@ -5,6 +5,9 @@ import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-max-512
 import { PhoneDetails } from '../../types/phoneDetails';
 import { NotFoundPage } from '../NotFoundPage';
 import cn from 'classnames';
+import { Button } from '../Button';
+import { HeartIcon } from '../HeartIcon';
+import { Sizes } from '../../types/sizes';
 
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
@@ -111,6 +114,21 @@ export const ProductDetailsPage = () => {
             </div>
 
             <div className="details__separator"></div>
+
+            <div className="details__prices">
+              <div className="details__price">{`$${phone.priceDiscount}`}</div>
+              <div className="details__fullprice">{`$${phone.priceRegular}`}</div>
+            </div>
+
+            <div className="details__buttons">
+              <div className="details__buttons--button">
+                <Button
+                  text={"Add to cart"}
+                  size={Sizes.L}
+                />
+              </div>
+              <HeartIcon />
+            </div>
           </div>
         </div>
       </div>
