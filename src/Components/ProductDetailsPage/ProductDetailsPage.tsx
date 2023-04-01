@@ -191,6 +191,36 @@ export const ProductDetailsPage = () => {
             </div>
           </div>
         </div>
+
+        <div className="details__description">
+          <div className="details__about">
+            <h3 className='details__about--title'>
+              About
+            </h3>
+
+            <div className="details__divider"></div>
+
+            {phone.description.map(desc => (
+              <React.Fragment>
+                <h4  
+                  className="details__about--subtitle"
+                >
+                  {desc.title}
+                </h4>
+
+                <div className="details__about--text">
+                  {desc.text}
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="details__techspecs">
+            <h3 className='details__about--title'>
+              Tech specs
+            </h3>
+          </div>
+        </div>
       </div>
     )
   } else {

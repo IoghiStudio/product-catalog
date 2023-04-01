@@ -22,6 +22,7 @@
     align-items: center;
     gap: 14px;
     margin: 25px 0 24px;
+    min-width: 450px;
 
     @include onTablet {
       margin-bottom: 41px;
@@ -280,5 +281,38 @@
     &--value {
       font-weight: 700;
     }
+  }
+
+  &__description {
+
+  }
+
+  &__about {
+    &--title {
+      margin: 0 0 16px;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+    }
+
+    &--subtitle {
+      margin: 0 0 16px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    &--text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: $secondary;
+
+      margin-bottom: 32px;
+    }
+  }
+
+  &__techspecs {
+
   }
 }
