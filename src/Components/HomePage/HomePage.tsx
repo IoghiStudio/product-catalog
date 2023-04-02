@@ -1,4 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import {
+  useCallback,
+  useState, 
+  useEffect } from 'react';
 import './HomePage.scss';
 import cn from 'classnames';
 
@@ -27,7 +30,12 @@ export const HomePage = () => {
       }
     },
     []
-  )
+  );
+
+  useEffect(() => {
+    
+  }, [])
+  
 
   return (
     <div className='home'>

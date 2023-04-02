@@ -62,6 +62,13 @@
       background-size: cover;
       background-repeat: no-repeat;
 
+      @include onTablet {
+        position: static;
+        
+        padding-top: 30%;
+        width: 80%;
+      }
+
       &--first {
         background-image: url(../../client/api/img/banner-14pro.png);
 
@@ -77,13 +84,6 @@
       
       &--third {
         background-image: url(../../client/api/img/banner-phones.png);
-      }
-  
-      @include onTablet {
-        position: static;
-        
-        padding-top: 30%;
-        width: 80%;
       }
     }
   }
