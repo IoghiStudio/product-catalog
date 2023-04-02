@@ -69,21 +69,45 @@
   &__filters {
     display: flex;
     gap: 16px;
+    margin: 0 auto;
   }
 
-  &__sortby {
-    height: 40px;
-    background-color: $surface-2;
-    border: 0;
-    appearance: none;
+  &__filter {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
 
-    font-family: 'Mont';
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 21px;
-    text-align: center;
-    cursor: pointer;
-    color: $white;
+    &--sortby {
+      max-width: 180px;
+    }
+
+    &--perpage {
+      max-width: 136px;
+    }
+
+    &--text {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $secondary;
+    }
+
+    &--select {
+      height: 40px;
+      background-color: $surface-2;
+      border: 0;
+      appearance: none;
+  
+      font-family: 'Mont';
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      text-align: center;
+      cursor: pointer;
+      color: $white;
+    }
   }
 
   &__option {

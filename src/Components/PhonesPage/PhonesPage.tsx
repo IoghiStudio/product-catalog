@@ -74,42 +74,91 @@ export const PhonesPage = () => {
       </div>
 
       <div className="phones__filters">
-        <select
-          className='phones__sortby'
-          value={filterBy}
-          onChange={(event) => {
-            setFilterBy(event.target.value)
-          }}
-        >
-          <option
-            className='phones__option'
-            value={FilterBy.All}
-            selected
-          >
-            All
-          </option>
+        <div className="phones__filter phones__filter--sortby">
+          <div className="phones__filter--text">
+            Sort by
+          </div>
 
-          <option 
-            className='phones__option'
-            value={FilterBy.Cheapest}
+          <select
+            className='phones__filter--select'
+            value={filterBy}
+            onChange={(event) => {
+              setFilterBy(event.target.value)
+            }}
           >
-            Price
-          </option>
+            <option
+              className='phones__option'
+              value={FilterBy.All}
+              selected
+            >
+              All
+            </option>
 
-          <option 
-            className='phones__option'
-            value={FilterBy.Alph}
-          >
-            Name
-          </option>
+            <option 
+              className='phones__option'
+              value={FilterBy.Cheapest}
+            >
+              Price
+            </option>
 
-          <option 
-            className='phones__option'
-            value={FilterBy.Newest}
+            <option 
+              className='phones__option'
+              value={FilterBy.Alph}
+            >
+              Name
+            </option>
+
+            <option 
+              className='phones__option'
+              value={FilterBy.Newest}
+            >
+              Newest
+            </option>
+          </select>
+        </div>
+
+        <div className="phones__filter phones__filter--perpage">
+          <div className="phones__filter--text">
+            Per page
+          </div>
+
+          <select
+            className='phones__filter--select'
+            // value={filterBy}
+            // onChange={(event) => {
+            //   setFilterBy(event.target.value)
+            // }}
           >
-            Newest
-          </option>
-        </select>
+            <option
+              className='phones__option'
+              // value={FilterBy.All}
+              selected
+            >
+              All
+            </option>
+
+            <option 
+              className='phones__option'
+              // value={FilterBy.Cheapest}
+            >
+              4
+            </option>
+
+            <option 
+              className='phones__option'
+              // value={FilterBy.Alph}
+            >
+              8
+            </option>
+
+            <option 
+              className='phones__option'
+              // value={FilterBy.Newest}
+            >
+              16
+            </option>
+          </select>
+        </div>
       </div>
 
       <ProductList
