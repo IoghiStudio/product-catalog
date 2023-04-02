@@ -71,19 +71,19 @@
       }
 
       &--second {
-        background-image: url(../../client/api/img/banner-14pro.png);
+        background-image: url(../../client/api/img/banner-phones.png);
 
         @include onTablet {
-          background-image: url(../../client/api/img/banner-14pro-desktop.png);
+          background-image: url(../../client/api/img/banner-phones.png);
         }
       }
 
       
       &--third {
-        background-image: url(../../client/api/img/banner-14pro.png);
+        background-image: url(../../client/api/img/banner-tablets.png);
 
         @include onTablet {
-          background-image: url(../../client/api/img/banner-14pro-desktop.png);
+          background-image: url(../../client/api/img/banner-tablets.png);
         }
       }
   
