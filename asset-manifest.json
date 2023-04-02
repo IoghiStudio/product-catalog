@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.f27ccdee.css",
+    "main.css": "/product-catalog/static/css/main.0038c57a.css",
     "main.js": "/product-catalog/static/js/main.ec6c5172.js",
     "static/media/category-tablets.png": "/product-catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
     "static/media/category-phones.png": "/product-catalog/static/media/category-phones.af93d992917380dfe206.png",
@@ -28,11 +28,11 @@
     "static/media/left-white.svg": "/product-catalog/static/media/left-white.173b6b33bb1fa3a0dcbb.svg",
     "static/media/right.svg": "/product-catalog/static/media/right.c9171b88f2b5c91378fd.svg",
     "static/media/up-white.svg": "/product-catalog/static/media/up-white.4a750d9ba7eef45d57ab.svg",
-    "main.f27ccdee.css.map": "/product-catalog/static/css/main.f27ccdee.css.map",
+    "main.0038c57a.css.map": "/product-catalog/static/css/main.0038c57a.css.map",
     "main.ec6c5172.js.map": "/product-catalog/static/js/main.ec6c5172.js.map"
   },
   "entrypoints": [
-    "static/css/main.f27ccdee.css",
+    "static/css/main.0038c57a.css",
     "static/js/main.ec6c5172.js"
   ]
 }
