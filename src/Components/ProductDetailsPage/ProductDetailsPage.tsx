@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './ProductDetailsPage.scss';
 import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-max-512gb-midnightgreen.json'
 import { PhoneDetails } from '../../types/phoneDetails';
@@ -16,7 +16,7 @@ export const ProductDetailsPage = () => {
   const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
-  
+
   // const [phonePath, setPhonePath] = useState([]);
   
   // const match = useMatch('/phones/:phoneId');
