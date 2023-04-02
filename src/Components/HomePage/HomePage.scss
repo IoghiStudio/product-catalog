@@ -71,20 +71,12 @@
       }
 
       &--second {
-        background-image: url(../../client/api/img/banner-phones.png);
-
-        @include onTablet {
-          background-image: url(../../client/api/img/banner-phones.png);
-        }
+        background-image: url(../../client/api/img/banner-tablets.png);
       }
 
       
       &--third {
-        background-image: url(../../client/api/img/banner-tablets.png);
-
-        @include onTablet {
-          background-image: url(../../client/api/img/banner-tablets.png);
-        }
+        background-image: url(../../client/api/img/banner-phones.png);
       }
   
       @include onTablet {
