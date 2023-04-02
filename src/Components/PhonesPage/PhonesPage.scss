@@ -95,9 +95,11 @@
     }
 
     &--select {
+      box-sizing: border-box;
       height: 40px;
       background-color: $surface-2;
       border: 0;
+      outline: none;
       appearance: none;
   
       font-family: 'Mont';
@@ -107,6 +109,10 @@
       text-align: center;
       cursor: pointer;
       color: $white;
+
+      &:hover {
+        border: 1px solid $accent;
+      }
     }
   }
 
