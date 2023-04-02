@@ -69,6 +69,23 @@
           background-image: url(../../client/api/img/banner-14pro-desktop.png);
         }
       }
+
+      &--second {
+        background-image: url(../../client/api/img/banner-14pro.png);
+
+        @include onTablet {
+          background-image: url(../../client/api/img/banner-14pro-desktop.png);
+        }
+      }
+
+      
+      &--third {
+        background-image: url(../../client/api/img/banner-14pro.png);
+
+        @include onTablet {
+          background-image: url(../../client/api/img/banner-14pro-desktop.png);
+        }
+      }
   
       @include onTablet {
         position: static;
