@@ -221,7 +221,7 @@ export const ProductDetailsPage = () => {
               Tech specs
             </h3>
 
-            <div className="divider"></div>
+            <div className="details__divider"></div>
 
             <div className="details__description">
               <div className="details__specs">
