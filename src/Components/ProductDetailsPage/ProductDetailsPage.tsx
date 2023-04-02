@@ -16,6 +16,7 @@ export const ProductDetailsPage = () => {
   const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
+  
   // const [phonePath, setPhonePath] = useState([]);
   
   // const match = useMatch('/phones/:phoneId');
