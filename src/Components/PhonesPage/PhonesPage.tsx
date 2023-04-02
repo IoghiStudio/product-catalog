@@ -17,7 +17,7 @@ enum FilterBy {
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
-  const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.All);
+  const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
 
   const filterProducts = useCallback((filter: FilterBy | string, products: Phone[]) => {
     switch(filter) {
@@ -64,46 +64,53 @@ export const PhonesPage = () => {
           Phones
         </Link>
       </div>
+
       <h1 className='phones__title'>
         Mobile Phones
       </h1>
 
-      <select
-        className='phones__filter'
-        value={filterBy}
-        onChange={(event) => {
-          setFilterBy(event.target.value)
-        }}
-      >
-        <option
-          className='phones__filter--option'
-          value={FilterBy.All}
-          selected
-        >
-          All
-        </option>
+      <div className="phones__count">
+        {`${visiblePhones.length} models`}
+      </div>
 
-        <option 
-          className='phones__filter--option'
-          value={FilterBy.Cheapest}
+      <div className="phones__filters">
+        <select
+          className='phones__sortby'
+          value={filterBy}
+          onChange={(event) => {
+            setFilterBy(event.target.value)
+          }}
         >
-          Price
-        </option>
+          <option
+            className='phones__option'
+            value={FilterBy.All}
+            selected
+          >
+            All
+          </option>
 
-        <option 
-          className='phones__filter--option'
-          value={FilterBy.Alph}
-        >
-          Name
-        </option>
+          <option 
+            className='phones__option'
+            value={FilterBy.Cheapest}
+          >
+            Price
+          </option>
 
-        <option 
-          className='phones__filter--option'
-          value={FilterBy.Newest}
-        >
-          Newest
-        </option>
-      </select>
+          <option 
+            className='phones__option'
+            value={FilterBy.Alph}
+          >
+            Name
+          </option>
+
+          <option 
+            className='phones__option'
+            value={FilterBy.Newest}
+          >
+            Newest
+          </option>
+        </select>
+      </div>
 
       <ProductList
         products={visiblePhones}

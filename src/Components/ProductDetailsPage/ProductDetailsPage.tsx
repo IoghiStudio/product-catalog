@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './ProductDetailsPage.scss';
-import phoneFromServer from '../../client/api/phones/apple-iphone-11-pro-max-512gb-midnightgreen.json'
+import phoneFromServer from '../../client/api/phones/apple-iphone-11-128gb-red.json'
 import { PhoneDetails } from '../../types/phoneDetails';
 import { NotFoundPage } from '../NotFoundPage';
 import cn from 'classnames';

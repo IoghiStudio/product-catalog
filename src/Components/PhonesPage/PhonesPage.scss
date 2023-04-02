@@ -46,6 +46,7 @@
     font-size: 32px;
     line-height: 41px;
     letter-spacing: -0.01em;
+    margin: 0 0 8px;
 
     @include onTablet {
       font-size: 48px;
@@ -53,7 +54,24 @@
     }
   }
 
-  &__filter {
+  &__count {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__filters {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__sortby {
     height: 40px;
     background-color: $surface-2;
     border: 0;
@@ -66,16 +84,16 @@
     text-align: center;
     cursor: pointer;
     color: $white;
+  }
 
-    &--option {
-      font-weight: 600;
-      color: $secondary;
-      background-color: $black;
+  &__option {
+    font-weight: 600;
+    color: $secondary;
+    background-color: $black;
 
-      &:hover {
-        color: $white;
-        background-color: $surface-2;
-      }
+    &:hover {
+      color: $white;
+      background-color: $surface-2;
     }
   }
 }
