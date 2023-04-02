@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.scss';
 import cn from 'classnames';
 
 export const HomePage = () => {
+  const [bannerIndex, setBannerIndex] = useState<number>(0);
+
   return (
     <div className='home'>
       <h1 className="home__title">
@@ -18,9 +20,9 @@ export const HomePage = () => {
           className={cn(
             "home__banner-image",
             {
-              "home__banner-image--first": true,
-              // "home__banner-image--second": currentImgIndex === 1,
-              // "home__banner-image--third": currentImgIndex === 2,
+              "home__banner-image--first": bannerIndex === 0,
+              "home__banner-image--second": bannerIndex === 1,
+              "home__banner-image--third": bannerIndex === 2,
             }
           )}
         ></div>
