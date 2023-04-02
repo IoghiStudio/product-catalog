@@ -10,6 +10,15 @@ export const HomePage = () => {
       
       <div className="home__banner">
 
+        <div className="home__icon-container">
+          <div className="home__icon home__icon--left"></div>
+        </div>
+        
+        <div className="home__banner--image"></div>
+
+        <div className="home__icon-container">
+          <div className="home__icon home__icon--right"></div>
+        </div>
       </div>
     </div>
   )

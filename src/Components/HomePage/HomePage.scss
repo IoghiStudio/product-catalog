@@ -21,25 +21,56 @@
     }
   }
 
-  &__banner {
-    position: absolute;
-    left: 0;
-    right: 0;
+  &__icon {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    margin: 0 auto;
-    padding-top: 85%;
-    background-image: url(../../client/api/img/banner-14pro.png);
+      width: 32px;
+      height: 32px;
+      background-color: $surface-2;
+    }
+
+    width: 16px;
+    height: 16px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include onTablet {
-      position: static;
-      
-      background-image: url(../../client/api/img/banner-14pro-desktop.png);
-      padding-top: 30%;
-      width: 80%;
-      // min-height: 185px;
+    &--left {
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+
+    &--right {
+      background-image: url(../../icons/Arrows/right.svg);
+    }
+  }
+
+  &__banner {
+    display: flex;
+    gap: 16px;
+
+    &--image {
+      position: absolute;
+      left: 0;
+      right: 0;
+  
+      margin: 0 auto;
+      padding-top: 85%;
+      background-image: url(../../client/api/img/banner-14pro.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+  
+      @include onTablet {
+        position: static;
+        
+        background-image: url(../../client/api/img/banner-14pro-desktop.png);
+        padding-top: 30%;
+        width: 80%;
+        // min-height: 185px;
+      }
     }
   }
 }
