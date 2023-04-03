@@ -52,7 +52,9 @@ export const Footer = () => {
         </p>
 
         <div
-          // onClick={}
+          onClick={() => {
+            document.getElementById('top')?.scrollIntoView()
+          }}
           className="footer__back--button-container"
         >
           <div className="footer__back--button"></div>
