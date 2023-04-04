@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import './ProductDetailsPage.scss';
 import phoneFromServer from '../../client/api/phones/apple-iphone-11-128gb-red.json'
 import { PhoneDetails } from '../../types/phoneDetails';
@@ -16,9 +16,9 @@ export const ProductDetailsPage = () => {
   const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
+  const obj22 = useParams();
 
   // const [phonePath, setPhonePath] = useState([]);
-  
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
@@ -30,6 +30,8 @@ export const ProductDetailsPage = () => {
     setCurrentCapacity(phoneFromServer.capacity)
     
   }, [])
+
+  console.log
 
   if (phone) {
     return (

@@ -33,19 +33,16 @@ export const App = () => {
             }
           />
 
-          <Route
-            path="/phones"
-            element={
-              <PhonesPage />
-            }
-          />
+          <Route path="/phones">
+            <Route index element={<PhonesPage />}/>
 
-          <Route
-            path="/phones/:phoneId"
-            element={
-              <ProductDetailsPage />
-            }
-          />
+            <Route
+              path=":phoneId"
+              element={
+                <ProductDetailsPage />
+              }
+            />
+          </Route>
 
           <Route
             path="/tablets"
