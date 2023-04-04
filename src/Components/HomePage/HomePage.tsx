@@ -31,12 +31,7 @@ export const HomePage = () => {
     },
     []
   );
-
-  useEffect(() => {
-    
-  }, [])
   
-
   return (
     <div className='home'>
       <h1 className="home__title">

@@ -27,7 +27,7 @@ export const ProductDetailsPage = () => {
     //   .then(data => console.log(data))
 
     // fetch('../../client/api/phones/apple-iphone-11-128gb-black.json')
-    //   .then(resp => resp.json())
+    //   .then(resp => console.log(resp))
 
     setPhone(phoneFromServer)
     setColorsAvailable(phoneFromServer.colorsAvailable)
@@ -38,7 +38,7 @@ export const ProductDetailsPage = () => {
       
   }, [])
 
-  // console.log(phoneId)
+  console.log(phoneId)
 
   if (phone) {
     return (
