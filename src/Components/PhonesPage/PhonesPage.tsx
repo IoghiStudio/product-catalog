@@ -89,7 +89,6 @@ export const PhonesPage = () => {
             <option
               className='phones__option'
               value={FilterBy.All}
-              selected
             >
               All
             </option>
@@ -132,7 +131,6 @@ export const PhonesPage = () => {
             <option
               className='phones__option'
               // value={FilterBy.All}
-              selected
             >
               All
             </option>

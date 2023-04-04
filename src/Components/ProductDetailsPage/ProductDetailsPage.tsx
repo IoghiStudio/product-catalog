@@ -31,7 +31,7 @@ export const ProductDetailsPage = () => {
     
   }, [])
 
-  console.log
+  console.log(obj22)
 
   if (phone) {
     return (
