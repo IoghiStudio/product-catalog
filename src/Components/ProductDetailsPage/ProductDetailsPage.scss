@@ -129,9 +129,10 @@
       }
 
       &--image {
+        border: 1px solid $white;
         width: 50px;
         height: 50px;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   }
