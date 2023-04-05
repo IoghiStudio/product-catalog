@@ -22,19 +22,16 @@ export const ProductDetailsPage = () => {
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    // fetch(`../../client/api/phones/${phoneId}.json`)
-    //   .then(resp => resp.json())
-    //   .then(data => console.log(data))
-
-    fetch('apple-iphone-11-128gb-black.json')
-      .then(resp => console.log(resp))
-
-    // setPhone(phoneFromServer)
-    // setColorsAvailable(phoneFromServer.colorsAvailable)
-    // setImages(phoneFromServer.images);
-    // setCurrentImage(phoneFromServer.images[0])
-    // setCapacityAvailable(phoneFromServer.capacityAvailable)
-    // setCurrentCapacity(phoneFromServer.capacity)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
+    .then(resp => resp.json())
+    .then(data => {
+      setPhone(data)
+      setColorsAvailable(data.colorsAvailable)
+      setImages(data.images);
+      setCurrentImage(data.images[0])
+      setCapacityAvailable(data.capacityAvailable)
+      setCurrentCapacity(data.capacity)
+    })
       
   }, [])
 
