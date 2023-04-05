@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import './ProductDetailsPage.scss';
-// import phoneFromServer from '../../../public/client/api/phones/apple-iphone-11-128gb-black.json'
 import { PhoneDetails } from '../../types/phoneDetails';
 import { NotFoundPage } from '../NotFoundPage';
 import cn from 'classnames';
@@ -22,7 +21,7 @@ export const ProductDetailsPage = () => {
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
       setPhone(data)
