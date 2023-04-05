@@ -134,6 +134,12 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="home__news">
+        <h2 className="home__news-title">
+          Brand new models
+        </h2>
+      </div>
     </div>
   )
 }

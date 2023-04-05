@@ -4,28 +4,25 @@ import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
 import { Link } from 'react-router-dom';
 import { Sizes } from '../../types/sizes';
+import { Phone } from '../../types/phone';
 
 type Props = {
-  phoneId: string;
-  image: string;
-  name: string;
-  fullPrice: number;
-  price: number;
-  screen: string;
-  capacity: string;
-  ram: string;
+  product: Phone;
 }
 
 export const ProductCard: React.FC<Props> = ({
-  phoneId,
-  image,
-  name,
-  fullPrice,
-  price,
-  screen,
-  capacity,
-  ram,
+  product
 }) => {
+  const {
+    phoneId,
+    image,
+    name,
+    price,
+    fullPrice,
+    screen,
+    capacity,
+    ram,
+  } = product;
   return (
     <div className="productcard">
       <Link

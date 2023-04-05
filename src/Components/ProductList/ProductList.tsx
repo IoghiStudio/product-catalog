@@ -12,37 +12,16 @@ export const ProductList: React.FC<Props> = ({
 }) => {
   return (
     <div className='productlist'>
-      {products.map(product => {
-        const {
-          id,
-          phoneId,
-          image,
-          name,
-          fullPrice,
-          price,
-          screen,
-          capacity,
-          ram,
-        } = product;
-
-        return (
+      {products.map(product => (
           <div
             className="productlist__item"
-            key={id}
+            key={product.id}
           >
             <ProductCard
-              phoneId={phoneId}
-              image={image}
-              name={name}
-              fullPrice={fullPrice}
-              price={price}
-              screen={screen}
-              capacity={capacity}
-              ram={ram}
+              product={product}
             />
           </div>
-        )
-      })}
+        ))}
     </div>
   )
 }
