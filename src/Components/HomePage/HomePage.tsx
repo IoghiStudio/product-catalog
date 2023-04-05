@@ -1,7 +1,7 @@
 import {
   useCallback,
   useState, 
-  useEffect } from 'react';
+} from 'react';
 import './HomePage.scss';
 import cn from 'classnames';
 

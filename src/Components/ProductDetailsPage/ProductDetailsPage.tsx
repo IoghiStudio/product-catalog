@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import './ProductDetailsPage.scss';
-import phoneFromServer from '../../client/api/phones/apple-iphone-11-128gb-red.json'
+// import phoneFromServer from '../../../public/client/api/phones/apple-iphone-11-128gb-black.json'
 import { PhoneDetails } from '../../types/phoneDetails';
 import { NotFoundPage } from '../NotFoundPage';
 import cn from 'classnames';
@@ -26,15 +26,15 @@ export const ProductDetailsPage = () => {
     //   .then(resp => resp.json())
     //   .then(data => console.log(data))
 
-    // fetch('../../client/api/phones/apple-iphone-11-128gb-black.json')
-    //   .then(resp => console.log(resp))
+    fetch('apple-iphone-11-128gb-black.json')
+      .then(resp => console.log(resp))
 
-    setPhone(phoneFromServer)
-    setColorsAvailable(phoneFromServer.colorsAvailable)
-    setImages(phoneFromServer.images);
-    setCurrentImage(phoneFromServer.images[0])
-    setCapacityAvailable(phoneFromServer.capacityAvailable)
-    setCurrentCapacity(phoneFromServer.capacity)
+    // setPhone(phoneFromServer)
+    // setColorsAvailable(phoneFromServer.colorsAvailable)
+    // setImages(phoneFromServer.images);
+    // setCurrentImage(phoneFromServer.images[0])
+    // setCapacityAvailable(phoneFromServer.capacityAvailable)
+    // setCurrentCapacity(phoneFromServer.capacity)
       
   }, [])
 
@@ -87,7 +87,7 @@ export const ProductDetailsPage = () => {
           <div className="details__images">
             <img
               className="details__images--image"
-              src={require(`../../client/api/${currentImage}`)}
+              src={require(`../../api/${currentImage}`)}
               alt={phone.name}
             />
 
@@ -97,7 +97,7 @@ export const ProductDetailsPage = () => {
                   <img
                     key={image}
                     className='details__images--previews--image'
-                    src={require(`../../client/api/${image}`)}
+                    src={require(`../../api/${image}`)}
                     alt={phone.name}
                     onClick={() => {
                       setCurrentImage(image)

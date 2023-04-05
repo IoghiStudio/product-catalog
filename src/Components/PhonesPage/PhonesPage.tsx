@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import phonesFromServer from '../../client/api/phones.json';
+import phonesFromServer from '../../api/phones.json';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
 import './PhonesPage.scss';

@@ -70,20 +70,20 @@
       }
 
       &--first {
-        background-image: url(../../client/api/img/banner-14pro.png);
+        background-image: url(../../api/img/banner-14pro.png);
 
         @include onTablet {
-          background-image: url(../../client/api/img/banner-14pro-desktop.png);
+          background-image: url(../../api/img/banner-14pro-desktop.png);
         }
       }
 
       &--second {
-        background-image: url(../../client/api/img/banner-tablets.png);
+        background-image: url(../../api/img/banner-tablets.png);
       }
 
       
       &--third {
-        background-image: url(../../client/api/img/banner-phones.png);
+        background-image: url(../../api/img/banner-phones.png);
       }
     }
   }

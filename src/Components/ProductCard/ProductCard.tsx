@@ -34,7 +34,7 @@ export const ProductCard: React.FC<Props> = ({
       >
         <img
           className="productcard__image"
-          src={require(`../../client/api/${image}`)}
+          src={require(`../../api/${image}`)}
           alt={name}
         />
       </Link>
