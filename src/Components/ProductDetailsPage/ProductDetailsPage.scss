@@ -94,7 +94,7 @@
     }
 
     @include onDesktop {
-      gap: 125px;
+      gap: 135px;
       margin-bottom: 80px;
     }
   }
@@ -103,10 +103,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 23px;
+    gap: 24px;
       
     @include onTablet {
       flex-direction: row;
+      gap: 36px;
     }
     
     &-image {

@@ -70,29 +70,15 @@ export const HomePage = () => {
       </div>
 
       <div className="home__dots">
-        <div
-          className={cn(
-            "home__dot", {
-              "home__dot--active": bannerIndex === 0,
-            }
-          )}
-        ></div>
-
-        <div
-          className={cn(
-            "home__dot", {
-              "home__dot--active": bannerIndex === 1,
-            }
-          )}
-        ></div>
-
-        <div
-          className={cn(
-            "home__dot", {
-              "home__dot--active": bannerIndex === 2,
-            }
-          )}
-        ></div>
+        {[0, 1, 2].map(index => (
+            <div
+            className={cn(
+              "home__dot", {
+                "home__dot--active": bannerIndex === index,
+              }
+            )}
+          ></div>
+        ))}
       </div>
     </div>
   )
