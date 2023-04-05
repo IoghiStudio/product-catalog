@@ -142,18 +142,21 @@
 
       &--phones {
         background-image: url(../../api/img/category-phones.png);
+        background-color: #6D6474;
+        background-position: center;
+        background-size: cover;
       }
 
       &--tablets {
         background-image: url(../../api/img/category-tablets.png);
-        background-color: #c4b6bd;
+        background-color: #8D8D92;
         background-position: top left;
         background-size: 140%;
       }
 
       &--accessories {
         background-image: url(../../api/img/category-accessories.png);
-        background-color: #7c3b5a;
+        background-color: #D53C51;
         background-position: bottom left;
         background-size: 200%;
       }
