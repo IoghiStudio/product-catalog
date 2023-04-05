@@ -87,7 +87,47 @@ export const HomePage = () => {
         </h2>
 
         <div className="home__categories-previews">
+          <div className="home__category">
+            <div className="home__category-image">
 
+            </div>
+
+            <h4 className="home__category-title">
+              Mobile phones
+            </h4>
+
+            <p className="home__category-text">
+              71 models
+            </p>
+          </div>
+
+          <div className="home__category">
+            <div className="home__category-image">
+
+            </div>
+            
+            <h4 className="home__category-title">
+              Mobile phones
+            </h4>
+
+            <p className="home__category-text">
+              71 models
+            </p>
+          </div>
+
+          <div className="home__category">
+            <div className="home__category-image">
+
+            </div>
+            
+            <h4 className="home__category-title">
+              Mobile phones
+            </h4>
+
+            <p className="home__category-text">
+              71 models
+            </p>
+          </div>
         </div>
       </div>
     </div>
