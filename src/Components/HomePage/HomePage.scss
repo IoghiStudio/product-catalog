@@ -23,13 +23,17 @@
 
   &__icon {
     &-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: none;
 
-      width: 32px;
-      cursor: pointer;
-      background-color: $surface-2;
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        width: 32px;
+        cursor: pointer;
+        background-color: $surface-2;
+      }
     }
 
     width: 16px;
@@ -52,26 +56,21 @@
     margin-bottom: 18px;
 
     &-image {
-      position: absolute;
-      left: 0;
-      right: 0;
-  
       margin: 0 auto;
-      padding-top: 85%;
+      padding-top: 100%;
+      width: 100%;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
 
       @include onTablet {
-        position: static;
-        
         padding-top: 30%;
         width: 80%;
       }
 
       &--first {
         background-image: url(../../api/img/banner-14pro.png);
-
+        
         @include onTablet {
           background-image: url(../../api/img/banner-14pro-desktop.png);
         }
@@ -98,6 +97,15 @@
     width: 14px;
     height: 4px;
     background-color: $elements;
+    margin-bottom: 66px;
+
+    @include onTablet {
+      margin-bottom: 74px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
 
     &--active {
       background-color: $white;
