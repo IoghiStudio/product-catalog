@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useEffect,
   useState, 
 } from 'react';
 import './HomePage.scss';
@@ -12,6 +13,15 @@ enum Way {
 
 export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
+  const [phones, setPhones] = useState([]);
+
+  useEffect(() => {
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then(phones => {
+        setPhones(phones)
+      })
+  }, [])
 
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
@@ -88,44 +98,38 @@ export const HomePage = () => {
 
         <div className="home__categories-previews">
           <div className="home__category">
-            <div className="home__category-image">
-
-            </div>
+            <div className="home__category-image"></div>
 
             <h4 className="home__category-title">
               Mobile phones
             </h4>
 
             <p className="home__category-text">
-              71 models
+              {`${phones.length} models`}
             </p>
           </div>
 
           <div className="home__category">
-            <div className="home__category-image">
-
-            </div>
+            <div className="home__category-image"></div>
             
             <h4 className="home__category-title">
-              Mobile phones
+              Tablets
             </h4>
 
             <p className="home__category-text">
-              71 models
+              24 models
             </p>
           </div>
 
           <div className="home__category">
-            <div className="home__category-image">
-
-            </div>
+            <div className="home__category-image"></div>
             
             <h4 className="home__category-title">
-              Mobile phones
+              Accessories
             </h4>
 
             <p className="home__category-text">
-              71 models
+              100 models
             </p>
           </div>
         </div>

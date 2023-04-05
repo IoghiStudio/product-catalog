@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import phonesFromServer from '../../api/phones.json';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
 import './PhonesPage.scss';
@@ -36,7 +35,9 @@ export const PhonesPage = () => {
   } , [])
 
   useEffect(() => {
-    setPhones(phonesFromServer);
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then(data => setPhones(data))
   }, [])
 
   useEffect(() => {

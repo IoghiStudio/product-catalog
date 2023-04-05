@@ -130,11 +130,14 @@
   }
 
   &__category {
+    flex-grow: 1;
+    width: 100%;
 
     &-image {
+      box-sizing: border-box;
       background: #000;
-      width: 20px;
-      height: 20px;
+      padding-top: 100%;
+      margin-bottom: 24px;
     }
 
     &-title {
