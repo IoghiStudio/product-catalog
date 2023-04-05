@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
-import phonesFromServer from '../../api/phones.json';
 import './PhonesPage.scss';
 import '../../styles/grid.scss';
 import { Link } from 'react-router-dom';
@@ -36,11 +35,9 @@ export const PhonesPage = () => {
   } , [])
 
   useEffect(() => {
-    // fetch('./product-catalog/phones.json')
-    //   .then(resp => resp.json())
-    //   .then(data => setPhones(data))
-
-    setPhones(phonesFromServer)
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then(data => setPhones(data))
   }, [])
 
   useEffect(() => {
