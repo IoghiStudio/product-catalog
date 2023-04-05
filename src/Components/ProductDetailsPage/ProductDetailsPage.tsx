@@ -83,17 +83,22 @@ export const ProductDetailsPage = () => {
         <div className="details__top">
           <div className="details__images">
             <img
-              className="details__images--image"
+              className="details__images-image"
               src={require(`../../api/${currentImage}`)}
               alt={phone.name}
             />
 
-            <div className="details__images--previews">
+            <div className="details__previews">
               {images.map(image => {
                 return (
                   <img
                     key={image}
-                    className='details__images--previews--image'
+                    className={cn(
+                      'details__previews-image',
+                      {
+                        'details__previews-image--active': image === currentImage,
+                      }
+                    )}
                     src={require(`../../api/${image}`)}
                     alt={phone.name}
                     onClick={() => {
