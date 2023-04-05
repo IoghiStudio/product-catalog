@@ -35,7 +35,7 @@ export const ProductDetailsPage = () => {
       
   }, [])
 
-  console.log(phoneId)
+  console.log(currentImage)
 
   if (phone) {
     return (

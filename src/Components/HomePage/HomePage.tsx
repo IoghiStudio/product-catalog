@@ -98,11 +98,7 @@ export const HomePage = () => {
 
         <div className="home__categories-previews">
           <div className="home__category">
-            <img
-              src=''
-              alt='phones category'
-              className="home__category-image"
-            />
+            <div className="home__category-image home__category-image--phones"></div>
 
             <h4 className="home__category-title">
               Mobile phones
@@ -114,11 +110,7 @@ export const HomePage = () => {
           </div>
 
           <div className="home__category">
-            <img
-              src=''
-              alt='tablets category'
-              className="home__category-image"
-            />
+            <div className="home__category-image home__category-image--tablets"></div>
             
             <h4 className="home__category-title">
               Tablets
@@ -130,11 +122,7 @@ export const HomePage = () => {
           </div>
 
           <div className="home__category">
-            <img
-              src=''
-              alt='accessories category'
-              className="home__category-image"
-            />
+            <div className="home__category-image home__category-image--accessories"></div>
             
             <h4 className="home__category-title">
               Accessories

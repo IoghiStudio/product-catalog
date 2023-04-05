@@ -134,10 +134,29 @@
     width: 100%;
 
     &-image {
-      box-sizing: border-box;
-      background: #000;
       padding-top: 100%;
       margin-bottom: 24px;
+      background-color: rgb(43, 46, 46);
+      // background-size: cover;
+      background-repeat: no-repeat;
+
+      &--phones {
+        background-image: url(../../api/img/category-phones.png);
+      }
+
+      &--tablets {
+        background-image: url(../../api/img/category-tablets.png);
+        background-color: #c4b6bd;
+        background-position: top left;
+        background-size: 150%;
+      }
+
+      &--accessories {
+        background-image: url(../../api/img/category-accessories.png);
+        background-color: #7c3b5a;
+        background-position: bottom left;
+        background-size: 200%;
+      }
     }
 
     &-title {
