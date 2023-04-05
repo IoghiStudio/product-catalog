@@ -80,6 +80,16 @@ export const HomePage = () => {
           ></div>
         ))}
       </div>
+
+      <div className="home__categories">
+        <h2 className="home__categories-title">
+          Shop by category
+        </h2>
+
+        <div className="home__categories-previews">
+
+        </div>
+      </div>
     </div>
   )
 }
