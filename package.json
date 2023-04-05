@@ -1,6 +1,6 @@
 {
   "name": "product-catalog",
-  "homepage": "https://ioghistudio.github.io/product-catalog",
+  "homepage": "https://ioghistudio.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
