@@ -16,7 +16,7 @@ export const HomePage = () => {
   const [phones, setPhones] = useState([]);
 
   useEffect(() => {
-    fetch('./product-catalog/phones.json')
+    fetch('./phones.json')
       .then(resp => resp.json())
       .then(phones => {
         setPhones(phones)
