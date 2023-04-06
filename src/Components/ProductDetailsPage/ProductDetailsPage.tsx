@@ -21,7 +21,7 @@ export const ProductDetailsPage = () => {
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
       setPhone(data)
@@ -100,8 +100,8 @@ export const ProductDetailsPage = () => {
                     )}
                     src={require(`../../api/${image}`)}
                     alt={phone.name}
-                    onClick={() => {
-                      setCurrentImage(image)
+                    onMouseEnter={() => {
+                      setCurrentImage(image);
                     }}
                   />
                 )
