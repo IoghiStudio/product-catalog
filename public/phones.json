@@ -1063,5 +1063,35 @@
     "ram": "3GB",
     "year": 2018,
     "image": "img/phones/apple-iphone-xr/yellow/00.jpg"
+  },
+  {
+    "id": "72",
+    "category": "phones",
+    "phoneId": "apple-iphone-14-pro-128gb-gold",
+    "itemId": "apple-iphone-14-pro-128gb-gold",
+    "name": "Apple iPhone 14 Pro 128GB Gold",
+    "fullPrice": 1199,
+    "price": 999,
+    "screen": "6.1' OLED",
+    "capacity": "128GB",
+    "color": "gold",
+    "ram": "6GB",
+    "year": 2022,
+    "image": "img/phones/apple-iphone-14-pro/gold/00.jpg"
+  },
+  {
+    "id": "73",
+    "category": "phones",
+    "phoneId": "apple-iphone-14-pro-256gb-silver",
+    "itemId": "apple-iphone-14-pro-256gb-silver",
+    "name": "Apple iPhone 14 Pro 256GB silver",
+    "fullPrice": 1199,
+    "price": 999,
+    "screen": "6.5' OLED",
+    "capacity": "256GB",
+    "color": "silver",
+    "ram": "6GB",
+    "year": 2022,
+    "image": "img/phones/apple-iphone-14-pro/silver/00.jpg"
   }
 ]
