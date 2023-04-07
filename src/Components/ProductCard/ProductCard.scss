@@ -23,6 +23,12 @@
       height: 100px;
       object-fit: contain;
       margin-bottom: 24px;
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
