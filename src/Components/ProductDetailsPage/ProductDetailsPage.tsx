@@ -22,7 +22,7 @@ export const ProductDetailsPage = () => {
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    fetch(`./product-catalog/phones/${phoneId}.json`)
+    fetch(`./phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
       setPhone(data)
@@ -35,10 +35,13 @@ export const ProductDetailsPage = () => {
       
   }, [])
 
+  let timeout: NodeJS.Timeout;
+
   const handleImageChange = (image: string) => {
+    clearTimeout(timeout);
     setImageLoading(true);
 
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       setImageLoading(false);
       setCurrentImage(image);
     }, 300)
