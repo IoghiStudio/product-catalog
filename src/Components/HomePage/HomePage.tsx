@@ -84,12 +84,13 @@ export const HomePage = () => {
 
       <div className="home__dots">
         {[0, 1, 2].map(index => (
-            <div
+          <div
             className={cn(
               "home__dot", {
                 "home__dot--active": bannerIndex === index,
               }
             )}
+            onClick={() => setBannerIndex(index)}
           ></div>
         ))}
       </div>

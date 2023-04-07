@@ -98,6 +98,7 @@
     height: 4px;
     background-color: $elements;
     margin-bottom: 66px;
+    cursor: pointer;
 
     @include onTablet {
       margin-bottom: 74px;
