@@ -1,17 +1,18 @@
 {
   "id": "apple-iphone-14-pro-128gb-gold",
 "namespaceId": "apple-iphone-14-pro",
-"name": "Apple iPhone 14 Pro 128GB gold",
-"capacityAvailable": ["128GB", "64GB", "256GB", "512GB"],
+"name": "Apple iPhone 14 Pro 128GB Gold",
+"capacityAvailable": ["128GB", "256GB", "512GB", "1TB"],
 "capacity": "128GB",
 "priceRegular": 1199,
 "priceDiscount": 999,
-"colorsAvailable": ["silver", "purple", "gold", "red"],
+"colorsAvailable": ["silver", "purple", "gold"],
 "color": "gold",
 "images": [
-  "img/phones/apple-iphone-14-pro/gold/00.jpg",
-  "img/phones/apple-iphone-14-pro/gold/01.jpg",
-  "img/phones/apple-iphone-14-pro/gold/02.jpg"
+  "img/phones/apple-iphone-14-pro/gold/00.png",
+  "img/phones/apple-iphone-14-pro/gold/01.png",
+  "img/phones/apple-iphone-14-pro/gold/02.png",
+  "img/phones/apple-iphone-14-pro/gold/03.png"
 ],
 "description": [
   {
@@ -35,7 +36,7 @@
   }
 ],
 "screen": "6.1' OLED",
-"resolution": "2688х1242",
+"resolution": "2556х1179",
 "processor": "Apple A16 Bionic",
 "ram": "6GB",
 "camera": "48 Mp + 12 Mp + 12MP + 12mp",
