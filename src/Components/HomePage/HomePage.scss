@@ -63,14 +63,22 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      transition: transform 0.3s;
+      // transition: transform 0.6s;
+      transform: scale(0.7);
+
+      &--anim {
+        transition: transform 0.5s;
+        transform: scale(1)
+      }
 
       &--animLeft {
-        transform: translateX(150%);
+        transition: transform 0.5s;
+        transform: translateX(120%) scale(1);
       }
       
       &--animRight {
-        transform: translateX(-150%);
+        transition: transform 0.5s;
+        transform: translateX(-120%);
       }
 
       &:hover {
@@ -79,7 +87,7 @@
 
       @include onTablet {
         padding-top: 34%;
-        width: 92%;
+        width: 90%;
       }
 
       &--first {

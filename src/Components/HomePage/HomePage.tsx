@@ -19,28 +19,42 @@ export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [phones, setPhones] = useState([]);
   const [bannerLoading, setBannerLoading] = useState(false); 
+  const [loadLeft, setLoadLeft] = useState(false); 
+  const [loadRight, setLoadRight] = useState(false); 
 
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
       setBannerLoading(true);
-      
+      let indexToLoad = 0;
+
       if (way === Way.Prev) {
+        setLoadLeft(true);
+
         if (index >= 1) {
-          setBannerIndex(index - 1);
+          indexToLoad = index - 1;
         } else {
-          setBannerIndex(2);
+          indexToLoad = 2;
         }
       } else if (way === Way.Next) {
+        setLoadRight(true);
+
         if (index <= 1) {
-          setBannerIndex(index + 1);
+          indexToLoad = index + 1;
         } else {
-          setBannerIndex(0);
+          indexToLoad = 0;
         }
       }
 
       setTimeout(() => {
+        setLoadRight(false);
+        setLoadLeft(false);
+
+        setBannerIndex(indexToLoad);
+      }, 500)
+
+      setTimeout(() => {
         setBannerLoading(false);
-      }, 300)
+      }, 550)
     },
     []
   );
@@ -85,8 +99,9 @@ export const HomePage = () => {
           className={cn(
             "home__banner-image",
             {
-              "home__banner-image--animLeft" : bannerLoading,
-              "home__banner-image--animRights" : true,
+              "home__banner-image--anim" : !bannerLoading,
+              "home__banner-image--animLeft" : bannerLoading && loadLeft,
+              "home__banner-image--animRight" : bannerLoading && loadRight,
               "home__banner-image--first": bannerIndex === 0,
               "home__banner-image--second": bannerIndex === 1,
               "home__banner-image--third": bannerIndex === 2,
