@@ -35,7 +35,7 @@ export const PhonesPage = () => {
   } , [])
 
   useEffect(() => {
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(data => setPhones(data))
   }, [])

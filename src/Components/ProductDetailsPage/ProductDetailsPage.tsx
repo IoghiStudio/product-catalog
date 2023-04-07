@@ -22,7 +22,7 @@ export const ProductDetailsPage = () => {
   // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
       setPhone(data)
