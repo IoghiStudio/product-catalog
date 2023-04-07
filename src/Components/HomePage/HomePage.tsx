@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Link } from 'react-router-dom'
 import { ReactRoutes } from '../../types/reactRoutes';
 
@@ -45,11 +46,16 @@ export const HomePage = () => {
       })
   }, [])
 
+  let timeout: string | number | NodeJS.Timeout | undefined;
+
   useEffect(() => {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       handleBannerChange(Way.Next, bannerIndex);
     }, 3000);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    
+    return () => {
+      clearTimeout(timeout)
+    }
   }, [bannerIndex])
   
   return (
