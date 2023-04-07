@@ -11,6 +11,7 @@ import { CartPage } from '../CartPage';
 import { FavoritesPage } from '../FavoritesPage';
 import { NotFoundPage } from '../NotFoundPage';
 import { ProductDetailsPage } from '../ProductDetailsPage';
+import { ReactRoutes } from '../../types/reactRoutes';
 
 export const App = () => {
   console.log('app rendered');
@@ -23,17 +24,17 @@ export const App = () => {
         <Routes>
           <Route
             element={<HomePage />}
-            path="/"
+            path={ReactRoutes.Home}
           />
 
           <Route
             path="/home"
             element={
-              <Navigate to="/" replace/>
+              <Navigate to={ReactRoutes.Home} replace/>
             }
           />
 
-          <Route path="/phones">
+          <Route path={ReactRoutes.Phones}>
             <Route index element={<PhonesPage />}/>
 
             <Route
@@ -45,28 +46,28 @@ export const App = () => {
           </Route>
 
           <Route
-            path="/tablets"
+            path={ReactRoutes.Tablets}
             element={
               <TabletsPage />
             }
           />
 
           <Route
-            path="/accessories"
+            path={ReactRoutes.Accessories}
             element={
               <AccessoriesPage />
             }
           />
 
           <Route
-            path="/favorites"
+            path={ReactRoutes.Favorites}
             element={
               <FavoritesPage />
             }
           />
 
           <Route
-            path="/cart"
+            path={ReactRoutes.Favorites}
             element={
               <CartPage />
             }

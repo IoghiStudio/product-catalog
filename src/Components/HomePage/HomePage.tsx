@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+import { ReactRoutes } from '../../types/reactRoutes';
+
 import {
   useCallback,
   useEffect,
@@ -91,6 +94,12 @@ export const HomePage = () => {
         ))}
       </div>
 
+      <div className="home__news">
+        <h2 className="home__news-title">
+          Brand new models
+        </h2>
+      </div>
+
       <div className="home__categories">
         <h2 className="home__categories-title">
           Shop by category
@@ -98,7 +107,10 @@ export const HomePage = () => {
 
         <div className="home__categories-previews">
           <div className="home__category">
-            <div className="home__category-image home__category-image--phones"></div>
+            <Link
+              to={ReactRoutes.Phones}
+              className="home__category-image home__category-image--phones"
+            ></Link>
 
             <h4 className="home__category-title">
               Mobile phones
@@ -110,7 +122,10 @@ export const HomePage = () => {
           </div>
 
           <div className="home__category">
-            <div className="home__category-image home__category-image--tablets"></div>
+            <Link
+              to={ReactRoutes.Tablets}
+              className="home__category-image home__category-image--tablets"
+            ></Link>
             
             <h4 className="home__category-title">
               Tablets
@@ -122,7 +137,10 @@ export const HomePage = () => {
           </div>
 
           <div className="home__category">
-            <div className="home__category-image home__category-image--accessories"></div>
+            <Link
+              to={ReactRoutes.Accessories}
+              className="home__category-image home__category-image--accessories"
+            ></Link>
             
             <h4 className="home__category-title">
               Accessories
@@ -133,12 +151,6 @@ export const HomePage = () => {
             </p>
           </div>
         </div>
-      </div>
-
-      <div className="home__news">
-        <h2 className="home__news-title">
-          Brand new models
-        </h2>
       </div>
     </div>
   )

@@ -1077,7 +1077,7 @@
     "color": "silver",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/silver/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/silver/00.png"
   },
   {
     "id": "73",
@@ -1092,7 +1092,7 @@
     "color": "gold",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/gold/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/gold/00.png"
   },
   {
     "id": "74",
@@ -1107,7 +1107,7 @@
     "color": "purple",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/purple/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/purple/00.png"
   },
   {
     "id": "75",
@@ -1122,7 +1122,7 @@
     "color": "silver",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/silver/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/silver/00.png"
   },
   {
     "id": "76",
@@ -1137,7 +1137,7 @@
     "color": "gold",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/gold/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/gold/00.png"
   },
   {
     "id": "77",
@@ -1152,7 +1152,7 @@
     "color": "purple",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/purple/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/purple/00.png"
   },
   {
     "id": "78",
@@ -1167,7 +1167,7 @@
     "color": "silver",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/silver/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/silver/00.png"
   },
   {
     "id": "79",
@@ -1182,7 +1182,7 @@
     "color": "gold",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/gold/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/gold/00.png"
   },
   {
     "id": "80",
@@ -1197,6 +1197,51 @@
     "color": "purple",
     "ram": "6GB",
     "year": 2022,
-    "image": "img/phones/apple-iphone-14-pro/purple/00.jpg"
+    "image": "img/phones/apple-iphone-14-pro/purple/00.png"
+  },
+  {
+    "id": "81",
+    "category": "phones",
+    "phoneId": "apple-iphone-14-pro-1tb-silver",
+    "itemId": "apple-iphone-14-pro-1tb-silver",
+    "name": "Apple iPhone 14 Pro 1TB Silver",
+    "fullPrice": 1199,
+    "price": 999,
+    "screen": "6.1' OLED",
+    "capacity": "1TB",
+    "color": "silver",
+    "ram": "6GB",
+    "year": 2022,
+    "image": "img/phones/apple-iphone-14-pro/silver/00.png"
+  },
+  {
+    "id": "79",
+    "category": "phones",
+    "phoneId": "apple-iphone-14-pro-1tb-gold",
+    "itemId": "apple-iphone-14-pro-1tb-gold",
+    "name": "Apple iPhone 14 Pro 1TB Gold",
+    "fullPrice": 1199,
+    "price": 999,
+    "screen": "6.1' OLED",
+    "capacity": "1TB",
+    "color": "gold",
+    "ram": "6GB",
+    "year": 2022,
+    "image": "img/phones/apple-iphone-14-pro/gold/00.png"
+  },
+  {
+    "id": "80",
+    "category": "phones",
+    "phoneId": "apple-iphone-14-pro-1tb-purple",
+    "itemId": "apple-iphone-14-pro-1tb-purple",
+    "name": "Apple iPhone 14 Pro 1TB Purple",
+    "fullPrice": 1199,
+    "price": 999,
+    "screen": "6.1' OLED",
+    "capacity": "1TB",
+    "color": "purple",
+    "ram": "6GB",
+    "year": 2022,
+    "image": "img/phones/apple-iphone-14-pro/purple/00.png"
   }
 ]
