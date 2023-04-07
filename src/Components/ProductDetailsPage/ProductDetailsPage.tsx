@@ -33,7 +33,7 @@ export const ProductDetailsPage = () => {
       setCurrentCapacity(data.capacity)
     })
       
-  }, [])
+  }, [phoneId])
 
 
   const handleImageChange = (image: string) => {

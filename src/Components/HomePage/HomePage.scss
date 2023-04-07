@@ -54,6 +54,7 @@
   &__banner {
     display: flex;
     margin-bottom: 18px;
+    overflow: hidden;
 
     &-image {
       margin: 0 auto;
@@ -64,13 +65,21 @@
       background-repeat: no-repeat;
       transition: transform 0.3s;
 
+      &--animLeft {
+        transform: translateX(150%);
+      }
+      
+      &--animRight {
+        transform: translateX(-150%);
+      }
+
       &:hover {
-        transform: scale(1.05);
+        // transform: scale(1.05);
       }
 
       @include onTablet {
-        padding-top: 30%;
-        width: 80%;
+        padding-top: 34%;
+        width: 92%;
       }
 
       &--first {

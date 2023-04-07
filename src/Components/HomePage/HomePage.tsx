@@ -18,9 +18,12 @@ enum Way {
 export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [phones, setPhones] = useState([]);
+  const [bannerLoading, setBannerLoading] = useState(false); 
 
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
+      setBannerLoading(true);
+      
       if (way === Way.Prev) {
         if (index >= 1) {
           setBannerIndex(index - 1);
@@ -34,6 +37,10 @@ export const HomePage = () => {
           setBannerIndex(0);
         }
       }
+
+      setTimeout(() => {
+        setBannerLoading(false);
+      }, 300)
     },
     []
   );
@@ -42,21 +49,21 @@ export const HomePage = () => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(phones => {
-        setPhones(phones)
+        setPhones(phones);
       })
   }, [])
 
   let timeout: string | number | NodeJS.Timeout | undefined;
 
-  useEffect(() => {
-    timeout = setTimeout(() => {
-      handleBannerChange(Way.Next, bannerIndex);
-    }, 3000);
+  // useEffect(() => {
+  //   timeout = setTimeout(() => {
+  //     handleBannerChange(Way.Next, bannerIndex);
+  //   }, 3000);
     
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [bannerIndex])
+  //   return () => {
+  //     clearTimeout(timeout)
+  //   }
+  // }, [bannerIndex])
   
   return (
     <div className='home'>
@@ -78,6 +85,8 @@ export const HomePage = () => {
           className={cn(
             "home__banner-image",
             {
+              "home__banner-image--animLeft" : bannerLoading,
+              "home__banner-image--animRights" : true,
               "home__banner-image--first": bannerIndex === 0,
               "home__banner-image--second": bannerIndex === 1,
               "home__banner-image--third": bannerIndex === 2,
