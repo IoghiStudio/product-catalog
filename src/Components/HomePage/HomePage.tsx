@@ -18,14 +18,6 @@ export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [phones, setPhones] = useState([]);
 
-  useEffect(() => {
-    fetch('./product-catalog/phones.json')
-      .then(resp => resp.json())
-      .then(phones => {
-        setPhones(phones)
-      })
-  }, [])
-
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
       if (way === Way.Prev) {
@@ -44,6 +36,21 @@ export const HomePage = () => {
     },
     []
   );
+
+  useEffect(() => {
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then(phones => {
+        setPhones(phones)
+      })
+  }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleBannerChange(Way.Next, bannerIndex);
+    }, 3000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bannerIndex])
   
   return (
     <div className='home'>
