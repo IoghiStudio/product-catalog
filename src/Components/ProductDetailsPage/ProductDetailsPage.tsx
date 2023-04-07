@@ -16,6 +16,7 @@ export const ProductDetailsPage = () => {
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
   const { phoneId } = useParams();
+  const [imageLoading, setImageLoading] = useState(false);
 
   // const [phonePath, setPhonePath] = useState([]);
   // const match = useMatch('/phones/:phoneId');
@@ -33,6 +34,15 @@ export const ProductDetailsPage = () => {
     })
       
   }, [])
+
+  const handleImageChange = (image: string) => {
+    setImageLoading(true);
+
+    setTimeout(() => {
+      setImageLoading(false);
+      setCurrentImage(image);
+    }, 300)
+  }
 
   console.log(currentImage)
 
@@ -82,7 +92,12 @@ export const ProductDetailsPage = () => {
         <div className="details__top">
           <div className="details__images">
             <img
-              className="details__images-image details__images-image--anim details__images-image--hideUp"
+              className={cn(
+                "details__images-image",
+                {
+                  'details__images-image--anim': imageLoading,
+                }
+              )}
               src={require(`../../api/${currentImage}`)}
               alt={phone.name}
             />
@@ -101,7 +116,7 @@ export const ProductDetailsPage = () => {
                     src={require(`../../api/${image}`)}
                     alt={phone.name}
                     onMouseEnter={() => {
-                      setCurrentImage(image);
+                      handleImageChange(image);
                     }}
                   />
                 )

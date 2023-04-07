@@ -116,25 +116,12 @@
       width: 274px;
       height: 274px;
       object-fit: contain;
-      transition: transform 500ms;
-      // transform: translateY(-110%);
-      transform: scale(0.4);
-      // opacity: 0.3;
+      transition: transform 300ms;
 
       &--anim {
-        transform: scale(1);
+        transform: scale(0.8);
       }
 
-      &--hideDown {
-        transform: translateY(110%);
-      }
-
-      &--hideUp {
-        transform: translateY(-110%);
-      }
-      
-      &:hover {
-      }
       
       @include onTablet {
         order: 1;
