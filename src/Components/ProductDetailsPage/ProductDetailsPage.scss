@@ -104,6 +104,7 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    overflow: hidden;
       
     @include onTablet {
       flex-direction: row;
@@ -115,6 +116,25 @@
       width: 274px;
       height: 274px;
       object-fit: contain;
+      transition: transform 500ms;
+      // transform: translateY(-110%);
+      transform: scale(0.4);
+      // opacity: 0.3;
+
+      &--anim {
+        transform: scale(1);
+      }
+
+      &--hideDown {
+        transform: translateY(110%);
+      }
+
+      &--hideUp {
+        transform: translateY(-110%);
+      }
+      
+      &:hover {
+      }
       
       @include onTablet {
         order: 1;

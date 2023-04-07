@@ -82,7 +82,7 @@ export const ProductDetailsPage = () => {
         <div className="details__top">
           <div className="details__images">
             <img
-              className="details__images-image"
+              className="details__images-image details__images-image--anim details__images-image--hideUp"
               src={require(`../../api/${currentImage}`)}
               alt={phone.name}
             />
