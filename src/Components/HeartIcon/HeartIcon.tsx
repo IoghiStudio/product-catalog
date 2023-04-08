@@ -5,20 +5,27 @@ import cn from 'classnames';
 
 type Props = {
   size: Sizes;
+  selected: boolean;
 }
 
-export const HeartIcon: React.FC<Props> = ({ size }) => {
+export const HeartIcon: React.FC<Props> = ({ size, selected }) => {
   return (
     <div
       className={cn(
         "hearticon",
         {
           "hearticon--m": size === Sizes.M,
-          "hearticon--l": size === Sizes.L
+          "hearticon--l": size === Sizes.L,
+          "hearticon--selected": selected,
         }
       )}
     >
-      <div className="hearticon--icon"></div>
+      <div className={cn(
+        "hearticon--icon",
+        {
+          "hearticon--icon--selected": selected,
+        }
+      )}></div>
     </div>
   );
 }

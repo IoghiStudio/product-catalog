@@ -1,6 +1,7 @@
 @import '../../styles/vars';
 
 .hearticon {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +19,11 @@
     height: 48px;
   }
 
+  &--selected {
+    background-color: $black;
+    border: 1px solid $elements;
+  }
+
   &:hover {
     background-color: $icons;
   }
@@ -29,5 +35,9 @@
     background-position: center;
     width: 16px;
     height: 16px;
+
+    &--selected {
+      background-image: url(../../icons/heart-filled.svg);
+    }
   }
 }

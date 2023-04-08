@@ -21,6 +21,7 @@ export const ProductDetailsPage = () => {
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
   const [imageLoading, setImageLoading] = useState(false);
   const { phoneId } = useParams();
+  const [backButtonHover, setBackButtonHover] = useState(false);
 
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export const ProductDetailsPage = () => {
     fetch(`./product-catalog/phones.json`)
     .then(resp => resp.json())
     .then(data => {
-      //random phones for slider
+      //random phones for slider while server is not implemented
       setPhonesForSlider(data.slice(20, 29))
     })
       
@@ -92,11 +93,29 @@ export const ProductDetailsPage = () => {
         <Link
           to={ReactRoutes.Phones}
           className="details__back"
+          onMouseEnter={() => setBackButtonHover(true)}
+          onMouseLeave={() => setBackButtonHover(false)}
         >
           <div
-            className="details__icon details__icon--left-arrow"
+            className={cn(
+              "details__icon",
+              "details__icon--left-arrow",
+              {
+                "details__icon--left-arrow--hover": backButtonHover
+              }
+            )}
           ></div>
-          <div className="details__back--text"> Back </div>
+
+          <div
+            className={cn(
+              "details__back-text",
+              {
+                "details__back-text--hover": backButtonHover
+              }
+            )}
+          >
+            Back
+          </div>
         </Link>
 
         <h2 className='details__title'>
@@ -207,6 +226,7 @@ export const ProductDetailsPage = () => {
               </div>
               <HeartIcon
                 size={Sizes.L}
+                selected={false}
               />
             </div>
 

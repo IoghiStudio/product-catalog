@@ -9,6 +9,10 @@
 
     &--left-arrow {
       background-image: url(../../icons/Arrows/left-white.svg);
+
+      &--hover {
+        background-image: url(../../icons/Arrows/left-accent.svg);
+      }
     }
 
     &--right-arrow {
@@ -58,10 +62,14 @@
     margin-bottom: 16px;
     gap: 6px;
     
-    &--text {
+    &-text {
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
+
+      &--hover {
+        color: $accent;
+      }
     }
   }
 

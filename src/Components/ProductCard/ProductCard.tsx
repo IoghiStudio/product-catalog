@@ -76,6 +76,7 @@ export const ProductCard: React.FC<Props> = ({
         </div>
         <HeartIcon
           size={Sizes.M}
+          selected={false}
         />
       </div>
     </div>
