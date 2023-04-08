@@ -174,7 +174,7 @@
     gap: 8px;
     margin-bottom: 24px;
 
-    &--title {
+    &-title {
       margin: 0;
       font-weight: 700;
       font-size: 12px;
@@ -182,31 +182,31 @@
       color: $secondary;
     }
 
-    &--previews {
+    &-previews {
       display: flex;
       gap: 20px;
     }
+  }
 
-    &-color {
-      &-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $elements;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        cursor: pointer;
-
-        &:hover {
-          border-color: $secondary;
-        }
-      }
-
-      width: 25px;
-      height: 25px;
+  &__color {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $elements;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $secondary;
+      }
     }
+
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
   }
 
   &__divider {

@@ -134,19 +134,19 @@ export const ProductDetailsPage = () => {
 
           <div className="details__pick">
             <div className="details__colors">
-              <h3 className='details__colors--title'>
+              <h3 className='details__colors-title'>
                 Available colors
               </h3>
 
-              <div className="details__colors--previews">
+              <div className="details__colors-previews">
                 {colorsAvailable.map(color => {
                   return (
                     <div
                       key={color}
-                      className="details__colors-color-container"
+                      className="details__color-container"
                     >
                       <div
-                        className="details__colors-color"
+                        className="details__color"
                         style={{backgroundColor: color}}
                       ></div>
                     </div>
