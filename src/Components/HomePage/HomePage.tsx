@@ -18,11 +18,13 @@ enum Way {
 
 export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
-  const [phones, setPhones] = useState([]);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
   const [loadRight, setLoadRight] = useState(false); 
-
+  const [phones, setPhones] = useState([]);
+  const [newPhones, setNewPhones] = useState([]);
+  const [visibleNewPhones, setVisibleNewPhones] = useState([]);
+  
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
       setBannerLoading(true);
@@ -65,6 +67,13 @@ export const HomePage = () => {
       .then(resp => resp.json())
       .then(phones => {
         setPhones(phones);
+
+        //we add just 8 new phones
+        const news = phones.slice(-8);
+        setNewPhones(news);
+
+        //based on new phones we can play the visible phones showing just 4 of them
+        setVisibleNewPhones(news.slice(0, 4))
       })
   }, [])
 
@@ -123,6 +132,7 @@ export const HomePage = () => {
       <div className="home__dots">
         {[0, 1, 2].map(index => (
           <div
+            key={index}
             className={cn(
               "home__dot", {
                 "home__dot--active": bannerIndex === index,
@@ -135,7 +145,7 @@ export const HomePage = () => {
 
       <ProductSlider
         title='Brand new models'
-        products={phones.slice(-4)}
+        products={visibleNewPhones}
       />
 
       <div className="home__categories">

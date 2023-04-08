@@ -1,14 +1,25 @@
+@import '../../styles/mixins';
+
 .productlist {
   display: flex;
-  // flex-wrap: wrap;
-  justify-content: left;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 
+  &--slider {
+    flex-wrap: nowrap;
+    justify-content: left;
+  }
+
   &__item {
-    min-width: 229px;
+    min-width: 212px;
     width: 229px;
     max-width: 288px;
     flex-grow: 1;
+
+    @include onTablet {
+      min-width: 229px;
+    }
   }
 
 }

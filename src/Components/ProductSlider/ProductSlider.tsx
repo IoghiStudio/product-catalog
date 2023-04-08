@@ -33,6 +33,7 @@ export const ProductSlider: React.FC<Props> = ({
 
       <ProductList
         products={products}
+        forSlider={true}
       />
     </div>
   )

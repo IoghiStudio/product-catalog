@@ -27,18 +27,14 @@
 
   &__icon {
     &-container {
-      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      @include onTablet {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        background-color: $surface-2;
-      }
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background-color: $surface-2;
     }
 
     width: 16px;

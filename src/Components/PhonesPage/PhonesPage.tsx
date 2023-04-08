@@ -171,6 +171,7 @@ export const PhonesPage = () => {
 
       <ProductList
         products={visiblePhones}
+        forSlider={false}
       />
     </div>
   )
