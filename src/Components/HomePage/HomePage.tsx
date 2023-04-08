@@ -21,6 +21,7 @@ export const HomePage = () => {
   const [loadRight, setLoadRight] = useState(false);  
   const [phones, setPhones] = useState<Phone[]>([]);
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
+  const [hotPricesPhones, setHotPricesPhones] = useState<Phone[]>([]);
 
   
   const handleBannerChange = useCallback(
@@ -63,11 +64,15 @@ export const HomePage = () => {
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
-      .then(data => {
-        setPhones(data);
+      .then(phonesData => {
+        setPhones(phonesData);
         //we add just 8 new phones
-        const news = data.slice(-8);
+
+        const news = phonesData.slice(-8);
         setNewPhones(news);
+
+        const hotPrices = phonesData.slice(0, 8);
+        setHotPricesPhones(hotPrices);
       })
   }, [])
 
@@ -137,10 +142,12 @@ export const HomePage = () => {
         ))}
       </div>
 
-      <ProductSlider
-        title='Brand new models'
-        products={newPhones}
-      />
+      <div className="home__slider">
+        <ProductSlider
+          title='Brand new models'
+          products={newPhones}
+        />
+      </div>
 
       <div className="home__categories">
         <h2 className="home__categories-title">
@@ -193,6 +200,14 @@ export const HomePage = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      
+      <div className="home__slider">
+        <ProductSlider
+          title='Hot prices'
+          products={hotPricesPhones}
+        />
       </div>
     </div>
   )
