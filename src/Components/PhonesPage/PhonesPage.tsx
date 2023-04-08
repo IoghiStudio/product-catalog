@@ -28,7 +28,7 @@ export const PhonesPage = () => {
   const [perPage, setPerPage] = useState<PerPage>(PerPage.Sixteen);
 
   useEffect(() => {
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(data => setPhones(data))
   }, [])
