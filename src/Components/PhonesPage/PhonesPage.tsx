@@ -13,11 +13,19 @@ enum FilterBy {
   Cheapest = 'cheapest'
 }
 
+enum PerPage {
+  Four = 4,
+  Eight = 8,
+  Sixteen = 16,
+  All = Infinity
+}
+
 
 export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
+  const [perPage, setPerPage] = useState<PerPage>(PerPage.Sixteen);
 
   useEffect(() => {
     fetch('./product-catalog/phones.json')
@@ -44,8 +52,8 @@ export const PhonesPage = () => {
 
     const sortedPhones = filterProducts();
 
-    setViziblePhones(sortedPhones);
-  }, [phones, filterBy]);
+    setViziblePhones(sortedPhones.slice(0, perPage));
+  }, [phones, filterBy, perPage]);
 
   return (
     <div className='phones'>
@@ -72,7 +80,7 @@ export const PhonesPage = () => {
       </h1>
 
       <div className="phones__count">
-        {`${visiblePhones.length} models`}
+        {`${phones.length} models`}
       </div>
 
       <div className="phones__filters">
@@ -125,35 +133,35 @@ export const PhonesPage = () => {
 
           <select
             className='phones__filter--select'
-            // value={filterBy}
-            // onChange={(event) => {
-            //   setFilterBy(event.target.value)
-            // }}
+            value={perPage}
+            onChange={(event) => {
+              setPerPage(+event.target.value)
+            }}
           >
             <option
               className='phones__option'
-              // value={FilterBy.All}
+              value={PerPage.All}
             >
               All
             </option>
 
             <option 
               className='phones__option'
-              // value={FilterBy.Cheapest}
+              value={PerPage.Four}
             >
               4
             </option>
 
             <option 
               className='phones__option'
-              // value={FilterBy.Alph}
+              value={PerPage.Eight}
             >
               8
             </option>
 
             <option 
               className='phones__option'
-              // value={FilterBy.Newest}
+              value={PerPage.Sixteen}
             >
               16
             </option>
