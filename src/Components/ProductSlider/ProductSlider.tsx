@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './ProductSlider.scss';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
@@ -9,16 +9,32 @@ import cn from 'classnames';
 type Props = {
   title: string;
   products: Phone[],
-  handleCounter: (way: Way) => void;
-  counter: number;
 }
 
 export const ProductSlider: React.FC<Props> = ({
   title,
   products,
-  handleCounter,
-  counter,
 }) => {
+  const [visibleProducts, setVisibleProducts] = useState<Phone[]>([]);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setVisibleProducts([...products].splice(counter, 4))
+  }, [counter, products])
+
+  const handleCounter = useCallback((way: Way) => {
+    if(way === Way.Prev) {
+      if (counter >= 1) {
+        setCounter(counter - 1);
+      }
+    }
+
+    if (way === Way.Next){
+      if (counter <= 3) {
+        setCounter(counter + 1);
+      }
+    }
+  }, [counter])
 
   return (
     <div className="slider">
@@ -37,25 +53,37 @@ export const ProductSlider: React.FC<Props> = ({
             )}
             onClick={() => handleCounter(Way.Prev)}
           >
-            <div className="slider__icon slider__icon--left"></div>
+            <div className={cn(
+              "slider__icon",
+              "slider__icon--left",
+              {
+                "slider__icon--left--disabled": counter === 0,
+              }
+            )}></div>
           </div>
           
           <div
             className={cn(
               "slider__icon-container",
               {
-                "slider__icon-container--disabled": counter === 3,
+                "slider__icon-container--disabled": counter === 4,
               }
             )}
             onClick={() => handleCounter(Way.Next)}
           >
-            <div className="slider__icon slider__icon--right"></div>
+            <div className={cn(
+              "slider__icon",
+              "slider__icon--right",
+              {
+                "slider__icon--right--disabled": counter === 4,
+              }
+            )}></div>
           </div>
         </div>
       </div>
 
       <ProductList
-        products={products}
+        products={visibleProducts}
         forSlider={true}
       />
     </div>

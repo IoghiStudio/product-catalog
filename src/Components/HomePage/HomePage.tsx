@@ -11,18 +11,17 @@ import './HomePage.scss';
 import cn from 'classnames';
 import { ProductSlider } from '../ProductSlider';
 import { Way } from '../../types/way';
+import { Phone } from '../../types/phone';
 
 
 export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
-  const [loadRight, setLoadRight] = useState(false);
-  
-  const [phones, setPhones] = useState([]);
-  const [newPhones, setNewPhones] = useState([]);
-  const [visibleNewPhones, setVisibleNewPhones] = useState([]);
-  const [sliderCounter, setSliderCounter] = useState(0);
+  const [loadRight, setLoadRight] = useState(false);  
+  const [phones, setPhones] = useState<Phone[]>([]);
+  const [newPhones, setNewPhones] = useState<Phone[]>([]);
+
   
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
@@ -61,37 +60,14 @@ export const HomePage = () => {
     []
   );
 
-  const handleCounter = useCallback((way: Way) => {
-    if (way === Way.Next) {
-      if (sliderCounter <= 2) {
-        setSliderCounter(sliderCounter + 1);
-      }
-    } else if (way === Way.Prev) {
-      if (sliderCounter >= 1) {
-        setSliderCounter(sliderCounter - 1);
-      }
-    }
-  }, [sliderCounter]);
-
-
-  // const handleNewPhones = (way: Way, index: number) => {
-  //   const visible = [...newPhones].splice(index, 4);
-
-  //   setVisibleNewPhones(visible);
-  // }
-
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
-      .then(phones => {
-        setPhones(phones);
-
+      .then(data => {
+        setPhones(data);
         //we add just 8 new phones
-        const news = phones.slice(-8);
+        const news = data.slice(-8);
         setNewPhones(news);
-
-        //based on new phones we can play the visible phones showing just 4 of them
-        setVisibleNewPhones(news.slice(0, 4))
       })
   }, [])
 
@@ -163,9 +139,7 @@ export const HomePage = () => {
 
       <ProductSlider
         title='Brand new models'
-        products={visibleNewPhones}
-        handleCounter={handleCounter}
-        counter={sliderCounter}
+        products={newPhones}
       />
 
       <div className="home__categories">

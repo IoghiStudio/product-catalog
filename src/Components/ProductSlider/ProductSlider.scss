@@ -52,10 +52,18 @@
 
     &--left {
       background-image: url(../../icons/Arrows/left-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/left.svg);
+      }
     }
 
     &--right {
       background-image: url(../../icons/Arrows/right-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/right.svg);
+      }
     }
   }
 }
