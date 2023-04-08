@@ -1,10 +1,11 @@
 .productlist {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  // flex-wrap: wrap;
+  justify-content: left;
   gap: 16px;
 
   &__item {
+    min-width: 229px;
     width: 229px;
     max-width: 288px;
     flex-grow: 1;
