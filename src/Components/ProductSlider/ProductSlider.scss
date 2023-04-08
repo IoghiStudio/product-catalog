@@ -1,0 +1,58 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.slider {
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 128%;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__icon {
+    &-container {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        background-color: $surface-2;
+      }
+    }
+
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--left {
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+
+    &--right {
+      background-image: url(../../icons/Arrows/right-white.svg);
+    }
+  }
+}

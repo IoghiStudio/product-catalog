@@ -1,14 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Link } from 'react-router-dom'
 import { ReactRoutes } from '../../types/reactRoutes';
-
 import {
   useCallback,
   useEffect,
   useState, 
 } from 'react';
+
 import './HomePage.scss';
 import cn from 'classnames';
+import { ProductSlider } from '../ProductSlider';
 
 enum Way {
   Prev = 'prev',
@@ -132,11 +133,10 @@ export const HomePage = () => {
         ))}
       </div>
 
-      <div className="home__news">
-        <h2 className="home__news-title">
-          Brand new models
-        </h2>
-      </div>
+      <ProductSlider
+        title='Brand new models'
+        products={phones.slice(-4)}
+      />
 
       <div className="home__categories">
         <h2 className="home__categories-title">

@@ -139,14 +139,19 @@
   &__categories {
 
     &-title {
-      margin: 0 0 24px;
+      margin: 57px 0 24px;
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;
 
       @include onTablet {
+        margin-top: 64px;
         font-size: 32px;
         line-height: 128%;
+      }
+
+      @include onDesktop {
+        margin-top: 80px;
       }
     }
 
@@ -214,21 +219,6 @@
 
       @include onTablet {
         margin-bottom: 64px;
-      }
-    }
-  }
-
-  &__news {
-
-    &-title {
-      margin: 0 0 24px;
-      font-weight: 800;
-      font-size: 22px;
-      line-height: 140%;
-
-      @include onTablet {
-        font-size: 32px;
-        line-height: 128%;
       }
     }
   }
