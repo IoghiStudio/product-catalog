@@ -61,7 +61,7 @@ export const HomePage = () => {
   );
 
   useEffect(() => {
-    fetch('./product-catalog/phones.json')
+    fetch('./phones.json')
       .then(resp => resp.json())
       .then(phones => {
         setPhones(phones);
@@ -70,15 +70,15 @@ export const HomePage = () => {
 
   let timeout: string | number | NodeJS.Timeout | undefined;
 
-  // useEffect(() => {
-  //   timeout = setTimeout(() => {
-  //     handleBannerChange(Way.Next, bannerIndex);
-  //   }, 3000);
+  useEffect(() => {
+    timeout = setTimeout(() => {
+      handleBannerChange(Way.Next, bannerIndex);
+    }, 3000);
     
-  //   return () => {
-  //     clearTimeout(timeout)
-  //   }
-  // }, [bannerIndex])
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [bannerIndex])
   
   return (
     <div className='home'>
