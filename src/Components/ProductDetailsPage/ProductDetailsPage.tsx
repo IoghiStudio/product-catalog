@@ -158,18 +158,18 @@ export const ProductDetailsPage = () => {
             <div className="details__divider"></div>
 
             <div className="details__capacities">
-              <h3 className="details__capacities--title">
+              <h3 className="details__capacities-title">
                 Select capacity
               </h3>
 
-              <div className="details__capacities--previews">
+              <div className="details__capacities-previews">
                 {capacityAvailable.map(capacity => {
                   return (
                     <div
                       className={cn(
-                        "details__capacities-capacity",
+                        "details__capacity",
                         {
-                          "details__capacities-capacity--active": capacity === currentCapacity
+                          "details__capacity--active": capacity === currentCapacity
                         }
                       )}
                       onClick={() => {

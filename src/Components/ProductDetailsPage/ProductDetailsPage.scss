@@ -220,7 +220,7 @@
     flex-direction: column;
     gap: 8px;
 
-    &--title {
+    &-title {
       margin: 0;
       font-weight: 700;
       font-size: 12px;
@@ -228,33 +228,33 @@
       color: $secondary;
     }
 
-    &--previews {
+    &-previews {
       display: flex;
       gap: 8px;
     }
+  }
 
-    &-capacity {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 7px 8px 4px;
-      height: 32px;
-      margin-bottom: 24px;
-      border: 1px solid $icons;
+  &__capacity {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 8px 4px;
+    height: 32px;
+    margin-bottom: 24px;
+    border: 1px solid $icons;
 
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
-      cursor: pointer;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
 
 
-      &--active {
-        color: $black;
-        background-color: $white;
-        border: 0;
-      }
+    &--active {
+      color: $black;
+      background-color: $white;
+      border: 0;
     }
   }
 
