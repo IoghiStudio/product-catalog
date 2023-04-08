@@ -4,6 +4,7 @@ import { ProductList } from '../ProductList';
 import './PhonesPage.scss';
 import '../../styles/grid.scss';
 import { Link } from 'react-router-dom';
+import { ReactRoutes } from '../../types/reactRoutes';
 
 enum FilterBy {
   All = 'all',
@@ -18,22 +19,6 @@ export const PhonesPage = () => {
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
 
-  const filterProducts = useCallback((filter: FilterBy | string, products: Phone[]) => {
-    switch(filter) {
-      case FilterBy.Alph:
-        return [...products].sort((a, b) => a.name.localeCompare(b.name));
-
-      case FilterBy.Newest:
-        return [...products].sort((a, b) => b.year - a.year);
-
-      case FilterBy.Cheapest:
-        return [...products].sort((a, b) => a.price - b.price);
-
-      default:
-        return [...products];
-    }
-  } , [])
-
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
@@ -41,17 +26,33 @@ export const PhonesPage = () => {
   }, [])
 
   useEffect(() => {
-    const sortedPhones = filterProducts(filterBy, phones);
+    const filterProducts = () => {
+      switch(filterBy) {
+        case FilterBy.Alph:
+          return [...phones].sort((a, b) => a.name.localeCompare(b.name));
+  
+        case FilterBy.Newest:
+          return [...phones].sort((a, b) => b.year - a.year);
+  
+        case FilterBy.Cheapest:
+          return [...phones].sort((a, b) => a.price - b.price);
+  
+        default:
+          return [...phones];
+      }
+    }
+
+    const sortedPhones = filterProducts();
 
     setViziblePhones(sortedPhones);
-  }, [phones, filterBy, filterProducts]);
+  }, [phones, filterBy]);
 
   return (
     <div className='phones'>
       <div className="phones__paths">
         <Link
           className='phones__path-home'
-          to='/home'
+          to={ReactRoutes.Home}
         ></Link>
 
         <div
@@ -60,7 +61,7 @@ export const PhonesPage = () => {
 
         <Link
           className='phones__path-phones'
-          to='/phones'
+          to={ReactRoutes.Phones}
         >
           Phones
         </Link>

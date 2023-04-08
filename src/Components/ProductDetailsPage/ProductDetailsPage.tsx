@@ -7,6 +7,7 @@ import cn from 'classnames';
 import { Button } from '../Button';
 import { HeartIcon } from '../HeartIcon';
 import { Sizes } from '../../types/sizes';
+import { ReactRoutes } from '../../types/reactRoutes';
 
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
@@ -15,8 +16,8 @@ export const ProductDetailsPage = () => {
   const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
-  const { phoneId } = useParams();
   const [imageLoading, setImageLoading] = useState(false);
+  const { phoneId } = useParams();
 
   // const [phonePath, setPhonePath] = useState([]);
   // const match = useMatch('/phones/:phoneId');
@@ -57,7 +58,7 @@ export const ProductDetailsPage = () => {
         <div className="details__paths">
           <Link
             className='details__path-home'
-            to='/home'
+            to={ReactRoutes.Home}
           ></Link>
 
           <div
@@ -66,7 +67,7 @@ export const ProductDetailsPage = () => {
 
           <Link
             className='details__path-phones'
-            to='/phones'
+            to={ReactRoutes.Phones}
           >
             Phones
           </Link>
@@ -81,7 +82,7 @@ export const ProductDetailsPage = () => {
         </div>
 
         <Link
-          to='/phones'
+          to={ReactRoutes.Phones}
           className="details__back"
         >
           <div
