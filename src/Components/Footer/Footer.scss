@@ -2,18 +2,22 @@
 @import '../../styles/mixins';
 
 .footer {
-  display: flex;
-  flex-direction: column;
+  border-top: 1px solid $elements;
   box-sizing: border-box;
-  padding: 34px 16px;
-  max-width: 1200px;
-  margin: 0 auto;
+  
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+    max-width: 1200px;
 
-  @include onTablet {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 34px 32px;
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 32px;
+    }
   }
 
   &__logo {
