@@ -33,7 +33,6 @@
   }
 
   &__title {
-    font-family: 'Mont';
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
@@ -43,7 +42,6 @@
   &__prices {
     display: flex;
     gap: 8px;
-    font-family: 'Mont';
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
@@ -74,7 +72,6 @@
   &__specs {
     display: flex;
     justify-content: space-between;
-    font-family: 'Mont';
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
