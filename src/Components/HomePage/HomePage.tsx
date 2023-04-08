@@ -50,11 +50,11 @@ export const HomePage = () => {
         setLoadLeft(false);
 
         setBannerIndex(indexToLoad);
-      }, 500)
+      }, 400)
 
       setTimeout(() => {
         setBannerLoading(false);
-      }, 550)
+      }, 500)
     },
     []
   );
