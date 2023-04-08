@@ -10,20 +10,19 @@ import {
 import './HomePage.scss';
 import cn from 'classnames';
 import { ProductSlider } from '../ProductSlider';
+import { Way } from '../../types/way';
 
-enum Way {
-  Prev = 'prev',
-  Next = 'next'
-}
 
 export const HomePage = () => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
-  const [loadRight, setLoadRight] = useState(false); 
+  const [loadRight, setLoadRight] = useState(false);
+  
   const [phones, setPhones] = useState([]);
   const [newPhones, setNewPhones] = useState([]);
   const [visibleNewPhones, setVisibleNewPhones] = useState([]);
+  const [sliderCounter, setSliderCounter] = useState(0);
   
   const handleBannerChange = useCallback(
     (way: Way, index: number) => {
@@ -62,6 +61,25 @@ export const HomePage = () => {
     []
   );
 
+  const handleCounter = useCallback((way: Way) => {
+    if (way === Way.Next) {
+      if (sliderCounter <= 2) {
+        setSliderCounter(sliderCounter + 1);
+      }
+    } else if (way === Way.Prev) {
+      if (sliderCounter >= 1) {
+        setSliderCounter(sliderCounter - 1);
+      }
+    }
+  }, [sliderCounter]);
+
+
+  // const handleNewPhones = (way: Way, index: number) => {
+  //   const visible = [...newPhones].splice(index, 4);
+
+  //   setVisibleNewPhones(visible);
+  // }
+
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
@@ -77,7 +95,7 @@ export const HomePage = () => {
       })
   }, [])
 
-  let timeout: string | number | NodeJS.Timeout | undefined;
+  let timeout: NodeJS.Timeout;
 
   useEffect(() => {
     timeout = setTimeout(() => {
@@ -146,6 +164,8 @@ export const HomePage = () => {
       <ProductSlider
         title='Brand new models'
         products={visibleNewPhones}
+        handleCounter={handleCounter}
+        counter={sliderCounter}
       />
 
       <div className="home__categories">

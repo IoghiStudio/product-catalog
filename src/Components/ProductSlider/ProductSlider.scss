@@ -27,6 +27,7 @@
 
   &__icon {
     &-container {
+      box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,6 +36,12 @@
       height: 32px;
       cursor: pointer;
       background-color: $surface-2;
+
+      &--disabled {
+        border: 1px solid $elements;
+        cursor: default;
+        background-color: $black;
+      }
     }
 
     width: 16px;
