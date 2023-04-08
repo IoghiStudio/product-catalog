@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.04987eb7.css",
-    "main.js": "/product-catalog/static/js/main.03c91d98.js",
+    "main.css": "/product-catalog/static/css/main.e5c985df.css",
+    "main.js": "/product-catalog/static/js/main.1b7e7d4d.js",
     "static/media/category-tablets.png": "/product-catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
     "static/media/category-phones.png": "/product-catalog/static/media/category-phones.af93d992917380dfe206.png",
-    "static/media/03.png": "/product-catalog/static/media/03.a0924fb8e0797a8116ba.png",
+    "static/media/04.png": "/product-catalog/static/media/04.a0924fb8e0797a8116ba.png",
     "static/media/00.png": "/product-catalog/static/media/00.1ad3232b774da10771b2.png",
     "static/media/02.png": "/product-catalog/static/media/02.7ecfcb91f1bd2a8bd78e.png",
     "static/media/banner-phones.png": "/product-catalog/static/media/banner-phones.b4eeda8bd82b712057a2.png",
     "static/media/01.png": "/product-catalog/static/media/01.b8cf74db05e4f05d00be.png",
     "static/media/category-accessories.png": "/product-catalog/static/media/category-accessories.e47d6d6df68a6548e82b.png",
     "static/media/nicegadgets-logo.svg": "/product-catalog/static/media/nicegadgets-logo.6f9215944abd73ff7f28.svg",
+    "static/media/03.png": "/product-catalog/static/media/03.9717f589089ca1453488.png",
     "static/media/banner-tablets.png": "/product-catalog/static/media/banner-tablets.a962057c1043a08f7737.png",
     "static/media/Mont-Regular.otf": "/product-catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product-catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -34,11 +35,11 @@
     "static/media/right.svg": "/product-catalog/static/media/right.c9171b88f2b5c91378fd.svg",
     "static/media/right-white.svg": "/product-catalog/static/media/right-white.4ef94d7c3aa057b04885.svg",
     "static/media/up-white.svg": "/product-catalog/static/media/up-white.4a750d9ba7eef45d57ab.svg",
-    "main.04987eb7.css.map": "/product-catalog/static/css/main.04987eb7.css.map",
-    "main.03c91d98.js.map": "/product-catalog/static/js/main.03c91d98.js.map"
+    "main.e5c985df.css.map": "/product-catalog/static/css/main.e5c985df.css.map",
+    "main.1b7e7d4d.js.map": "/product-catalog/static/js/main.1b7e7d4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.04987eb7.css",
-    "static/js/main.03c91d98.js"
+    "static/css/main.e5c985df.css",
+    "static/js/main.1b7e7d4d.js"
   ]
 }

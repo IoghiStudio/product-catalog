@@ -4,15 +4,16 @@
 "name": "Apple iPhone 14 Pro 1TB Purple",
 "capacityAvailable": ["128GB", "256GB", "512GB", "1TB"],
 "capacity": "1TB",
-"priceRegular": 1199,
-"priceDiscount": 999,
+"priceRegular": 1379,
+"priceDiscount": 1219,
 "colorsAvailable": ["silver", "purple", "gold"],
 "color": "purple",
 "images": [
   "img/phones/apple-iphone-14-pro/purple/00.png",
   "img/phones/apple-iphone-14-pro/purple/01.png",
   "img/phones/apple-iphone-14-pro/purple/02.png",
-  "img/phones/apple-iphone-14-pro/purple/03.png"
+  "img/phones/apple-iphone-14-pro/purple/03.png",
+  "img/phones/apple-iphone-14-pro/purple/04.png"
 ],
 "description": [
   {

@@ -4,15 +4,16 @@
 "name": "Apple iPhone 14 Pro 512GB Gold",
 "capacityAvailable": ["128GB", "256GB", "512GB", "1TB"],
 "capacity": "512GB",
-"priceRegular": 1199,
-"priceDiscount": 999,
+"priceRegular": 1299,
+"priceDiscount": 1199,
 "colorsAvailable": ["silver", "purple", "gold"],
 "color": "gold",
 "images": [
   "img/phones/apple-iphone-14-pro/gold/00.png",
   "img/phones/apple-iphone-14-pro/gold/01.png",
   "img/phones/apple-iphone-14-pro/gold/02.png",
-  "img/phones/apple-iphone-14-pro/gold/03.png"
+  "img/phones/apple-iphone-14-pro/gold/03.png",
+  "img/phones/apple-iphone-14-pro/gold/04.png"
 ],
 "description": [
   {
