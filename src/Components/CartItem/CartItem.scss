@@ -1,0 +1,84 @@
+@import '../../styles/vars.scss';
+@import '../../styles/_mixins.scss';
+
+.cartitem {
+  height: 160px;
+  background: $surface-1;
+  max-width: 752px;
+
+  @include onTablet {
+    height: 128px;
+  }
+
+  &__icons {
+    display: flex;
+  }
+
+  &__count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &__icon {
+    &-container {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background-color: $surface-2;
+
+      &--disabled {
+        border: 1px solid $elements;
+        cursor: default;
+        background-color: $black;
+      }
+    }
+
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--minus {
+      background-image: url(../../icons/minus-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/minus-white.svg);
+      }
+    }
+
+    &--plus {
+      background-image: url(../../icons/plus-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/plus-white.svg);
+      }
+    }
+
+    &--left {
+      background-image: url(../../icons/Arrows/left-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/left.svg);
+      }
+    }
+
+    &--right {
+      background-image: url(../../icons/Arrows/right-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/right.svg);
+      }
+    }
+  }
+}

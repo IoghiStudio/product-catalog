@@ -1,0 +1,58 @@
+@import '../../styles/vars.scss';
+@import '../../styles/_mixins.scss';
+
+.cart {
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &--left-arrow {
+      background-image: url(../../icons/Arrows/left-white.svg);
+
+      &--hover {
+        background-image: url(../../icons/Arrows/left-accent.svg);
+      }
+    }
+
+    &--right-arrow {
+      background-image: url(../../icons/Arrows/right.svg);
+    }
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $white;
+    margin: 25px 0 24px;
+    gap: 6px;
+
+    @include onTablet {
+      margin: 40px 0 16px;
+    }
+    
+    &-text {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+
+      &--hover {
+        color: $accent;
+      }
+    }
+  }
+}
