@@ -10,7 +10,7 @@ const footerLinks = [
   },
   {
     id: 2,
-    url: '/',
+    url: 'https://ioghistudio.github.io/portfolio-website/#/contact',
     name: 'Contacts'
   },
   {
@@ -38,6 +38,8 @@ export const Footer = () => {
               <a
                 href={url}
                 className='footer__link'
+                target='_blank'
+                rel='noreferrer'
               >
                 {name}
               </a>

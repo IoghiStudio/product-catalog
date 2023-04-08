@@ -8,9 +8,12 @@ import { Button } from '../Button';
 import { HeartIcon } from '../HeartIcon';
 import { Sizes } from '../../types/sizes';
 import { ReactRoutes } from '../../types/reactRoutes';
+import { ProductSlider } from '../ProductSlider';
+import { Phone } from '../../types/phone';
 
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
+  const [phonesForSlider, setPhonesForSlider] = useState<Phone[]>([]);
   const [colorsAvailable, setColorsAvailable] = useState<string[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [capacityAvailable, setCapacityAvailable] = useState<string[]>([]);
@@ -19,19 +22,24 @@ export const ProductDetailsPage = () => {
   const [imageLoading, setImageLoading] = useState(false);
   const { phoneId } = useParams();
 
-  // const [phonePath, setPhonePath] = useState([]);
-  // const match = useMatch('/phones/:phoneId');
 
   useEffect(() => {
-    fetch(`./product-catalog/phones/${phoneId}.json`)
+    fetch(`./phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
-      setPhone(data)
-      setColorsAvailable(data.colorsAvailable)
+      setPhone(data);
+      setColorsAvailable(data.colorsAvailable);
       setImages(data.images);
-      setCurrentImage(data.images[0])
-      setCapacityAvailable(data.capacityAvailable)
-      setCurrentCapacity(data.capacity)
+      setCurrentImage(data.images[0]);
+      setCapacityAvailable(data.capacityAvailable);
+      setCurrentCapacity(data.capacity);
+    })
+
+    fetch(`./phones.json`)
+    .then(resp => resp.json())
+    .then(data => {
+      //random phones for slider
+      setPhonesForSlider(data.slice(20, 29))
     })
       
   }, [phoneId])
@@ -298,6 +306,13 @@ export const ProductDetailsPage = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="details__slider">
+          <ProductSlider
+            title='You may also like'
+            products={phonesForSlider}
+          />
         </div>
       </div>
     )

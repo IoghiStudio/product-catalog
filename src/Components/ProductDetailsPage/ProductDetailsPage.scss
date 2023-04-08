@@ -322,6 +322,7 @@
 
     @include onDesktop {
       flex-direction: row;
+      margin-bottom: 80px;
     }
   }
 
@@ -365,6 +366,18 @@
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
     }
   }
 }
