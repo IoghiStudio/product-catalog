@@ -6,20 +6,8 @@ import '../../styles/grid.scss';
 import { Link } from 'react-router-dom';
 import { ReactRoutes } from '../../types/reactRoutes';
 import { Loader } from '../Loader';
-
-enum FilterBy {
-  All = 'all',
-  Alph = 'alph',
-  Newest = 'newest',
-  Cheapest = 'cheapest'
-}
-
-enum PerPage {
-  Four = 4,
-  Eight = 8,
-  Sixteen = 16,
-  All = 300
-}
+import { FilterBy } from '../../types/filterBy';
+import { PerPage } from '../../types/perPage';
 
 
 export const PhonesPage = () => {
@@ -69,7 +57,7 @@ export const PhonesPage = () => {
         ></div>
 
         <Link
-          className='phones__path-phones'
+          className='phones__path-main'
           to={ReactRoutes.Phones}
         >
           Phones

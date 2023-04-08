@@ -32,7 +32,7 @@
     background-image: url(../../icons/home.svg);
   }
 
-  &__path-phones {
+  &__path-main {
     text-decoration: none;
     color: $secondary;
     font-weight: 700;
@@ -41,7 +41,6 @@
   }
 
   &__title {
-    font-family: 'Mont';
     font-weight: 800;
     font-size: 32px;
     line-height: 41px;
