@@ -82,12 +82,8 @@
         transform: translateX(-120%);
       }
 
-      &:hover {
-        // transform: scale(1.05);
-      }
-
       @include onTablet {
-        padding-top: 34%;
+        padding-top: 30%;
         width: 90%;
       }
 
