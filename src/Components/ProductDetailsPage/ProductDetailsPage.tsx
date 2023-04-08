@@ -10,6 +10,7 @@ import { Sizes } from '../../types/sizes';
 import { ReactRoutes } from '../../types/reactRoutes';
 import { ProductSlider } from '../ProductSlider';
 import { Phone } from '../../types/phone';
+import { Loader } from '../Loader';
 
 export const ProductDetailsPage = () => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
@@ -338,7 +339,7 @@ export const ProductDetailsPage = () => {
     )
   } else {
     return (
-      <NotFoundPage />
+      <Loader/>
     )
   }
 }

@@ -5,6 +5,7 @@ import './PhonesPage.scss';
 import '../../styles/grid.scss';
 import { Link } from 'react-router-dom';
 import { ReactRoutes } from '../../types/reactRoutes';
+import { Loader } from '../Loader';
 
 enum FilterBy {
   All = 'all',
@@ -169,10 +170,14 @@ export const PhonesPage = () => {
         </div>
       </div>
 
-      <ProductList
-        products={visiblePhones}
-        forSlider={false}
-      />
+      {phones.length > 0 ? (
+        <ProductList
+          products={visiblePhones}
+          forSlider={false}
+        />
+      ) : (
+        <Loader/>
+      )}
     </div>
   )
 }
