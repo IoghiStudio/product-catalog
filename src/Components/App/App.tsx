@@ -67,7 +67,7 @@ export const App = () => {
           />
 
           <Route
-            path={ReactRoutes.Favorites}
+            path={ReactRoutes.Cart}
             element={
               <CartPage />
             }

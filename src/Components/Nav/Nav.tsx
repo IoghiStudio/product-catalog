@@ -3,26 +3,27 @@ import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import './Nav.scss';
 import { UtilityIcon } from '../UtilityIcon';
+import { ReactRoutes } from '../../types/reactRoutes';
 
 const paths = [
   {
     id: 1,
-    url: '/',
+    url: ReactRoutes.Home,
     name: 'Home',
   },
   {
     id: 2,
-    url: '/phones',
+    url: ReactRoutes.Phones,
     name: 'Phones',
   },
   {
     id: 3,
-    url: '/tablets',
+    url: ReactRoutes.Tablets,
     name: 'Tablets',
   },
   {
     id: 4,
-    url: '/accessories',
+    url: ReactRoutes.Accessories,
     name: 'Accessories',
   },
 ]
@@ -55,12 +56,12 @@ export const Nav = React.memo(
   
         <div className="nav__icons">
           <UtilityIcon
-            url='/favorites'
+            url={ReactRoutes.Favorites}
             modifier='fav'
           />
   
           <UtilityIcon
-            url='/cart'
+            url={ReactRoutes.Cart}
             modifier='cart'
           />
         </div>

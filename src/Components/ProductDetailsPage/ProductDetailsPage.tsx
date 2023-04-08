@@ -26,7 +26,7 @@ export const ProductDetailsPage = () => {
 
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
     .then(resp => resp.json())
     .then(data => {
       setPhone(data);
@@ -37,7 +37,7 @@ export const ProductDetailsPage = () => {
       setCurrentCapacity(data.capacity);
     })
 
-    fetch(`./phones.json`)
+    fetch(`./product-catalog/phones.json`)
     .then(resp => resp.json())
     .then(data => {
       //random phones for slider while server is not implemented
