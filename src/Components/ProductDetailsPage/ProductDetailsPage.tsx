@@ -351,6 +351,8 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
           <ProductSlider
             title='You may also like'
             products={phonesForSlider}
+            cartItems={cartItems}
+            onAdd={onAdd}
           />
         </div>
       </div>

@@ -7,12 +7,20 @@ import cn from 'classnames';
 type Props = {
   products: Phone[];
   forSlider: boolean;
+  cartItems: Phone[];
+  onAdd: (phoneId: string) => void;
 }
 
 export const ProductList: React.FC<Props> = ({
   products,
-  forSlider
+  forSlider,
+  cartItems,
+  onAdd
 }) => {
+  const checkIfAlreadyInCart = (phoneId: string) => {
+    return cartItems.some(item => item.phoneId === phoneId);
+  }
+
   return (
     <div 
       className={cn(
@@ -29,6 +37,8 @@ export const ProductList: React.FC<Props> = ({
           >
             <ProductCard
               product={product}
+              alreadyInCart={checkIfAlreadyInCart(product.phoneId)}
+              onAdd={onAdd}
             />
           </div>
         ))}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../Button';
 import { HeartIcon } from '../HeartIcon';
 import './ProductCard.scss';
@@ -8,10 +8,14 @@ import { Phone } from '../../types/phone';
 
 type Props = {
   product: Phone;
+  alreadyInCart: boolean;
+  onAdd: (phoneId: string) => void;
 }
 
 export const ProductCard: React.FC<Props> = ({
-  product
+  product,
+  alreadyInCart,
+  onAdd
 }) => {
   const {
     phoneId,
@@ -23,6 +27,7 @@ export const ProductCard: React.FC<Props> = ({
     capacity,
     ram,
   } = product;
+
   return (
     <div className="productcard">
       <Link
@@ -68,11 +73,18 @@ export const ProductCard: React.FC<Props> = ({
       </div>
 
       <div className="productcard__buttons">
-        <div className="productcard__buttons--button">
+        <div
+          className="productcard__buttons--button"
+          onClick={() => {
+            if (!alreadyInCart) {
+              onAdd(phoneId)
+            }
+          }}
+        >
           <Button
-            text={"Add to cart"}
+            text={!alreadyInCart ? "Add to cart" : "Added to cart"}
             size={Sizes.M}
-            selected={false}
+            selected={alreadyInCart}
           />
         </div>
         <HeartIcon

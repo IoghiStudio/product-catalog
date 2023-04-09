@@ -145,10 +145,11 @@ export const AccessoriesPage = () => {
       </div>
 
       {accessories.length > 0 ? (
-        <ProductList
-          products={visibleAccessoriess}
-          forSlider={false}
-        />
+        // <ProductList
+        //   products={visibleAccessoriess}
+        //   forSlider={false}
+        // />
+        <>Products</>
       ) : (
         <Loader/>
       )}

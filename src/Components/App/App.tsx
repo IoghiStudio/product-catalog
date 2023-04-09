@@ -18,12 +18,7 @@ export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
 
   useEffect(() => {
-    fetch('./product-catalog/phones.json')
-      .then(response => response.json())
-      .then(data => {
-        setCartItems(data.slice(77, 80))
-        console.log(data);
-      });
+    
   }, [])
 
   const removeFromCart = (phoneId: string) => {
@@ -51,7 +46,7 @@ export const App = () => {
       <main className='app__main'>
         <Routes>
           <Route
-            element={<HomePage />}
+            element={<HomePage cartItems={cartItems} onAdd={addToCart}/>}
             path={ReactRoutes.Home}
           />
 
@@ -63,7 +58,15 @@ export const App = () => {
           />
 
           <Route path={ReactRoutes.Phones}>
-            <Route index element={<PhonesPage />}/>
+            <Route
+              index
+              element={
+                <PhonesPage 
+                  cartItems={cartItems} 
+                  onAdd={addToCart}
+                /> 
+              }
+            />
 
             <Route
               path=":phoneId"

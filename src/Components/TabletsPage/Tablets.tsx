@@ -145,10 +145,11 @@ export const TabletsPage = () => {
       </div>
 
       {tablets.length > 0 ? (
-        <ProductList
-          products={visibleTablets}
-          forSlider={false}
-        />
+        // <ProductList
+        //   products={visibleTablets}
+        //   forSlider={false}
+        // />
+          <>Products</>
       ) : (
         <Loader/>
       )}

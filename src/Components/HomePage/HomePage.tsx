@@ -14,7 +14,12 @@ import { Way } from '../../types/way';
 import { Phone } from '../../types/phone';
 
 
-export const HomePage = () => {
+type Props = {
+  cartItems: Phone[];
+  onAdd: (phoneId: string) => void;
+}
+
+export const HomePage: React.FC<Props> = ({ cartItems, onAdd }) => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
@@ -146,6 +151,8 @@ export const HomePage = () => {
         <ProductSlider
           title='Brand new models'
           products={newPhones}
+          cartItems={cartItems}
+          onAdd={onAdd}
         />
       </div>
 
@@ -207,6 +214,8 @@ export const HomePage = () => {
         <ProductSlider
           title='Hot prices'
           products={hotPricesPhones}
+          cartItems={cartItems}
+          onAdd={onAdd}
         />
       </div>
     </div>

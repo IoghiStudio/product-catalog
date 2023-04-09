@@ -9,8 +9,13 @@ import { Loader } from '../Loader';
 import { FilterBy } from '../../types/filterBy';
 import { PerPage } from '../../types/perPage';
 
+type Props = {
+  cartItems: Phone[];
+  onAdd: (phoneId: string) => void;
+}
 
-export const PhonesPage = () => {
+
+export const PhonesPage: React.FC<Props> = ({ cartItems, onAdd}) => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
@@ -162,6 +167,8 @@ export const PhonesPage = () => {
         <ProductList
           products={visiblePhones}
           forSlider={false}
+          cartItems={cartItems}
+          onAdd={onAdd}
         />
       ) : (
         <Loader/>
