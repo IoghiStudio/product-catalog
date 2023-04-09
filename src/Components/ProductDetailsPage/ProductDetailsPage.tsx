@@ -41,23 +41,23 @@ export const ProductDetailsPage: React.FC<Props> = ({
   const [alreadyInFavorites, setAlreadyInFavorites] = useState(false);
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
-    .then(resp => resp.json())
-    .then(data => {
-      setPhone(data);
-      setColorsAvailable(data.colorsAvailable);
-      setImages(data.images);
-      setCurrentImage(data.images[0]);
-      setCapacityAvailable(data.capacityAvailable);
-      setCurrentCapacity(data.capacity);
-    })
+    fetch(`./product-catalog/phones/${phoneId}.json`)
+      .then(resp => resp.json())
+      .then(data => {
+        setPhone(data);
+        setColorsAvailable(data.colorsAvailable);
+        setImages(data.images);
+        setCurrentImage(data.images[0]);
+        setCapacityAvailable(data.capacityAvailable);
+        setCurrentCapacity(data.capacity);
+      })
 
-    fetch(`./phones.json`)
-    .then(resp => resp.json())
-    .then(data => {
-      //random phones for slider while server is not implemented
-      setPhonesForSlider(data.slice(20, 29))
-    })
+    fetch(`./product-catalog/phones.json`)
+      .then(resp => resp.json())
+      .then(data => {
+        //random phones for slider while server is not implemented
+        setPhonesForSlider(data.slice(20, 29))
+      })
       
   }, [phoneId])
 

@@ -76,7 +76,7 @@ export const HomePage: React.FC<Props> = ({
   );
 
   useEffect(() => {
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(phonesData => {
         setPhones(phonesData);
