@@ -24,7 +24,6 @@ export const ProductDetailsPage = () => {
   const { phoneId } = useParams();
   const [backButtonHover, setBackButtonHover] = useState(false);
 
-
   useEffect(() => {
     fetch(`./product-catalog/phones/${phoneId}.json`)
     .then(resp => resp.json())
@@ -46,7 +45,6 @@ export const ProductDetailsPage = () => {
       
   }, [phoneId])
 
-
   const handleImageChange = (image: string) => {
     if (image === currentImage) {
       return;
@@ -59,8 +57,6 @@ export const ProductDetailsPage = () => {
       setCurrentImage(image);
     }, 300)
   }
-
-  console.log(currentImage)
 
   if (phone) {
     return (
