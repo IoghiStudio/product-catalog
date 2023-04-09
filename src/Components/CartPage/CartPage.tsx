@@ -5,20 +5,26 @@ import { ReactRoutes } from '../../types/reactRoutes';
 import cn from 'classnames';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/phone';
-import { Loader } from '../Loader';
 import { CartList } from '../CartList';
-import { Button } from '../Button';
 import { Sizes } from '../../types/sizes';
+import { Button } from '../Button';
+import { Loader } from '../Loader';
 
 type Props = {
+  clearCart: () => void;
   products: Phone[];
   onRemove: (phoneId: string) => void;
 }
 
-export const CartPage: React.FC<Props> = ({ products, onRemove }) => {
+export const CartPage: React.FC<Props> = ({
+  products,
+  onRemove,
+  clearCart 
+}) => {
   const [backButtonHover, setBackButtonHover] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(products.length);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [checkoutActive, setCheckoutActive] = useState(false);
 
 
   useEffect(() => {
@@ -90,16 +96,59 @@ export const CartPage: React.FC<Props> = ({ products, onRemove }) => {
 
             <div className="cart__divider"></div>
 
-            <Button
-              text={'Checkout'}
-              size={Sizes.L}
-              selected={false}
-            />
+            <div
+              className="cart__checkout"
+              onClick={() => {
+                setCheckoutActive(true);
+              }}
+            >
+              <Button
+                text={'Checkout'}
+                size={Sizes.L}
+                selected={false}
+              />
+            </div>
+
+            {checkoutActive && (
+              <div className="cart__modal">
+                <div className="cart__modal-text">
+                  Checkout is not implemented yet. Do you wan't to clear the Cart?
+                </div>
+
+                <div className="cart__modal-buttons">
+                  <div
+                    className="cart__modal-confirm"
+                    onClick={clearCart}
+                  >
+                    <Button
+                      text='Confirm'
+                      size={Sizes.M}
+                      selected={true}
+                    />
+                  </div>
+
+                  <div
+                    className="cart__modal-cancel"
+                    onClick={() => {
+                      setCheckoutActive(false)
+                    }}
+                  >
+                    <Button
+                      text='Cancel'
+                      size={Sizes.M}
+                      selected={false}
+                    />
+                  </div>
+                </div>
+
+                <Loader />
+              </div>
+            )}
           </div>
         </div>
       ) : (
         <div className="cart__empty">
-          Cart is empty, you can add products by pressing add to cart button
+          Your cart is empty, you can add products by pressing add to cart button
         </div>
       )}
     </div>

@@ -34,7 +34,7 @@ type Props = {
 }
 
 export const Nav: React.FC<Props> = React.memo(
-  ({ cartCount, favCount }) => {
+  ({ cartCount, favCount}) => {
     return (
       <nav className='nav'>
         <ul className='nav__list'>

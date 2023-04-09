@@ -127,6 +127,44 @@
     }
   }
 
+  &__checkout {
+    width: 100%;
+  }
+
+  &__modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(65, 53, 78, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+
+    &-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: $red;
+    }
+
+    &-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-confirm {
+      width: 100px;
+    }
+    
+    &-cancel {
+      width: 100px;
+    }
+  }
+
   &__empty {
     
   }

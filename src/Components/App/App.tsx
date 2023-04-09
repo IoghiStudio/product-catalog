@@ -18,6 +18,10 @@ export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
   const [favoriteItems, setFavoriteItems] = useState<Phone[]>([]);
 
+  const clearCart = () => {
+    setCartItems([]);
+  }
+
   const removeFromCart = (phoneId: string) => {
     const items = cartItems.filter(item => item.phoneId !== phoneId);
     setCartItems(items);
@@ -144,6 +148,7 @@ export const App = () => {
             path={ReactRoutes.Cart}
             element={
               <CartPage
+                clearCart={clearCart}
                 products={cartItems}
                 onRemove={removeFromCart}
               />
