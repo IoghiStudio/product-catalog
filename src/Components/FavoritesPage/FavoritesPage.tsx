@@ -2,8 +2,20 @@ import React from 'react'
 import './FavoritesPage.scss';
 import { Link } from 'react-router-dom';
 import { ReactRoutes } from '../../types/reactRoutes';
+import { ProductList } from '../ProductList';
+import { Phone } from '../../types/phone';
 
-export const FavoritesPage = () => {
+type Props = {
+  cartItems: Phone[];
+  favoriteItems: Phone[];
+  onCartAdd: (phoneId: string) => void;
+}
+
+export const FavoritesPage: React.FC<Props> = ({
+  cartItems,
+  favoriteItems,
+  onCartAdd,
+}) => {
   return (
     <div className="favorites">
       <div className="favorites__paths">
@@ -29,9 +41,15 @@ export const FavoritesPage = () => {
       </h1>
 
       <div className="favorites__count">
-        {`${0} items`}
+        {`${favoriteItems.length} items`}
       </div>
 
+      <ProductList
+        products={favoriteItems}
+        cartItems={cartItems}
+        onCartAdd={onCartAdd}
+        forSlider={false}
+      />
     </div>
   )
 }

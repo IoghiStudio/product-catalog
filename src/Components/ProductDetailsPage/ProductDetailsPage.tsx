@@ -13,11 +13,20 @@ import { Phone } from '../../types/phone';
 import { Loader } from '../Loader';
 
 type Props = {
-  onAdd: (phoneId: string) => void;
   cartItems: Phone[];
+  favoriteItems: Phone[];
+  onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
-export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
+export const ProductDetailsPage: React.FC<Props> = ({
+  cartItems,
+  favoriteItems,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove,
+}) => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
   const [phonesForSlider, setPhonesForSlider] = useState<Phone[]>([]);
   const [colorsAvailable, setColorsAvailable] = useState<string[]>([]);
@@ -29,6 +38,7 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
   const [backButtonHover, setBackButtonHover] = useState(false);
   const { phoneId } = useParams();
   const [alreadyInCart, setAlreadyInCart] = useState(false);
+  const [alreadyInFavorites, setAlreadyInFavorites] = useState(false);
 
   useEffect(() => {
     fetch(`./product-catalog/phones/${phoneId}.json`)
@@ -58,6 +68,16 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
       setAlreadyInCart(true);
     }
   }, [cartItems, phoneId])
+
+  useEffect(() => {
+    const foundItem = favoriteItems.find(item => item.phoneId === phoneId)
+
+    if (foundItem) {
+      setAlreadyInFavorites(true);
+    } else {
+      setAlreadyInFavorites(false);
+    }
+  }, [favoriteItems, phoneId])
 
   const handleImageChange = (image: string) => {
     if (image === currentImage) {
@@ -233,7 +253,7 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
                 className="details__buttons--button"
                 onClick={() => {
                   if (phoneId && !alreadyInCart) {
-                    onAdd(phoneId)
+                    onCartAdd(phoneId)
                   }
                 }}
               >
@@ -243,10 +263,23 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
                   selected={alreadyInCart}
                 />
               </div>
-              <HeartIcon
-                size={Sizes.L}
-                selected={false}
-              />
+              <div
+                className="details__heart"
+                onClick={() => {
+                  if (phoneId) {
+                    if (!alreadyInFavorites) {
+                      onFavoriteAdd(phoneId);
+                    } else {
+                      onFavoriteRemove(phoneId);
+                    }
+                  }
+                }}
+              >
+                <HeartIcon
+                  size={Sizes.L}
+                  selected={alreadyInFavorites}
+                />
+              </div>
             </div>
 
             <div className="details__description">
@@ -352,7 +385,7 @@ export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
             title='You may also like'
             products={phonesForSlider}
             cartItems={cartItems}
-            onAdd={onAdd}
+            onCartAdd={onCartAdd}
           />
         </div>
       </div>

@@ -16,10 +16,10 @@ import { Phone } from '../../types/phone';
 
 type Props = {
   cartItems: Phone[];
-  onAdd: (phoneId: string) => void;
+  onCartAdd: (phoneId: string) => void;
 }
 
-export const HomePage: React.FC<Props> = ({ cartItems, onAdd }) => {
+export const HomePage: React.FC<Props> = ({ cartItems, onCartAdd }) => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
@@ -152,7 +152,7 @@ export const HomePage: React.FC<Props> = ({ cartItems, onAdd }) => {
           title='Brand new models'
           products={newPhones}
           cartItems={cartItems}
-          onAdd={onAdd}
+          onCartAdd={onCartAdd}
         />
       </div>
 
@@ -215,7 +215,7 @@ export const HomePage: React.FC<Props> = ({ cartItems, onAdd }) => {
           title='Hot prices'
           products={hotPricesPhones}
           cartItems={cartItems}
-          onAdd={onAdd}
+          onCartAdd={onCartAdd}
         />
       </div>
     </div>

@@ -8,14 +8,14 @@ type Props = {
   products: Phone[];
   forSlider: boolean;
   cartItems: Phone[];
-  onAdd: (phoneId: string) => void;
+  onCartAdd: (phoneId: string) => void;
 }
 
 export const ProductList: React.FC<Props> = ({
   products,
   forSlider,
   cartItems,
-  onAdd
+  onCartAdd
 }) => {
   const checkIfAlreadyInCart = (phoneId: string) => {
     return cartItems.some(item => item.phoneId === phoneId);
@@ -38,7 +38,7 @@ export const ProductList: React.FC<Props> = ({
             <ProductCard
               product={product}
               alreadyInCart={checkIfAlreadyInCart(product.phoneId)}
-              onAdd={onAdd}
+              onCartAdd={onCartAdd}
             />
           </div>
         ))}

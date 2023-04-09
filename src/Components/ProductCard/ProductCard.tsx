@@ -9,13 +9,19 @@ import { Phone } from '../../types/phone';
 type Props = {
   product: Phone;
   alreadyInCart: boolean;
-  onAdd: (phoneId: string) => void;
+  alreadyInFavorites: boolean;
+  onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
 export const ProductCard: React.FC<Props> = ({
   product,
   alreadyInCart,
-  onAdd
+  alreadyInFavorites,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove
 }) => {
   const {
     phoneId,
@@ -80,7 +86,7 @@ export const ProductCard: React.FC<Props> = ({
           className="productcard__buttons--button"
           onClick={() => {
             if (!alreadyInCart) {
-              onAdd(phoneId)
+              onCartAdd(phoneId)
             }
           }}
         >
@@ -90,10 +96,23 @@ export const ProductCard: React.FC<Props> = ({
             selected={alreadyInCart}
           />
         </div>
-        <HeartIcon
-          size={Sizes.M}
-          selected={false}
-        />
+        <div
+          className="details__heart"
+          onClick={() => {
+            if (phoneId) {
+              if (!alreadyInFavorites) {
+                onFavoriteAdd(phoneId);
+              } else {
+                onFavoriteRemove(phoneId);
+              }
+            }
+          }}
+        >
+          <HeartIcon
+            size={Sizes.M}
+            selected={alreadyInFavorites}
+          />
+        </div>
       </div>
     </div>
   )

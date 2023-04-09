@@ -16,7 +16,7 @@ import { Phone } from '../../types/phone';
 
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
-  const [favoriteItems, seFavoriteItems] = useState<Phone[]>([]);
+  const [favoriteItems, setFavoriteItems] = useState<Phone[]>([]);
 
   useEffect(() => {
     
@@ -25,6 +25,11 @@ export const App = () => {
   const removeFromCart = (phoneId: string) => {
     const items = cartItems.filter(item => item.phoneId !== phoneId);
     setCartItems(items);
+  }
+
+  const removeFromFavorites = (phoneId: string) => {
+    const items = favoriteItems.filter(item => item.phoneId !== phoneId);
+    setFavoriteItems(items);
   }
 
   const addToCart = (phoneId: string) => {
@@ -40,6 +45,19 @@ export const App = () => {
       })
   }
 
+  const addToFavorites = (phoneId: string) => {
+    // on real api, should fetch by ID , not getting all the phones like here
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then((data: Phone[]) => {
+        const foundItem = data.find(item => item.phoneId === phoneId);
+
+        if (foundItem) {
+          setFavoriteItems((state) => [...state, foundItem])
+        }
+      })
+  }
+
   return (
     <div id='top' className="app">
       <Header />
@@ -47,7 +65,7 @@ export const App = () => {
       <main className='app__main'>
         <Routes>
           <Route
-            element={<HomePage cartItems={cartItems} onAdd={addToCart}/>}
+            element={<HomePage cartItems={cartItems} onCartAdd={addToCart}/>}
             path={ReactRoutes.Home}
           />
 
@@ -64,7 +82,7 @@ export const App = () => {
               element={
                 <PhonesPage 
                   cartItems={cartItems} 
-                  onAdd={addToCart}
+                  onCartAdd={addToCart}
                 /> 
               }
             />
@@ -73,8 +91,11 @@ export const App = () => {
               path=":phoneId"
               element={
                 <ProductDetailsPage
-                  onAdd={addToCart}
                   cartItems={cartItems}
+                  favoriteItems={favoriteItems}
+                  onCartAdd={addToCart}
+                  onFavoriteAdd={addToFavorites}
+                  onFavoriteRemove={removeFromFavorites}
                 />
               }
             />
@@ -97,7 +118,11 @@ export const App = () => {
           <Route
             path={ReactRoutes.Favorites}
             element={
-              <FavoritesPage />
+              <FavoritesPage
+                favoriteItems={favoriteItems}
+                cartItems={cartItems}
+                onCartAdd={addToCart}
+              />
             }
           />
 
