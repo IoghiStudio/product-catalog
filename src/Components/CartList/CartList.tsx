@@ -5,9 +5,10 @@ import './CartList.scss';
 
 type Props = {
   products: Phone[];
+  onRemove: (phoneId: string) => void;
 }
 
-export const CartList: React.FC<Props> = ({ products }) => {
+export const CartList: React.FC<Props> = ({ products, onRemove }) => {
   return (
     <div className="cartlist">
       {products.map(product => (
@@ -17,6 +18,7 @@ export const CartList: React.FC<Props> = ({ products }) => {
           >
             <CartItem
               product={product}
+              onRemove={onRemove}
             />
           </div>
         ))}

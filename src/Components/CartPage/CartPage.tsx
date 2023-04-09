@@ -12,9 +12,10 @@ import { Sizes } from '../../types/sizes';
 
 type Props = {
   products: Phone[];
+  onRemove: (phoneId: string) => void;
 }
 
-export const CartPage: React.FC<Props> = ({ products }) => {
+export const CartPage: React.FC<Props> = ({ products, onRemove }) => {
   const [backButtonHover, setBackButtonHover] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(products.length);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -27,6 +28,7 @@ export const CartPage: React.FC<Props> = ({ products }) => {
 
     for (let i = 0; i < products.length; i++) {
       const product = products[i];
+      console.log(product, product.price)
       total += product.price;
     }
 
@@ -71,7 +73,10 @@ export const CartPage: React.FC<Props> = ({ products }) => {
       {products.length > 0 ? (
         <div className="cart__details">
           <div className="cart__list">
-            <CartList products={products}/>
+            <CartList
+              products={products}
+              onRemove={onRemove}
+            />
           </div>
 
           <div className="cart__info">

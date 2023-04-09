@@ -7,15 +7,19 @@ import { Link } from 'react-router-dom';
 
 type Props = {
   product: Phone;
+  onRemove: (phoneId: string) => void;
 }
 
-export const CartItem: React.FC<Props> = ({ product }) => {
+export const CartItem: React.FC<Props> = ({ product, onRemove }) => {
   const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="cartitem">
       <div className="cartitem__top">
-        <div className="cartitem__remove"></div>
+        <div
+          className="cartitem__remove"
+          onClick={() => onRemove(product.phoneId)}
+        ></div>
 
         <Link
           to={`/phones/${product.phoneId}`}
@@ -85,7 +89,7 @@ export const CartItem: React.FC<Props> = ({ product }) => {
         </div>
   
         <div className="cartitem__price">
-          {`$${999}`}
+          {`$${product.price}`}
         </div>
       </div>
     </div>

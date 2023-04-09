@@ -20,11 +20,19 @@ export const App = () => {
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(response => response.json())
-      .then(data => setCartItems(data.slice(77, 80)));
+      .then(data => {
+        setCartItems(data.slice(77, 80))
+        console.log(data);
+      });
   }, [])
 
-  const removeFromCart = () => {
+  const removeFromCart = (phoneId: string) => {
+    const items = cartItems.filter(item => item.phoneId !== phoneId);
+    setCartItems(items);
+  }
 
+  const addToCart = (phoneId: string) => {
+    
   }
 
   return (
@@ -80,7 +88,10 @@ export const App = () => {
           <Route
             path={ReactRoutes.Cart}
             element={
-              <CartPage products={cartItems}/>
+              <CartPage
+                products={cartItems}
+                onRemove={removeFromCart}
+              />
             }
           />
 
