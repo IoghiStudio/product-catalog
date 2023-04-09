@@ -30,6 +30,7 @@ export const App = () => {
   const removeFromFavorites = (phoneId: string) => {
     const items = favoriteItems.filter(item => item.phoneId !== phoneId);
     setFavoriteItems(items);
+    console.log('remove')
   }
 
   const addToCart = (phoneId: string) => {
@@ -54,6 +55,7 @@ export const App = () => {
 
         if (foundItem) {
           setFavoriteItems((state) => [...state, foundItem])
+          console.log('added')
         }
       })
   }
@@ -65,7 +67,15 @@ export const App = () => {
       <main className='app__main'>
         <Routes>
           <Route
-            element={<HomePage cartItems={cartItems} onCartAdd={addToCart}/>}
+            element={
+              <HomePage
+                cartItems={cartItems}
+                favoriteItems={favoriteItems}
+                onCartAdd={addToCart}
+                onFavoriteAdd={addToFavorites}
+                onFavoriteRemove={removeFromFavorites}
+              />
+            }
             path={ReactRoutes.Home}
           />
 
@@ -81,8 +91,11 @@ export const App = () => {
               index
               element={
                 <PhonesPage 
-                  cartItems={cartItems} 
+                  cartItems={cartItems}
+                  favoriteItems={favoriteItems}
                   onCartAdd={addToCart}
+                  onFavoriteAdd={addToFavorites}
+                  onFavoriteRemove={removeFromFavorites}
                 /> 
               }
             />
@@ -122,6 +135,8 @@ export const App = () => {
                 favoriteItems={favoriteItems}
                 cartItems={cartItems}
                 onCartAdd={addToCart}
+                onFavoriteAdd={addToFavorites}
+                onFavoriteRemove={removeFromFavorites}
               />
             }
           />

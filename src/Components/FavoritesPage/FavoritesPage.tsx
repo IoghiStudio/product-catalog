@@ -9,12 +9,16 @@ type Props = {
   cartItems: Phone[];
   favoriteItems: Phone[];
   onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
 export const FavoritesPage: React.FC<Props> = ({
   cartItems,
   favoriteItems,
   onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove,
 }) => {
   return (
     <div className="favorites">
@@ -47,8 +51,11 @@ export const FavoritesPage: React.FC<Props> = ({
       <ProductList
         products={favoriteItems}
         cartItems={cartItems}
+        favoriteItems={favoriteItems}
         onCartAdd={onCartAdd}
         forSlider={false}
+        onFavoriteAdd={onFavoriteAdd}
+        onFavoriteRemove={onFavoriteRemove}
       />
     </div>
   )

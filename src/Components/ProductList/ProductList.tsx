@@ -8,17 +8,27 @@ type Props = {
   products: Phone[];
   forSlider: boolean;
   cartItems: Phone[];
+  favoriteItems: Phone[];
   onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
 export const ProductList: React.FC<Props> = ({
   products,
   forSlider,
   cartItems,
-  onCartAdd
+  favoriteItems,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove,
 }) => {
   const checkIfAlreadyInCart = (phoneId: string) => {
     return cartItems.some(item => item.phoneId === phoneId);
+  }
+
+  const checkIfAlreadyInFavorites = (phoneId: string) => {
+    return favoriteItems.some(item => item.phoneId === phoneId);
   }
 
   return (
@@ -38,7 +48,10 @@ export const ProductList: React.FC<Props> = ({
             <ProductCard
               product={product}
               alreadyInCart={checkIfAlreadyInCart(product.phoneId)}
+              alreadyInFavorites={checkIfAlreadyInFavorites(product.phoneId)}
               onCartAdd={onCartAdd}
+              onFavoriteAdd={onFavoriteAdd}
+              onFavoriteRemove={onFavoriteRemove}
             />
           </div>
         ))}

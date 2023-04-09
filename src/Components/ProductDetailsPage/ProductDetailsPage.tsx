@@ -385,7 +385,10 @@ export const ProductDetailsPage: React.FC<Props> = ({
             title='You may also like'
             products={phonesForSlider}
             cartItems={cartItems}
+            favoriteItems={favoriteItems}
             onCartAdd={onCartAdd}
+            onFavoriteAdd={onFavoriteAdd}
+            onFavoriteRemove={onFavoriteRemove}
           />
         </div>
       </div>

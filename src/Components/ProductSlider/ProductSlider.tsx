@@ -10,14 +10,20 @@ type Props = {
   title: string;
   products: Phone[],
   cartItems: Phone[],
+  favoriteItems: Phone[];
   onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
 export const ProductSlider: React.FC<Props> = ({
   title,
   products,
   cartItems,
-  onCartAdd
+  favoriteItems,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove
 }) => {
   const [visibleProducts, setVisibleProducts] = useState<Phone[]>([]);
   const [counter, setCounter] = useState(0);
@@ -90,7 +96,10 @@ export const ProductSlider: React.FC<Props> = ({
         products={visibleProducts}
         forSlider={true}
         cartItems={cartItems}
+        favoriteItems={favoriteItems}
         onCartAdd={onCartAdd}
+        onFavoriteAdd={onFavoriteAdd}
+        onFavoriteRemove={onFavoriteRemove}
       />
     </div>
   )

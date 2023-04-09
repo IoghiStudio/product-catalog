@@ -11,11 +11,20 @@ import { PerPage } from '../../types/perPage';
 
 type Props = {
   cartItems: Phone[];
+  favoriteItems: Phone[];
   onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
 
-export const PhonesPage: React.FC<Props> = ({ cartItems, onCartAdd}) => {
+export const PhonesPage: React.FC<Props> = ({
+  cartItems,
+  favoriteItems,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove
+}) => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
@@ -168,7 +177,10 @@ export const PhonesPage: React.FC<Props> = ({ cartItems, onCartAdd}) => {
           products={visiblePhones}
           forSlider={false}
           cartItems={cartItems}
+          favoriteItems={favoriteItems}
           onCartAdd={onCartAdd}
+          onFavoriteAdd={onFavoriteAdd}
+          onFavoriteRemove={onFavoriteRemove}
         />
       ) : (
         <Loader/>

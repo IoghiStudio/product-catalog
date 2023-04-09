@@ -16,10 +16,19 @@ import { Phone } from '../../types/phone';
 
 type Props = {
   cartItems: Phone[];
+  favoriteItems: Phone[];
   onCartAdd: (phoneId: string) => void;
+  onFavoriteAdd: (phoneId: string) => void;
+  onFavoriteRemove: (phoneId: string) => void;
 }
 
-export const HomePage: React.FC<Props> = ({ cartItems, onCartAdd }) => {
+export const HomePage: React.FC<Props> = ({
+  cartItems,
+  favoriteItems,
+  onCartAdd,
+  onFavoriteAdd,
+  onFavoriteRemove
+}) => {
   const [bannerIndex, setBannerIndex] = useState<number>(0);
   const [bannerLoading, setBannerLoading] = useState(false); 
   const [loadLeft, setLoadLeft] = useState(false); 
@@ -152,7 +161,10 @@ export const HomePage: React.FC<Props> = ({ cartItems, onCartAdd }) => {
           title='Brand new models'
           products={newPhones}
           cartItems={cartItems}
+          favoriteItems={favoriteItems}
           onCartAdd={onCartAdd}
+          onFavoriteAdd={onFavoriteAdd}
+          onFavoriteRemove={onFavoriteRemove}
         />
       </div>
 
@@ -215,7 +227,10 @@ export const HomePage: React.FC<Props> = ({ cartItems, onCartAdd }) => {
           title='Hot prices'
           products={hotPricesPhones}
           cartItems={cartItems}
+          favoriteItems={favoriteItems}
           onCartAdd={onCartAdd}
+          onFavoriteAdd={onFavoriteAdd}
+          onFavoriteRemove={onFavoriteRemove}
         />
       </div>
     </div>
