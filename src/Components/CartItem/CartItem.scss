@@ -4,21 +4,39 @@
 .cartitem {
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: space-between;
-  align-items: center;
   box-sizing: border-box;
   padding: 16px;
-  height: 160px;
   background: $surface-1;
   max-width: 752px;
 
   @include onTablet {
     flex-direction: row;
     padding: 24px;
-    height: 128px;
+      align-items: center;
   }
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    @include onTablet {
+      gap: 24px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 53px;
+  }
+
+
   &__remove {
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
     background-image: url(../../icons/close.svg);
@@ -26,11 +44,17 @@
   }
 
   &__image {
+    width: 66px;
+    height: 66px;
+    // object-fit: contain;
+
     &-container {
+      flex-shrink: 0;
       display: flex;
-      width: 66px;
-      height: 66px;
-      object-fit: contain;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
       transition: transform 0.3s;
 
       &:hover {
@@ -39,8 +63,8 @@
     }
   }
 
-
   &__name {
+    text-align: center;
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
