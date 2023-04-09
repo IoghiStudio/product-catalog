@@ -9,6 +9,7 @@
   width: 48px;
   height: 48px;
   box-shadow: -1px 0 0 0 $surface-2;
+  text-decoration: none;
   
   @include onDesktop {
     width: 64px;
@@ -37,6 +38,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    &--quantity {
+      position: relative;
+      left: 7px;
+    }
   }
 
   &--fav {
@@ -53,5 +59,26 @@
 
   &--close {
     background-image: url(../../icons/close.svg);
+  }
+
+  &__quantity {
+    position: relative;
+    top: -6px;
+    right: 1px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+
+    text-decoration: none;
+    background-color: $red;
+    color: $white;
+    border-radius: 50%;
+
+    font-weight: 700;
+    font-size: 9px;
+    line-height: 12px;
   }
 }

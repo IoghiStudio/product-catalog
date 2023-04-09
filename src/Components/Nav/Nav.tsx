@@ -26,10 +26,15 @@ const paths = [
     url: ReactRoutes.Accessories,
     name: 'Accessories',
   },
-]
+];
 
-export const Nav = React.memo(
-  () => {
+type Props = {
+  cartCount: number;
+  favCount: number;
+}
+
+export const Nav: React.FC<Props> = React.memo(
+  ({ cartCount, favCount }) => {
     return (
       <nav className='nav'>
         <ul className='nav__list'>
@@ -58,11 +63,13 @@ export const Nav = React.memo(
           <UtilityIcon
             url={ReactRoutes.Favorites}
             modifier='fav'
+            quantity={favCount}
           />
   
           <UtilityIcon
             url={ReactRoutes.Cart}
             modifier='cart'
+            quantity={cartCount}
           />
         </div>
       </nav>

@@ -6,8 +6,13 @@ import './Header.scss';
 // import cn from 'classnames';
 import { UtilityIcon } from '../UtilityIcon';
 
-export const Header = React.memo(
-  () => {
+type Props = {
+  cartCount: number;
+  favCount: number;
+}
+
+export const Header: React.FC<Props> = React.memo(
+  ({ cartCount, favCount }) => {
     const [windowWidth, setWindowSize] = useState(window.innerWidth);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   
@@ -30,7 +35,10 @@ export const Header = React.memo(
         />
   
         {windowWidth >= 640 ? (
-          <Nav />
+          <Nav
+            cartCount={cartCount}
+            favCount={favCount}
+          />
         ) : (
           <div
             onClick={() => {
@@ -41,11 +49,13 @@ export const Header = React.memo(
               <UtilityIcon
                 url='/menu'
                 modifier='menu'
+                quantity={0}
               />
             ) : (
               <UtilityIcon
                 url='/'
                 modifier='close'
+                quantity={0}
               />
             )}
           </div>
