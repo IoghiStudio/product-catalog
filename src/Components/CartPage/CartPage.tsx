@@ -10,20 +10,18 @@ import { CartList } from '../CartList';
 import { Button } from '../Button';
 import { Sizes } from '../../types/sizes';
 
-export const CartPage = () => {
+type Props = {
+  products: Phone[];
+}
+
+export const CartPage: React.FC<Props> = ({ products }) => {
   const [backButtonHover, setBackButtonHover] = useState(false);
-  const [products, setProducts] = useState<Phone[]>([]);
-  const [quantity, setQuantity] = useState(0);
+  const [totalQuantity, setTotalQuantity] = useState(products.length);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  useEffect(() => {
-    fetch('./product-catalog/phones.json')
-      .then(response => response.json())
-      .then(data => setProducts(data.slice(76, 79)));
-  }, [])
 
   useEffect(() => {
-    setQuantity(products.length);
+    setTotalQuantity(products.length);
 
     let total = 0;
 
@@ -34,6 +32,7 @@ export const CartPage = () => {
 
     setTotalPrice(total);
   }, [products])
+
 
   return (
     <div className='cart'>
@@ -81,7 +80,7 @@ export const CartPage = () => {
             </h2>
 
             <div className="cart__text">
-              {`Total for ${quantity} items`}
+              {`Total for ${totalQuantity} items`}
             </div>
 
             <div className="cart__divider"></div>

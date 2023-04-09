@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { Routes, Route, Navigate} from 'react-router-dom';
@@ -12,9 +12,20 @@ import { FavoritesPage } from '../FavoritesPage';
 import { NotFoundPage } from '../NotFoundPage';
 import { ProductDetailsPage } from '../ProductDetailsPage';
 import { ReactRoutes } from '../../types/reactRoutes';
+import { Phone } from '../../types/phone';
 
 export const App = () => {
-  console.log('app rendered');
+  const [cartItems, setCartItems] = useState<Phone[]>([]);
+
+  useEffect(() => {
+    fetch('./product-catalog/phones.json')
+      .then(response => response.json())
+      .then(data => setCartItems(data.slice(77, 80)));
+  }, [])
+
+  const removeFromCart = () => {
+
+  }
 
   return (
     <div id='top' className="app">
@@ -69,7 +80,7 @@ export const App = () => {
           <Route
             path={ReactRoutes.Cart}
             element={
-              <CartPage />
+              <CartPage products={cartItems}/>
             }
           />
 
