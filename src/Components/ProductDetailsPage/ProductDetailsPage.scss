@@ -95,8 +95,11 @@
 
     @include onTablet {
       flex-direction: row;
-      gap: 75px;
       margin-bottom: 64px;
+    }
+
+    @media (min-width: 800px) {
+      gap: 75px;
     }
 
     @include onDesktop {
@@ -110,7 +113,6 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    overflow: hidden;
       
     @include onTablet {
       flex-direction: row;
