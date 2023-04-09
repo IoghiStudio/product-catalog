@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/product-catalog/static/css/main.ba51d3e8.css",
-    "main.js": "/product-catalog/static/js/main.deaae4e7.js",
+    "main.css": "/product-catalog/static/css/main.743aabbc.css",
+    "main.js": "/product-catalog/static/js/main.6543e08e.js",
     "static/media/category-tablets.png": "/product-catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
     "static/media/category-phones.png": "/product-catalog/static/media/category-phones.af93d992917380dfe206.png",
     "static/media/04.png": "/product-catalog/static/media/04.a0924fb8e0797a8116ba.png",
@@ -29,8 +29,9 @@
     "static/media/heart.svg": "/product-catalog/static/media/heart.28f6088c83570782c6af.svg",
     "static/media/home.svg": "/product-catalog/static/media/home.901f72c9436f9e8c6357.svg",
     "static/media/heart-filled.svg": "/product-catalog/static/media/heart-filled.d554a185325e4fb06092.svg",
-    "static/media/close.svg": "/product-catalog/static/media/close.c89cd55fcda471b596c2.svg",
+    "static/media/close.svg": "/product-catalog/static/media/close.a7b1ced7ed3e49385129.svg",
     "static/media/menu.svg": "/product-catalog/static/media/menu.ccd1a9542b5bc584f2a1.svg",
+    "static/media/plus-white.svg": "/product-catalog/static/media/plus-white.1377f8b445ceb66e847d.svg",
     "index.html": "/product-catalog/index.html",
     "static/media/left-accent.svg": "/product-catalog/static/media/left-accent.17835e5517a544bee67a.svg",
     "static/media/left-white.svg": "/product-catalog/static/media/left-white.173b6b33bb1fa3a0dcbb.svg",
@@ -38,11 +39,13 @@
     "static/media/right.svg": "/product-catalog/static/media/right.c9171b88f2b5c91378fd.svg",
     "static/media/right-white.svg": "/product-catalog/static/media/right-white.4ef94d7c3aa057b04885.svg",
     "static/media/up-white.svg": "/product-catalog/static/media/up-white.4a750d9ba7eef45d57ab.svg",
-    "main.ba51d3e8.css.map": "/product-catalog/static/css/main.ba51d3e8.css.map",
-    "main.deaae4e7.js.map": "/product-catalog/static/js/main.deaae4e7.js.map"
+    "static/media/minus.svg": "/product-catalog/static/media/minus.a6cc83682174ac68c902.svg",
+    "static/media/minus-white.svg": "/product-catalog/static/media/minus-white.0365a13e7f5baa53bce8.svg",
+    "main.743aabbc.css.map": "/product-catalog/static/css/main.743aabbc.css.map",
+    "main.6543e08e.js.map": "/product-catalog/static/js/main.6543e08e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba51d3e8.css",
-    "static/js/main.deaae4e7.js"
+    "static/css/main.743aabbc.css",
+    "static/js/main.6543e08e.js"
   ]
 }
