@@ -1,0 +1,68 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.favorites {
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    &--left-arrow {
+      background-image: url(../../icons/Arrows/left-white.svg);
+    }
+
+    &--right-arrow {
+      background-image: url(../../icons/Arrows/right.svg);
+    }
+  }
+
+  &__paths {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 24px;
+    padding-top: 25px;
+
+    @include onTablet {
+      margin-bottom: 41px;
+    }
+  }
+
+  &__path-home {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../icons/home.svg);
+  }
+
+  &__path-main {
+    text-decoration: none;
+    color: $secondary;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__count {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+}

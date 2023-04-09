@@ -16,6 +16,7 @@ import { Phone } from '../../types/phone';
 
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
+  const [favoriteItems, seFavoriteItems] = useState<Phone[]>([]);
 
   useEffect(() => {
     
