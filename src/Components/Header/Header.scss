@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 32px;
-  height: 48px;
+  height: $header-height-mob-tab;
   padding-left: 16px;
   border-bottom: 1px solid $elements;
   background-color: $black;
@@ -23,7 +23,7 @@
   }
 
   @include onDesktop {
-    height: 64px;
+    height: $header-height-desktop;
     gap: 48px;
     padding-left: 24px;
   }
