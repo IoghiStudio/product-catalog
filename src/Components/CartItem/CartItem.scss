@@ -9,7 +9,6 @@
   box-sizing: border-box;
   padding: 16px;
   background: $surface-1;
-  max-width: 752px;
 
   @include onTablet {
     flex-direction: row;

@@ -38,12 +38,17 @@ body {
   background-color: $black;
 
   &__main {
+    box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
 
     @include onTablet {
       padding: 0 24px;
+    }
+
+    @include onDesktop {
+      padding: 0 32px;
     }
   }
 }
