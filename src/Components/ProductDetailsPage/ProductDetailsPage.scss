@@ -176,6 +176,14 @@
   &__pick {
     display: flex;
     flex-direction: column;
+
+    @include onTablet {
+      width: 238px;
+    }
+
+    @include onDesktop {
+      width: 320px;
+    }
   }
 
   &__colors {
