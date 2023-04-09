@@ -3,6 +3,7 @@
 
 .cartitem {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
@@ -12,6 +13,7 @@
   max-width: 752px;
 
   @include onTablet {
+    flex-direction: row;
     padding: 24px;
     height: 128px;
   }
@@ -20,6 +22,7 @@
     width: 16px;
     height: 16px;
     background-image: url(../../icons/close.svg);
+    cursor: pointer;
   }
 
   &__image {
@@ -43,6 +46,7 @@
     line-height: 21px;
   }
 
+// #region Icon
   &__icons {
     display: flex;
   }
@@ -98,6 +102,7 @@
       }
     }
   }
+//#endregion
 
   &__price {
     font-weight: 800;
