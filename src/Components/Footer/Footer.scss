@@ -15,7 +15,7 @@
     height: $footer-height-mobile;
 
     @include onTablet {
-      height: $footer-height-tablet;
+      height: $footer-height-tab-desk;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;

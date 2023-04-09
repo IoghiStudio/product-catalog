@@ -38,11 +38,13 @@
     align-items: center;
     text-decoration: none;
     color: $white;
-    margin: 25px 0 24px;
+    margin: 0 0 24px;
+    padding-top: 25px;
     gap: 6px;
 
     @include onTablet {
-      margin: 40px 0 16px;
+      margin: 0 0 16px;
+      padding-top: 40px;
     }
     
     &-text {
