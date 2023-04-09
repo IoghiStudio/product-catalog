@@ -33,6 +33,9 @@ export const ProductCard: React.FC<Props> = ({
       <Link
         to={`/phones/${phoneId}`}
         className="productcard__image-container"
+        onClick={() => {
+          document.getElementById('top')?.scrollIntoView();
+        }}
       >
         <img
           className="productcard__image"
