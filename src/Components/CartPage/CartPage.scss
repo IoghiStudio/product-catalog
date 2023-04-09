@@ -60,10 +60,16 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
 
     @include onDesktop {
       flex-direction: row;
       gap: 16px;
+      margin-bottom: 80px;
     }
   }
 
@@ -78,20 +84,44 @@
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    box-sizing: border-box;
+    padding: 23px;
     height: 190px;
     border: 1px solid $elements;
+
+    @include onDesktop {
+      height: 206px;
+    }
   }
 
   &__price {
-
+    margin: 0;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
   }
 
   &__text {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
 
+    @include onDesktop {
+      margin-bottom: 23px;
+    }
   }
 
   &__divider {
+    width: 100%;
+    border-bottom: 1px solid $elements;
+    margin-bottom: 16px;
 
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
   }
 
 

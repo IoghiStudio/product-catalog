@@ -7,12 +7,14 @@ import { CartItem } from '../CartItem';
 import { Phone } from '../../types/phone';
 import { Loader } from '../Loader';
 import { CartList } from '../CartList';
+import { Button } from '../Button';
+import { Sizes } from '../../types/sizes';
 
 export const CartPage = () => {
   const [backButtonHover, setBackButtonHover] = useState(false);
   const [products, setProducts] = useState<Phone[]>([]);
   const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     fetch('./product-catalog/phones.json')
@@ -22,6 +24,15 @@ export const CartPage = () => {
 
   useEffect(() => {
     setQuantity(products.length);
+
+    let total = 0;
+
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      total += product.price;
+    }
+
+    setTotalPrice(total);
   }, [products])
 
   return (
@@ -66,12 +77,19 @@ export const CartPage = () => {
 
           <div className="cart__info">
             <h2 className="cart__price">
-              {price}
+              {`$${totalPrice}`}
             </h2>
 
             <div className="cart__text">
               {`Total for ${quantity} items`}
             </div>
+
+            <div className="cart__divider"></div>
+
+            <Button
+              text={'Checkout'}
+              size={Sizes.L}
+            />
           </div>
         </div>
       ) : (
