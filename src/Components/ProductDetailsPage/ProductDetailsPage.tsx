@@ -12,7 +12,12 @@ import { ProductSlider } from '../ProductSlider';
 import { Phone } from '../../types/phone';
 import { Loader } from '../Loader';
 
-export const ProductDetailsPage = () => {
+type Props = {
+  onAdd: (phoneId: string) => void;
+  cartItems: Phone[];
+}
+
+export const ProductDetailsPage: React.FC<Props> = ({ onAdd, cartItems}) => {
   const [phone, setPhone] = useState<PhoneDetails | null>(null);
   const [phonesForSlider, setPhonesForSlider] = useState<Phone[]>([]);
   const [colorsAvailable, setColorsAvailable] = useState<string[]>([]);
@@ -21,8 +26,9 @@ export const ProductDetailsPage = () => {
   const [currentImage, setCurrentImage] = useState<string>('');
   const [currentCapacity, setCurrentCapacity] = useState<string>('');
   const [imageLoading, setImageLoading] = useState(false);
-  const { phoneId } = useParams();
   const [backButtonHover, setBackButtonHover] = useState(false);
+  const { phoneId } = useParams();
+  const [alreadyInCart, setAlreadyInCart] = useState(false);
 
   useEffect(() => {
     fetch(`./product-catalog/phones/${phoneId}.json`)
@@ -44,6 +50,14 @@ export const ProductDetailsPage = () => {
     })
       
   }, [phoneId])
+
+  useEffect(() => {
+    const foundItem = cartItems.find(item => item.phoneId === phoneId)
+
+    if (foundItem) {
+      setAlreadyInCart(true);
+    }
+  }, [cartItems, phoneId])
 
   const handleImageChange = (image: string) => {
     if (image === currentImage) {
@@ -215,10 +229,18 @@ export const ProductDetailsPage = () => {
             </div>
 
             <div className="details__buttons">
-              <div className="details__buttons--button">
+              <div
+                className="details__buttons--button"
+                onClick={() => {
+                  if (phoneId && !alreadyInCart) {
+                    onAdd(phoneId)
+                  }
+                }}
+              >
                 <Button
-                  text={"Add to cart"}
+                  text={!alreadyInCart ? "Add to cart" : "Added to cart"}
                   size={Sizes.L}
+                  selected={alreadyInCart}
                 />
               </div>
               <HeartIcon

@@ -93,6 +93,7 @@ export const CartPage: React.FC<Props> = ({ products, onRemove }) => {
             <Button
               text={'Checkout'}
               size={Sizes.L}
+              selected={false}
             />
           </div>
         </div>

@@ -72,6 +72,7 @@ export const ProductCard: React.FC<Props> = ({
           <Button
             text={"Add to cart"}
             size={Sizes.M}
+            selected={false}
           />
         </div>
         <HeartIcon

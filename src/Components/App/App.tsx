@@ -32,7 +32,16 @@ export const App = () => {
   }
 
   const addToCart = (phoneId: string) => {
-    
+    // on real api, should fetch by ID , not getting all the phones like here
+    fetch('./product-catalog/phones.json')
+      .then(resp => resp.json())
+      .then((data: Phone[]) => {
+        const foundItem = data.find(item => item.phoneId === phoneId);
+
+        if (foundItem) {
+          setCartItems((state) => [...state, foundItem])
+        }
+      })
   }
 
   return (
@@ -59,7 +68,10 @@ export const App = () => {
             <Route
               path=":phoneId"
               element={
-                <ProductDetailsPage />
+                <ProductDetailsPage
+                  onAdd={addToCart}
+                  cartItems={cartItems}
+                />
               }
             />
           </Route>
