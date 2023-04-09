@@ -19,7 +19,7 @@ export const CartPage = () => {
   useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(response => response.json())
-      .then(data => setProducts(data.slice(76, 80)));
+      .then(data => setProducts(data.slice(76, 79)));
   }, [])
 
   useEffect(() => {

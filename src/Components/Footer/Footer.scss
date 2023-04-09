@@ -6,6 +6,7 @@
   box-sizing: border-box;
   
   &__container {
+    box-sizing: border-box;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,7 @@
     max-width: 1200px;
 
     @include onTablet {
+      height: 96px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -33,7 +35,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 65px;
     list-style: none;
     padding: 0;
     margin: 0 0 32px;
@@ -41,6 +43,7 @@
 
     @include onTablet {
       flex-direction: row;
+      height: 100%;
       margin: 0;
     }
 
