@@ -2,12 +2,45 @@
 @import '../../styles/_mixins.scss';
 
 .cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px;
   height: 160px;
   background: $surface-1;
   max-width: 752px;
 
   @include onTablet {
+    padding: 24px;
     height: 128px;
+  }
+
+  &__remove {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../icons/close.svg);
+  }
+
+  &__image {
+    &-container {
+      display: flex;
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
   }
 
   &__icons {
@@ -19,7 +52,7 @@
     justify-content: center;
     align-items: center;
     width: 32px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 21px;
   }
@@ -53,7 +86,7 @@
       background-image: url(../../icons/minus-white.svg);
 
       &--disabled {
-        background-image: url(../../icons/minus-white.svg);
+        background-image: url(../../icons/minus.svg);
       }
     }
 
@@ -64,21 +97,11 @@
         background-image: url(../../icons/plus-white.svg);
       }
     }
+  }
 
-    &--left {
-      background-image: url(../../icons/Arrows/left-white.svg);
-
-      &--disabled {
-        background-image: url(../../icons/Arrows/left.svg);
-      }
-    }
-
-    &--right {
-      background-image: url(../../icons/Arrows/right-white.svg);
-
-      &--disabled {
-        background-image: url(../../icons/Arrows/right.svg);
-      }
-    }
+  &__price {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
   }
 }
