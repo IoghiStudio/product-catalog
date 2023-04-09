@@ -193,11 +193,18 @@
     margin-bottom: 24px;
 
     &-title {
+      position: relative;
       margin: 0;
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
       color: $secondary;
+
+      &::after {
+        content: "ID: 802390";
+        position: absolute;
+        right: 0;
+      }
     }
 
     &-previews {
