@@ -10,15 +10,16 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 32px 16px;
+    padding: 34px 16px 32px;
     max-width: 1200px;
+    height: $footer-height-mobile;
 
     @include onTablet {
-      height: 96px;
+      height: $footer-height-tablet;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 32px 32px;
+      padding: 34px 32px 32px;
     }
   }
 
