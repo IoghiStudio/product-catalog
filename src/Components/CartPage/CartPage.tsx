@@ -6,6 +6,7 @@ import cn from 'classnames';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/phone';
 import { Loader } from '../Loader';
+import { CartList } from '../CartList';
 
 export const CartPage = () => {
   const [backButtonHover, setBackButtonHover] = useState(false);
@@ -52,11 +53,7 @@ export const CartPage = () => {
       </h2>
 
       {products.length > 0 ? (
-        products.map(product => (
-          <CartItem
-            product={product}
-          />
-        ))
+        <CartList products={products}/>
       ) : (
         <Loader />
       )}

@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const CartItem: React.FC<Props> = ({ product }) => {
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="cartitem">
@@ -41,12 +41,12 @@ export const CartItem: React.FC<Props> = ({ product }) => {
             className={cn(
               "cartitem__icon-container",
               {
-                "cartitem__icon-container--disabled": count === 1,
+                "cartitem__icon-container--disabled": quantity === 1,
               }
             )}
             onClick={() => {
-              if (count > 1) {
-                setCount(count - 1);
+              if (quantity > 1) {
+                setQuantity(quantity - 1);
               }
             }}
           >
@@ -54,23 +54,23 @@ export const CartItem: React.FC<Props> = ({ product }) => {
               "cartitem__icon",
               "cartitem__icon--minus",
               {
-                "cartitem__icon--minus--disabled": count === 1,
+                "cartitem__icon--minus--disabled": quantity === 1,
               }
             )}></div>
           </div>
   
-          <div className="cartitem__count">{count}</div>
+          <div className="cartitem__quantity">{quantity}</div>
             
           <div
             className={cn(
               "cartitem__icon-container",
               {
-                "cartitem__icon-container--disabled": count === 6,
+                "cartitem__icon-container--disabled": quantity === 6,
               }
             )}
             onClick={() => {
-              if (count < 6) {
-                setCount(count + 1);
+              if (quantity < 6) {
+                setQuantity(quantity + 1);
               }
             }}
           >
@@ -78,7 +78,7 @@ export const CartItem: React.FC<Props> = ({ product }) => {
               "cartitem__icon",
               "cartitem__icon--plus",
               {
-                "cartitem__icon--plus--disabled": count === 6,
+                "cartitem__icon--plus--disabled": quantity === 6,
               }
             )}></div>
           </div>
