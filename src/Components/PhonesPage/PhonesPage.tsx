@@ -29,12 +29,12 @@ export const PhonesPage: React.FC<Props> = ({
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
-  const [perPage, setPerPage] = useState<PerPage>(PerPage.Sixteen);
+  const [perPage, setPerPage] = useState<PerPage>(PerPage.Four);
 
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(data => setPhones(data))
   }, [])
@@ -190,39 +190,47 @@ export const PhonesPage: React.FC<Props> = ({
           </div>
 
         <div className="phones__pagination">
-          <div className="slider__icons">
+          <div className="phones__icons">
             <div
               className={cn(
-                "slider__icon-container",
+                "phones__icon-container",
                 {
-                  "slider__icon-container--disabled": currentPage === 0,
+                  "phones__icon-container--disabled": currentPage === 1,
                 }
               )}
-              // onClick={() => handlecurrentPage(Way.Prev)}
+              onClick={() => {
+                if (currentPage > 1) {
+                  setCurrentPage(currentPage - 1);
+                }
+              }}
             >
               <div className={cn(
-                "slider__icon",
-                "slider__icon--left",
+                "phones__icon",
+                "phones__icon--left",
                 {
-                  "slider__icon--left--disabled": currentPage === 0,
+                  "phones__icon--left--disabled": currentPage === 1,
                 }
               )}></div>
             </div>
             
             <div
               className={cn(
-                "slider__icon-container",
+                "phones__icon-container",
                 {
-                  "slider__icon-container--disabled": currentPage === 4,
+                  "phones__icon-container--disabled": currentPage === 4,
                 }
               )}
-              // onClick={() => handlecurrentPage(Way.Next)}
+              onClick={() => {
+                if (currentPage < 4) {
+                  setCurrentPage(currentPage + 1);
+                }
+              }}
             >
               <div className={cn(
-                "slider__icon",
-                "slider__icon--right",
+                "phones__icon",
+                "phones__icon--right",
                 {
-                  "slider__icon--right--disabled": currentPage === 4,
+                  "phones__icon--right--disabled": currentPage === 4,
                 }
               )}></div>
             </div>

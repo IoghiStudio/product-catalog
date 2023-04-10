@@ -133,7 +133,15 @@
     }
   }
 
-  &__pagination {}
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
 
   &__icons {
     display: flex;
