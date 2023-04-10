@@ -217,8 +217,8 @@ export const PhonesPage: React.FC<Props> = ({
               )}></div>
             </div>
             
-            <div className="phone__pagination-icons phone__pagination-icons--middle">
-              <div className="phones__pagination-page-icon">1</div>
+            <div className="phones__pagination-icons phones__pagination-icons--middle">
+              <div className="phones__pagination-page-icon phones__pagination-page-icon--selected">1</div>
               <div className="phones__pagination-page-icon">2</div>
             </div>
 

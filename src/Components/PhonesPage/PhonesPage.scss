@@ -152,9 +152,21 @@
     }
 
     &-page-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 32px;
       height: 32px;
-      background-color: $elements;
+      background-color: $surface-1;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      &--selected {
+        cursor: default;
+        background-color: $accent;
+      }
     }
 
     &-icon {
