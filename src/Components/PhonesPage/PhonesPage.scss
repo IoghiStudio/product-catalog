@@ -141,51 +141,61 @@
     @include onDesktop {
       margin-bottom: 80px;
     }
-  }
 
-  &__icons {
-    display: flex;
-    gap: 16px;
-  }
-
-  &__icon {
-    &-container {
-      box-sizing: border-box;
+    &-icons {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      gap: 16px;
 
+      &--middle {
+        gap: 8px;
+      }
+    }
+
+    &-page-icon {
       width: 32px;
       height: 32px;
-      cursor: pointer;
-      background-color: $surface-2;
-
-      &--disabled {
-        border: 1px solid $elements;
-        cursor: default;
-        background-color: $black;
-      }
+      background-color: $elements;
     }
 
-    width: 16px;
-    height: 16px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    &--left {
-      background-image: url(../../icons/Arrows/left-white.svg);
-
-      &--disabled {
-        background-image: url(../../icons/Arrows/left.svg);
+    &-icon {
+      &-container {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        background-color: $surface-2;
+  
+        &--disabled {
+          border: 1px solid $elements;
+          cursor: default;
+          background-color: $black;
+        }
       }
-    }
-
-    &--right {
-      background-image: url(../../icons/Arrows/right-white.svg);
-
-      &--disabled {
-        background-image: url(../../icons/Arrows/right.svg);
+  
+      width: 16px;
+      height: 16px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+  
+      &--left {
+        background-image: url(../../icons/Arrows/left-white.svg);
+  
+        &--disabled {
+          background-image: url(../../icons/Arrows/left.svg);
+        }
+      }
+  
+      &--right {
+        background-image: url(../../icons/Arrows/right-white.svg);
+  
+        &--disabled {
+          background-image: url(../../icons/Arrows/right.svg);
+        }
       }
     }
   }

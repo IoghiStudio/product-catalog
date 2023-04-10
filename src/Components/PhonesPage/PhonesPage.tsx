@@ -194,12 +194,12 @@ export const PhonesPage: React.FC<Props> = ({
           </div>
 
         <div className="phones__pagination">
-          <div className="phones__icons">
+          <div className="phones__pagination-icons">
             <div
               className={cn(
-                "phones__icon-container",
+                "phones__pagination-icon-container",
                 {
-                  "phones__icon-container--disabled": currentPage === 1,
+                  "phones__pagination-icon-container--disabled": currentPage === 1,
                 }
               )}
               onClick={() => {
@@ -209,21 +209,24 @@ export const PhonesPage: React.FC<Props> = ({
               }}
             >
               <div className={cn(
-                "phones__icon",
-                "phones__icon--left",
+                "phones__pagination-icon",
+                "phones__pagination-icon--left",
                 {
-                  "phones__icon--left--disabled": currentPage === 1,
+                  "phones__pagination-icon--left--disabled": currentPage === 1,
                 }
               )}></div>
             </div>
-
-            <div>{currentPage}</div>
             
+            <div className="phone__pagination-icons phone__pagination-icons--middle">
+              <div className="phones__pagination-page-icon">1</div>
+              <div className="phones__pagination-page-icon">2</div>
+            </div>
+
             <div
               className={cn(
-                "phones__icon-container",
+                "phones__pagination-icon-container",
                 {
-                  "phones__icon-container--disabled": currentPage === totalPages,
+                  "phones__pagination-icon-container--disabled": currentPage === totalPages,
                 }
               )}
               onClick={() => {
@@ -233,10 +236,10 @@ export const PhonesPage: React.FC<Props> = ({
               }}
             >
               <div className={cn(
-                "phones__icon",
-                "phones__icon--right",
+                "phones__pagination-icon",
+                "phones__pagination-icon--right",
                 {
-                  "phones__icon--right--disabled": currentPage === totalPages,
+                  "phones__pagination-icon--right--disabled": currentPage === totalPages,
                 }
               )}></div>
             </div>
