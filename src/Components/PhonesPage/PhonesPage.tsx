@@ -30,8 +30,12 @@ export const PhonesPage: React.FC<Props> = ({
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
   const [perPage, setPerPage] = useState<PerPage>(PerPage.Four);
-
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    setTotalPages(phones.length / perPage);
+  }, [phones, perPage])
 
   useEffect(() => {
     fetch('./product-catalog/phones.json')
