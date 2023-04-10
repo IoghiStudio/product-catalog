@@ -34,7 +34,7 @@ export const PhonesPage: React.FC<Props> = ({
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    setTotalPages(phones.length / perPage);
+    setTotalPages(Math.ceil(phones.length / perPage));
   }, [phones, perPage])
 
   useEffect(() => {
@@ -61,8 +61,8 @@ export const PhonesPage: React.FC<Props> = ({
     }
 
     const sortedPhones = filterProducts();
-
     setViziblePhones(sortedPhones.slice(0, perPage));
+    setCurrentPage(1);
   }, [phones, filterBy, perPage]);
 
   return (
@@ -216,16 +216,18 @@ export const PhonesPage: React.FC<Props> = ({
                 }
               )}></div>
             </div>
+
+            <div>{currentPage}</div>
             
             <div
               className={cn(
                 "phones__icon-container",
                 {
-                  "phones__icon-container--disabled": currentPage === 4,
+                  "phones__icon-container--disabled": currentPage === totalPages,
                 }
               )}
               onClick={() => {
-                if (currentPage < 4) {
+                if (currentPage < totalPages) {
                   setCurrentPage(currentPage + 1);
                 }
               }}
@@ -234,7 +236,7 @@ export const PhonesPage: React.FC<Props> = ({
                 "phones__icon",
                 "phones__icon--right",
                 {
-                  "phones__icon--right--disabled": currentPage === 4,
+                  "phones__icon--right--disabled": currentPage === totalPages,
                 }
               )}></div>
             </div>
