@@ -126,4 +126,59 @@
       background-color: $surface-2;
     }
   }
+
+  &__list {
+    @include onTablet {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__pagination {}
+
+  &__icons {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__icon {
+    &-container {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background-color: $surface-2;
+
+      &--disabled {
+        border: 1px solid $elements;
+        cursor: default;
+        background-color: $black;
+      }
+    }
+
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--left {
+      background-image: url(../../icons/Arrows/left-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/left.svg);
+      }
+    }
+
+    &--right {
+      background-image: url(../../icons/Arrows/right-white.svg);
+
+      &--disabled {
+        background-image: url(../../icons/Arrows/right.svg);
+      }
+    }
+  }
 }

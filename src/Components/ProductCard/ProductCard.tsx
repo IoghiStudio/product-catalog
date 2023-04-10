@@ -51,11 +51,19 @@ export const ProductCard: React.FC<Props> = ({
       </Link>
       
 
-      <div className="productcard__title">
-        {name}
-        {' '}
-        (iMT9G2FS/A)
-      </div>
+      <Link
+        to={`/phones/${phoneId}`}
+        className="productcard__title-container"
+        onClick={() => {
+          document.getElementById('top')?.scrollIntoView();
+        }}
+      >
+        <div className="productcard__title">
+          {name}
+          {' '}
+          (iMT9G2FS/A)
+        </div>
+      </Link>
 
       <div className="productcard__prices">
         <div className="productcard__price">{`$${price}`}</div>

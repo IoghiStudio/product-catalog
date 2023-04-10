@@ -178,6 +178,9 @@ export const HomePage: React.FC<Props> = ({
             <Link
               to={ReactRoutes.Phones}
               className="home__category-image home__category-image--phones"
+              onClick={() => {
+                document.getElementById('top')?.scrollIntoView();
+              }}
             ></Link>
 
             <h4 className="home__category-title">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone } from '../../types/phone';
 import { ProductList } from '../ProductList';
 import './PhonesPage.scss';
@@ -8,6 +8,7 @@ import { ReactRoutes } from '../../types/reactRoutes';
 import { Loader } from '../Loader';
 import { FilterBy } from '../../types/filterBy';
 import { PerPage } from '../../types/perPage';
+import cn from 'classnames';
 
 type Props = {
   cartItems: Phone[];
@@ -29,6 +30,8 @@ export const PhonesPage: React.FC<Props> = ({
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
   const [perPage, setPerPage] = useState<PerPage>(PerPage.Sixteen);
+
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetch('./product-catalog/phones.json')
@@ -173,15 +176,59 @@ export const PhonesPage: React.FC<Props> = ({
       </div>
 
       {phones.length > 0 ? (
-        <ProductList
-          products={visiblePhones}
-          forSlider={false}
-          cartItems={cartItems}
-          favoriteItems={favoriteItems}
-          onCartAdd={onCartAdd}
-          onFavoriteAdd={onFavoriteAdd}
-          onFavoriteRemove={onFavoriteRemove}
-        />
+        <>
+          <div className="phones__list">
+            <ProductList
+              products={visiblePhones}
+              forSlider={false}
+              cartItems={cartItems}
+              favoriteItems={favoriteItems}
+              onCartAdd={onCartAdd}
+              onFavoriteAdd={onFavoriteAdd}
+              onFavoriteRemove={onFavoriteRemove}
+            />
+          </div>
+
+        <div className="phones__pagination">
+          <div className="slider__icons">
+            <div
+              className={cn(
+                "slider__icon-container",
+                {
+                  "slider__icon-container--disabled": currentPage === 0,
+                }
+              )}
+              // onClick={() => handlecurrentPage(Way.Prev)}
+            >
+              <div className={cn(
+                "slider__icon",
+                "slider__icon--left",
+                {
+                  "slider__icon--left--disabled": currentPage === 0,
+                }
+              )}></div>
+            </div>
+            
+            <div
+              className={cn(
+                "slider__icon-container",
+                {
+                  "slider__icon-container--disabled": currentPage === 4,
+                }
+              )}
+              // onClick={() => handlecurrentPage(Way.Next)}
+            >
+              <div className={cn(
+                "slider__icon",
+                "slider__icon--right",
+                {
+                  "slider__icon--right--disabled": currentPage === 4,
+                }
+              )}></div>
+            </div>
+          </div>
+        </div>
+        </>
       ) : (
         <Loader/>
       )}
