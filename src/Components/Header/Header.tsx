@@ -46,7 +46,7 @@ export const Header: React.FC<Props> = React.memo(
           >
             {!isMenuOpen ? (
               <UtilityIcon
-                url='/menu'
+                url='/'
                 modifier='menu'
                 quantity={0}
               />
