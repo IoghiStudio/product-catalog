@@ -1,9 +1,21 @@
+import { Nav } from '../Nav';
 import './BurgerMenu.scss';
 
-export const BurgerMenu = () => {
+type Props = {
+  cartCount: number;
+  favCount: number;
+}
+
+export const BurgerMenu: React.FC<Props> = ({
+  cartCount,
+  favCount,
+}) => {
   return (
     <div className="burgermenu">
-      
+      <Nav
+        cartCount={cartCount}
+        favCount={favCount}
+      />
     </div>
   )
 }

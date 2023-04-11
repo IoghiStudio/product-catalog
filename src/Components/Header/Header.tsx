@@ -25,6 +25,11 @@ export const Header: React.FC<Props> = React.memo(
       const handleWindowResize = () => {
         setWindowSize(window.innerWidth);
       };
+
+      //if we switch to tablet while menu open, the menu should be closed
+      if (windowWidth >= 640 && isMenuOpen) {
+        handleMenu();
+      }
   
       window.addEventListener('resize', handleWindowResize);
   

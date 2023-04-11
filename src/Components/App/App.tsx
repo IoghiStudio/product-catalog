@@ -77,7 +77,10 @@ export const App = () => {
 
       <main className='app__main'>
         {isMenuOpen ? (
-          <BurgerMenu />
+          <BurgerMenu
+            cartCount={cartItems.length}
+            favCount={favoriteItems.length}
+          />
         ) : (
           <Routes>
             <Route
