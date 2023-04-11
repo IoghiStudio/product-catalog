@@ -17,7 +17,9 @@
   }
 
   &--formenu {
-    
+    width: 50vw;
+    height: 64px;
+    border-top: 1px solid $surface-2;
   }
 
   &--active {

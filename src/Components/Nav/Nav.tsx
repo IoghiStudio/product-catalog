@@ -84,12 +84,14 @@ export const Nav: React.FC<Props> = React.memo(
             url={ReactRoutes.Favorites}
             modifier='fav'
             quantity={favCount}
+            formenu={formenu}
           />
   
           <UtilityIcon
             url={ReactRoutes.Cart}
             modifier='cart'
             quantity={cartCount}
+            formenu={formenu}
           />
         </div>
       </nav>

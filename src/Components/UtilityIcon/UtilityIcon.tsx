@@ -22,6 +22,7 @@ export const UtilityIcon: React.FC<Props> = React.memo(
         className={({ isActive }) => cn(
           "utilityicon",
           {
+            "utilityicon--formenu": formenu,
             "utilityicon--active": isActive,
             "utilityicon--quantity": quantity > 0,
           }
@@ -33,6 +34,7 @@ export const UtilityIcon: React.FC<Props> = React.memo(
             "utilityicon--icon",
             `utilityicon--${modifier}`,
             {
+              "utilityicon--icon--formenu": formenu,
               "utilityicon--icon--quantity": quantity > 0,
             }
           )}
