@@ -28,20 +28,29 @@ export const PhonesPage: React.FC<Props> = ({
 }) => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [visiblePhones, setViziblePhones] = useState<Phone[]>([]); 
+  const [phonesForCurrentPage, setPhonesForCurrentPage] = useState<Phone[]>([]); 
   const [filterBy, setFilterBy] = useState<FilterBy | string>(FilterBy.Newest);
   const [perPage, setPerPage] = useState<PerPage>(PerPage.Four);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    setTotalPages(Math.ceil(phones.length / perPage));
-  }, [phones, perPage])
-
-  useEffect(() => {
     fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then(data => setPhones(data))
   }, [])
+
+  useEffect(() => {
+    setTotalPages(Math.ceil(phones.length / perPage));
+    setCurrentPage(1);
+  }, [phones, perPage]);
+
+  useEffect(() => {
+    const index = perPage * (currentPage - 1);
+    const startingFromCurrentPage = visiblePhones.slice(index);
+
+    setPhonesForCurrentPage(startingFromCurrentPage.slice(0, perPage));
+  }, [currentPage, perPage, visiblePhones])
 
   useEffect(() => {
     const filterProducts = () => {
@@ -61,9 +70,9 @@ export const PhonesPage: React.FC<Props> = ({
     }
 
     const sortedPhones = filterProducts();
-    setViziblePhones(sortedPhones.slice(0, perPage));
+    setViziblePhones(sortedPhones);
     setCurrentPage(1);
-  }, [phones, filterBy, perPage]);
+  }, [phones, filterBy]);
 
   return (
     <div className='phones'>
@@ -183,7 +192,7 @@ export const PhonesPage: React.FC<Props> = ({
         <>
           <div className="phones__list">
             <ProductList
-              products={visiblePhones}
+              products={phonesForCurrentPage}
               forSlider={false}
               cartItems={cartItems}
               favoriteItems={favoriteItems}
@@ -225,12 +234,15 @@ export const PhonesPage: React.FC<Props> = ({
                 const pageNumber = index + 1;
 
                 return (
-                  <div className={cn(
-                    "phones__pagination-page-icon",
-                    {
-                      "phones__pagination-page-icon--selected": currentPage === pageNumber
-                    }
-                  )}>
+                  <div
+                    className={cn(
+                      "phones__pagination-page-icon",
+                      {
+                        "phones__pagination-page-icon--selected": currentPage === pageNumber
+                      }
+                    )}
+                    onClick={() => setCurrentPage(pageNumber)}
+                  >
                     {pageNumber}
                   </div>
                 )
