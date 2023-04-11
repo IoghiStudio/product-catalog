@@ -14,6 +14,7 @@ import { ProductDetailsPage } from '../ProductDetailsPage';
 import { ReactRoutes } from '../../types/reactRoutes';
 import { Phone } from '../../types/phone';
 import { BurgerMenu } from '../BurgerMenu';
+import cn from 'classnames';
 
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
@@ -66,6 +67,8 @@ export const App = () => {
       })
   }
 
+  console.log(isMenuOpen)
+
   return (
     <div id='top' className="app">
       <Header
@@ -75,7 +78,15 @@ export const App = () => {
         isMenuOpen={isMenuOpen}
       />
 
-      <main className='app__main'>
+      <main
+        //remove padding for menu to have border screen width
+        className={cn(
+          'app__main',
+          {
+            'app__main--no-padding': isMenuOpen
+          }
+        )}
+      >
         {isMenuOpen ? (
           <BurgerMenu
             cartCount={cartItems.length}

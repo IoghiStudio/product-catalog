@@ -54,5 +54,9 @@ body {
       min-height: calc(100vh - $header-height-desktop - $footer-height-tab-desk);
       padding: 0 32px;
     }
+
+    &--no-padding {
+      padding: 0;
+    }
   }
 }
