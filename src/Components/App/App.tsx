@@ -18,7 +18,7 @@ import { BurgerMenu } from '../BurgerMenu';
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
   const [favoriteItems, setFavoriteItems] = useState<Phone[]>([]);
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
 
   const handleMenu = useCallback(() => {
     setIsMenuOpen((state => !state));

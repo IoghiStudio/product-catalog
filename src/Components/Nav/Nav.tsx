@@ -31,13 +31,32 @@ const paths = [
 type Props = {
   cartCount: number;
   favCount: number;
+  formenu?: boolean
 }
 
 export const Nav: React.FC<Props> = React.memo(
-  ({ cartCount, favCount}) => {
+  ({ 
+    cartCount,
+    favCount,
+    formenu = false,
+  }) => {
     return (
-      <nav className='nav'>
-        <ul className='nav__list'>
+      <nav
+        className={cn(
+          'nav',
+          {
+            'nav--formenu': formenu,
+          }
+        )}
+      >
+        <ul
+          className={cn(
+            'nav__list',
+            {
+              'nav__list--formenu': formenu,
+            }
+          )}
+        >
           {paths.map(path => {
             const { id, url, name } = path;
   

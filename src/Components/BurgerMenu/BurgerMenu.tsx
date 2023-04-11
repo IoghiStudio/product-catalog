@@ -15,6 +15,7 @@ export const BurgerMenu: React.FC<Props> = ({
       <Nav
         cartCount={cartCount}
         favCount={favCount}
+        formenu={true}
       />
     </div>
   )

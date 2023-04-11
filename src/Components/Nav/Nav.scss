@@ -9,7 +9,7 @@
   flex-grow: 1;
 
   &--formenu {
-    
+    flex-direction: column;
   }
 
   &__list {
@@ -23,6 +23,13 @@
 
     @include onDesktop {
       gap: 64px;
+    }
+
+    &--formenu {
+      flex-direction: column;
+      justify-content: center;
+      height: max-content;
+      margin-top: 32px;
     }
   }
 
@@ -41,9 +48,11 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: $white;
+    color: $secondary;
 
     &--active {
       border-bottom: 3px solid $white;
+      color: $white;
     }
   }
 
