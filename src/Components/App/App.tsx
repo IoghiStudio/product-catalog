@@ -42,7 +42,7 @@ export const App = () => {
 
   const addToCart = (phoneId: string) => {
     // on real api, should fetch by ID , not getting all the phones like here
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then((data: Phone[]) => {
         const foundItem = data.find(item => item.phoneId === phoneId);
@@ -55,7 +55,7 @@ export const App = () => {
 
   const addToFavorites = (phoneId: string) => {
     // on real api, should fetch by ID , not getting all the phones like here
-    fetch('./phones.json')
+    fetch('./product-catalog/phones.json')
       .then(resp => resp.json())
       .then((data: Phone[]) => {
         const foundItem = data.find(item => item.phoneId === phoneId);
