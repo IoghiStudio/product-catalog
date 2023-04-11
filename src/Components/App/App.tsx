@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { Routes, Route, Navigate} from 'react-router-dom';
@@ -13,10 +13,16 @@ import { NotFoundPage } from '../NotFoundPage';
 import { ProductDetailsPage } from '../ProductDetailsPage';
 import { ReactRoutes } from '../../types/reactRoutes';
 import { Phone } from '../../types/phone';
+import { BurgerMenu } from '../BurgerMenu';
 
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
   const [favoriteItems, setFavoriteItems] = useState<Phone[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const handleMenu = useCallback(() => {
+    setIsMenuOpen((state => !state));
+  }, [])
 
   const clearCart = () => {
     setCartItems([]);
@@ -65,48 +71,18 @@ export const App = () => {
       <Header
         cartCount={cartItems.length}
         favCount={favoriteItems.length}
+        handleMenu={handleMenu}
+        isMenuOpen={isMenuOpen}
       />
 
       <main className='app__main'>
-        <Routes>
-          <Route
-            element={
-              <HomePage
-                cartItems={cartItems}
-                favoriteItems={favoriteItems}
-                onCartAdd={addToCart}
-                onFavoriteAdd={addToFavorites}
-                onFavoriteRemove={removeFromFavorites}
-              />
-            }
-            path={ReactRoutes.Home}
-          />
-
-          <Route
-            path="/home"
-            element={
-              <Navigate to={ReactRoutes.Home} replace/>
-            }
-          />
-
-          <Route path={ReactRoutes.Phones}>
+        {isMenuOpen ? (
+          <BurgerMenu />
+        ) : (
+          <Routes>
             <Route
-              index
               element={
-                <PhonesPage 
-                  cartItems={cartItems}
-                  favoriteItems={favoriteItems}
-                  onCartAdd={addToCart}
-                  onFavoriteAdd={addToFavorites}
-                  onFavoriteRemove={removeFromFavorites}
-                /> 
-              }
-            />
-
-            <Route
-              path=":phoneId"
-              element={
-                <ProductDetailsPage
+                <HomePage
                   cartItems={cartItems}
                   favoriteItems={favoriteItems}
                   onCartAdd={addToCart}
@@ -114,55 +90,93 @@ export const App = () => {
                   onFavoriteRemove={removeFromFavorites}
                 />
               }
+              path={ReactRoutes.Home}
             />
-          </Route>
 
-          <Route
-            path={ReactRoutes.Tablets}
-            element={
-              <TabletsPage />
-            }
-          />
+            <Route
+              path="/home"
+              element={
+                <Navigate to={ReactRoutes.Home} replace/>
+              }
+            />
 
-          <Route
-            path={ReactRoutes.Accessories}
-            element={
-              <AccessoriesPage />
-            }
-          />
-
-          <Route
-            path={ReactRoutes.Favorites}
-            element={
-              <FavoritesPage
-                favoriteItems={favoriteItems}
-                cartItems={cartItems}
-                onCartAdd={addToCart}
-                onFavoriteAdd={addToFavorites}
-                onFavoriteRemove={removeFromFavorites}
+            <Route path={ReactRoutes.Phones}>
+              <Route
+                index
+                element={
+                  <PhonesPage 
+                    cartItems={cartItems}
+                    favoriteItems={favoriteItems}
+                    onCartAdd={addToCart}
+                    onFavoriteAdd={addToFavorites}
+                    onFavoriteRemove={removeFromFavorites}
+                  /> 
+                }
               />
-            }
-          />
 
-          <Route
-            path={ReactRoutes.Cart}
-            element={
-              <CartPage
-                clearCart={clearCart}
-                products={cartItems}
-                onRemove={removeFromCart}
+              <Route
+                path=":phoneId"
+                element={
+                  <ProductDetailsPage
+                    cartItems={cartItems}
+                    favoriteItems={favoriteItems}
+                    onCartAdd={addToCart}
+                    onFavoriteAdd={addToFavorites}
+                    onFavoriteRemove={removeFromFavorites}
+                  />
+                }
               />
-            }
-          />
+            </Route>
 
-          <Route
-            element={<NotFoundPage />}
-            path='*'
-          />
-        </Routes>
+            <Route
+              path={ReactRoutes.Tablets}
+              element={
+                <TabletsPage />
+              }
+            />
+
+            <Route
+              path={ReactRoutes.Accessories}
+              element={
+                <AccessoriesPage />
+              }
+            />
+
+            <Route
+              path={ReactRoutes.Favorites}
+              element={
+                <FavoritesPage
+                  favoriteItems={favoriteItems}
+                  cartItems={cartItems}
+                  onCartAdd={addToCart}
+                  onFavoriteAdd={addToFavorites}
+                  onFavoriteRemove={removeFromFavorites}
+                />
+              }
+            />
+
+            <Route
+              path={ReactRoutes.Cart}
+              element={
+                <CartPage
+                  clearCart={clearCart}
+                  products={cartItems}
+                  onRemove={removeFromCart}
+                />
+              }
+            />
+
+            <Route
+              element={<NotFoundPage />}
+              path='*'
+            />
+          </Routes>
+        )}
       </main>
 
-      <Footer />
+      {!isMenuOpen && (
+        <Footer />
+      )}
     </div>
   );
 }

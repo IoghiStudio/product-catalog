@@ -1,0 +1,8 @@
+@import '../../styles/vars';
+
+.burgermenu {
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - $header-height-mob-tab);
+  background-color: royalblue;
+}
