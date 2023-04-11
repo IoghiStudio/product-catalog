@@ -31,7 +31,9 @@ const paths = [
 type Props = {
   cartCount: number;
   favCount: number;
-  formenu?: boolean
+  formenu?: boolean;
+  isMenuOpen?: boolean
+  handleMenu?: () => void;
 }
 
 export const Nav: React.FC<Props> = React.memo(
@@ -39,6 +41,8 @@ export const Nav: React.FC<Props> = React.memo(
     cartCount,
     favCount,
     formenu = false,
+    isMenuOpen = false,
+    handleMenu = () => {}
   }) => {
     return (
       <nav
@@ -61,7 +65,15 @@ export const Nav: React.FC<Props> = React.memo(
             const { id, url, name } = path;
   
             return (
-              <li key={id} className="nav__item">
+              <li
+                key={id}
+                className="nav__item"
+                onClick={() => {
+                  if (isMenuOpen) {
+                    handleMenu();
+                  }
+                }}
+              >
                 <NavLink
                   className={({ isActive }) => cn(
                     "nav__link",

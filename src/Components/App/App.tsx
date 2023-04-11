@@ -91,6 +91,8 @@ export const App = () => {
           <BurgerMenu
             cartCount={cartItems.length}
             favCount={favoriteItems.length}
+            handleMenu={handleMenu}
+            isMenuOpen={isMenuOpen}
           />
         ) : (
           <Routes>
