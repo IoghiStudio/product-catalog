@@ -55,8 +55,18 @@
       color: $white;
 
       &--formenu {
+        position: relative;
         border: 0;
         padding: 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 16px;
+          height: 3px;
+          width: 100%;
+          background-color: $white;
+        }
       }
     }
   }
