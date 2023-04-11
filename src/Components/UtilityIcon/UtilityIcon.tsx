@@ -6,14 +6,16 @@ import cn from 'classnames';
 type Props = {
   url: string;
   modifier: string;
-  quantity: number;
+  quantity?: number;
+  formenu?: boolean
 }
 
 export const UtilityIcon: React.FC<Props> = React.memo(
   ({
     url,
     modifier,
-    quantity,
+    quantity = 0,
+    formenu = false
   }) => {
     return (
       <NavLink

@@ -16,6 +16,10 @@
     height: 64px;
   }
 
+  &--formenu {
+    
+  }
+
   &--active {
     &::after {
       content: "";
@@ -42,6 +46,10 @@
     &--quantity {
       position: relative;
       left: 7px;
+    }
+
+    &--formenu {
+
     }
   }
 
