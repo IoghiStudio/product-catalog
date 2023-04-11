@@ -66,7 +66,8 @@ export const Nav: React.FC<Props> = React.memo(
                   className={({ isActive }) => cn(
                     "nav__link",
                     {
-                      "nav__link--active": isActive
+                      "nav__link--active": isActive,
+                      "nav__link--active--formenu": isActive && formenu
                     }
                   )}
                   to={`${url}`}

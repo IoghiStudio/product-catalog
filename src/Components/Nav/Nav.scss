@@ -47,13 +47,17 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: $white;
     color: $secondary;
 
     &--active {
       border-bottom: 3px solid $white;
       padding-top: 3px;
       color: $white;
+
+      &--formenu {
+        border: 0;
+        padding: 0;
+      }
     }
   }
 
