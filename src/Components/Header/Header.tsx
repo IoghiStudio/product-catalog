@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import './Header.scss';
-// import cn from 'classnames';
 import { UtilityIcon } from '../UtilityIcon';
 
 type Props = {
