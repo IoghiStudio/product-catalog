@@ -35,7 +35,7 @@ export const PhonesPage: React.FC<Props> = ({
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    fetch('./product-catalog/phones.json')
+    fetch('./phones.json')
       .then(resp => resp.json())
       .then(data => setPhones(data))
   }, [])
