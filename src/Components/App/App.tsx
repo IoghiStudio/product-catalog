@@ -19,7 +19,7 @@ import cn from 'classnames';
 export const App = () => {
   const [cartItems, setCartItems] = useState<Phone[]>([]);
   const [favoriteItems, setFavoriteItems] = useState<Phone[]>([]);
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const handleMenu = useCallback(() => {
     setIsMenuOpen((state => !state));
