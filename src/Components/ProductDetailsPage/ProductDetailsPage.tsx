@@ -41,7 +41,7 @@ export const ProductDetailsPage: React.FC<Props> = ({
   const [alreadyInFavorites, setAlreadyInFavorites] = useState(false);
 
   useEffect(() => {
-    fetch(`./phones/${phoneId}.json`)
+    fetch(`./product-catalog/phones/${phoneId}.json`)
       .then(resp => resp.json())
       .then(data => {
         setPhone(data);
@@ -52,7 +52,7 @@ export const ProductDetailsPage: React.FC<Props> = ({
         setCurrentCapacity(data.capacity);
       })
 
-    fetch(`./phones.json`)
+    fetch(`./product-catalog/phones.json`)
       .then(resp => resp.json())
       .then(data => {
         //random phones for slider while server is not implemented
